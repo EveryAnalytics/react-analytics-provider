@@ -19,6 +19,8 @@
     "@types/react-dom": "^16.9.3",
     "@types/react-test-renderer": "^16.9.1",
     "jest": "^24.9.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "react-scripts-ts": "^4.0.8",
     "react-test-renderer": "^16.11.0",
     "rollup": "^1.25.2",
@@ -27,8 +29,6 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.24.3",
     "ts-jest": "^24.1.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
     "typescript": "^3.6.4"
   },
   "jest": {
@@ -42,6 +42,5 @@
   "peerDependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
-  },
-  "dependencies": {}
+  }
 }

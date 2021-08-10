@@ -4,7 +4,7 @@ import DemoComponent from "@every-analytics/react-analytics-provider";
 function App() {
   return (
     <div className="App">
-      <DemoComponent text="test text" />
+      <DemoComponent text="react-analytics-provider 흥해라!" />
     </div>
   );
 }

@@ -1,11 +1,11 @@
-import { createElement } from 'react';
+import { useState, createElement, Fragment } from 'react';
 
 var SampleComponent = function (props) {
     var text = props.text;
-    // const [value] = React.useState("abc");
-    return (createElement("div", { style: { backgroundColor: "black", color: "white" } },
-        "32 ",
-        text));
+    var value = useState("Ready to use React Hook!")[0];
+    return (createElement(Fragment, null,
+        createElement("div", null, value),
+        createElement("div", { style: { backgroundColor: "black", color: "white" } }, text)));
 };
 
 export default SampleComponent;
