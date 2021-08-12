@@ -16,3 +16,4 @@ const SampleComponent = (props: IProps) => {
 };
 
 export default SampleComponent;
+export * from "./components/AnalyticsProvider";
