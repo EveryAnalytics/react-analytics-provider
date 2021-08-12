@@ -13,6 +13,9 @@ npm run build
 
 # 테스트
 npm run test
+
+# 라이브러리 개발 서버 띄우기
+npm run serve
 ```
 
 ## Demo
