@@ -1,15 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`component testing 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "black",
-      "color": "white",
+Array [
+  <div>
+    Ready to use React Hook!
+  </div>,
+  <div
+    style={
+      Object {
+        "backgroundColor": "black",
+        "color": "white",
+      }
     }
-  }
->
-  32 
-  World
-</div>
+  >
+    World
+  </div>,
+]
 `;
