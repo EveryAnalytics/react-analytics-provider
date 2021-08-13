@@ -9,10 +9,13 @@ const SampleComponent = (props: IProps) => {
   const [value] = React.useState("Ready to use React Hook!");
   return (
     <>
-    <div>{value}</div>
-    <div style={{ backgroundColor: "black", color: "white" }}>{text}</div>
+      <div style={{ backgroundColor: "black", color: "white" }}>
+        {text}
+        {value}
+      </div>
     </>
   );
 };
 
 export default SampleComponent;
+export * from "./components/AnalyticsProvider";
