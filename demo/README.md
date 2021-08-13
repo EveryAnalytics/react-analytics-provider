@@ -2,8 +2,17 @@
 
 ## 환경설정
 
+1. 의존성 설치
+
 ```sh
 npm install
+```
+
+2. `.env`파일 추가
+
+```
+SKIP_PREFLIGHT_CHECK=true
+REACT_APP_GA_TRACKING_ID=트래킹아이디를적으세요
 ```
 
 ## 데모 실행
