@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
   "scripts": {
