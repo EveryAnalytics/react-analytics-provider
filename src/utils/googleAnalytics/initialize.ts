@@ -4,19 +4,19 @@ declare global {
   }
 }
 
-export const gtag = function() {
+export const gtag = function(..._: any) {
   window.dataLayer.push(arguments);
 };
 
 /**
- * Google Analytics를 초기화 합니다.
+ * Initialize google analytics
  */
 export const initializeGA = (
+  /** Tracking id (e.g. G-YNXXXXX) */
   trackingId: string,
-  additionalConfigInfo: any = {}
+  /** To set values that will be sent with every event for a web page */
+  persistentValues: any = {}
 ) => {
-  console.info(`✅GA(${trackingId})가 초기화 되었습니다.`);
-
   const scriptId = "ga-gtag";
 
   if (document.getElementById(scriptId)) return;
@@ -31,8 +31,7 @@ export const initializeGA = (
 
   window.dataLayer = window.dataLayer || [];
 
-  // @ts-ignore
   gtag("js", new Date());
-  // @ts-ignore
-  gtag("config", trackingId, additionalConfigInfo);
+  gtag("config", trackingId, persistentValues);
+  console.info(`📊Initialized Google Analytics (${trackingId}).`);
 };
