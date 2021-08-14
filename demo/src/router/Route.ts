@@ -9,6 +9,7 @@ const Route = ({
 }) => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
+  // FIXME: querystring이 바뀌어도 listening을 못함
   useEffect(() => {
     const onLocationChange = () => {
       setCurrentPath(window.location.pathname);
