@@ -1,0 +1,6 @@
+# Ignore
+build
+node_modules
+
+# Ignore files
+*.html
