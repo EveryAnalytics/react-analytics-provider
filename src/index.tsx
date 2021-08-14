@@ -1,15 +1,15 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface IProps {
   text: string;
 }
 
 const SampleComponent = (props: IProps) => {
-  const { text } = props;
-  const [value] = React.useState("Ready to use React Hook!");
+  const {text} = props;
+  const [value] = React.useState('Ready to use React Hook!');
   return (
     <>
-      <div style={{ backgroundColor: "black", color: "white" }}>
+      <div style={{backgroundColor: 'black', color: 'white'}}>
         {text}
         {value}
       </div>
@@ -18,4 +18,4 @@ const SampleComponent = (props: IProps) => {
 };
 
 export default SampleComponent;
-export * from "./components/AnalyticsProvider";
+export * from './components/AnalyticsProvider';
