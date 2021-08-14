@@ -4,7 +4,7 @@ declare global {
   }
 }
 
-export const gtag = function() {
+export const gtag = function(..._: any) {
   window.dataLayer.push(arguments);
 };
 
@@ -31,8 +31,6 @@ export const initializeGA = (
 
   window.dataLayer = window.dataLayer || [];
 
-  // @ts-ignore
   gtag("js", new Date());
-  // @ts-ignore
   gtag("config", trackingId, additionalConfigInfo);
 };

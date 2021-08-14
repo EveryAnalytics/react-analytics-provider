@@ -10,7 +10,7 @@ const ProductsPage = () => {
       <h1>{color} fruits</h1>
       <ul>
         {products.map((product) => (
-          <li>{product}</li>
+          <li key={product}>{product}</li>
         ))}
       </ul>
     </>
