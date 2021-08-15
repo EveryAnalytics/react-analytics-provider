@@ -12,7 +12,7 @@ export const gtag = function(..._: any) {
  * Initialize Google Analytics(Univarsal Analytics)
  * TODO: Support analytics.js(Legacy version of Universal Analytics)
  */
-export const initializeGA = (
+export const initialize = (
   /** Tracking id (e.g. G-YNXXXXX) */
   trackingId: string,
   /** To set values that will be sent with every event for a web page */

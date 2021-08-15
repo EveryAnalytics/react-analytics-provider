@@ -1,7 +1,7 @@
-import {logEvent} from './event';
-import {initializeGA} from './initialize';
+import {event} from './event';
+import {initialize} from './initialize';
 
 export const googleAnalytics = {
-  initialize: initializeGA,
-  event: logEvent,
+  initialize,
+  event,
 };
