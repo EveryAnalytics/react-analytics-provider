@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import SampleComponent from '..';
+import SampleComponent from '../components/Sample';
 
 test('component testing', () => {
   const component = renderer.create(<SampleComponent text="World" />);
