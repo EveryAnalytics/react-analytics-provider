@@ -9,13 +9,14 @@ export const gtag = function(..._: any) {
 };
 
 /**
- * Initialize google analytics
+ * Initialize Google Analytics(Univarsal Analytics)
+ * TODO: Support analytics.js(Legacy version of Universal Analytics)
  */
 export const initializeGA = (
   /** Tracking id (e.g. G-YNXXXXX) */
   trackingId: string,
   /** To set values that will be sent with every event for a web page */
-  persistentValues?: {[key: string]: string},
+  persistentValues?: {[key: string]: any},
 ) => {
   const scriptId = 'ga-gtag';
 

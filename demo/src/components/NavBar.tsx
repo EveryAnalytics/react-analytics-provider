@@ -1,4 +1,4 @@
-import { logEvent } from "@every-analytics/react-analytics-provider";
+// import { logEvent } from "@every-analytics/react-analytics-provider";
 import React from "react";
 import navigate from "../router/navigate";
 
@@ -8,7 +8,7 @@ const NavBar = () => {
       <NavItem
         href="/"
         onClick={() => {
-          logEvent("Click logo");
+          // logEvent("Click logo");
         }}
       >
         Fruit Store
@@ -16,7 +16,7 @@ const NavBar = () => {
       <NavItem
         href="/products?color=red"
         onClick={() => {
-          logEvent("Click nav item", { color: "red" });
+          // logEvent("Click nav item", { color: "red" });
         }}
       >
         Red
@@ -24,7 +24,7 @@ const NavBar = () => {
       <NavItem
         href="/products?color=yellow"
         onClick={() => {
-          logEvent("Click logo", { color: "yellow" });
+          // logEvent("Click logo", { color: "yellow" });
         }}
       >
         Yellow
