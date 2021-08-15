@@ -1,14 +1,14 @@
 {
   "parser": "@typescript-eslint/parser", // eslint to TS
+  "plugins": ["prettier", "@typescript-eslint"],
   "extends": [
     "plugin:@typescript-eslint/recommended", // ts 추천 rules https://github.com/typescript-eslint/typescript-eslint#readme
-    "prettier/@typescript-eslint", // eslint rule과 prettier rule 충돌 방지. https://github.com/prettier/eslint-config-prettier
     "plugin:react/recommended", // react 추천 rules. https://github.com/yannickcr/eslint-plugin-react
     "plugin:react-hooks/recommended", // react-hook 추천 rules. https://github.com/facebook/react
     "plugin:jsx-a11y/recommended", // jsx 추천 rules. https://www.npmjs.com/package/eslint-plugin-jsx-a11y
     "plugin:import/errors", // es6+ import/export syntax linting 지원. https://www.npmjs.com/package/eslint-plugin-import
     "plugin:import/warnings", // es6+ import/export syntax linting 지원. https://www.npmjs.com/package/eslint-plugin-import
-    "plugin:prettier/recommended" // eslint의 formatting 기능을 prettier로 사용함. 항상 마지막에 세팅 되어야 함. https://github.com/prettier/eslint-config-prettier
+    "prettier" // eslint rule과 prettier rule 충돌 방지. https://github.com/prettier/eslint-config-prettier
   ],
   "parserOptions": {
     "ecmaVersion": 2018, // 문법 지원 (기본 값으로 둠)
@@ -16,6 +16,14 @@
   },
   "rules": {
     // custom 해야할 규칙 선언
+    "prettier/prettier": "error"
   },
-  "settings": {}
+  "settings": {
+    // module resolve issue로 인해 추가, https://stackoverflow.com/questions/55198502/using-eslint-with-typescript-unable-to-resolve-path-to-module
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
 }
