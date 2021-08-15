@@ -9,8 +9,8 @@ export const gtag = function(..._: any) {
 };
 
 /**
- * Initialize Google Analytics(Univarsal Analytics)
- * TODO: Support analytics.js(Legacy version of Universal Analytics)
+ * Initialize Google Analytics(GA4)
+ * TODO: Support analytics.js(Universal analytics - Legacy version of GA4)
  */
 export const initialize = (
   /** Tracking id (e.g. G-YNXXXXX) */

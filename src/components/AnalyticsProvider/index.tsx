@@ -6,10 +6,11 @@ interface Props {
   onInitialize(): void;
   onPageView?(params?: {[key: string]: any}): void;
   onEvent?(name: string, params?: {[key: string]: any}): void;
+  onClick?(name: string, params?: {[key: string]: any}): void;
   children: React.ReactNode;
 }
 
-export function AnalyticsProvider({onInitialize, onPageView = () => null, onEvent = () => null, children}: Props) {
+export function AnalyticsProvider({onInitialize, onPageView = () => null, onEvent = () => null, onClick = () => null, children}: Props) {
   React.useEffect(() => {
     onInitialize();
   }, []);
@@ -20,6 +21,7 @@ export function AnalyticsProvider({onInitialize, onPageView = () => null, onEven
         value={{
           onPageView,
           onEvent,
+          onClick,
         }}
       >
         {children}
