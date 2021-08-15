@@ -5,11 +5,13 @@ import App from './App';
 import {AnalyticsProvider, googleAnalytics} from '@every-analytics/react-analytics-provider';
 import {fruitLogger} from './utils/fruitLogger';
 
+const persistentValues = {userNo: 123};
+
 ReactDOM.render(
   <React.StrictMode>
     <AnalyticsProvider
       onInitialize={() => {
-        googleAnalytics.initialize(process.env.REACT_APP_GA_TRACKING_ID!, {userNo: 123});
+        googleAnalytics.initialize(process.env.REACT_APP_GA_TRACKING_ID!, persistentValues);
       }}
       onPageView={params => {
         const path = window.location.pathname + window.location.search;
