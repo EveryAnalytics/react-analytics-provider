@@ -2,10 +2,12 @@ import {createContext} from 'react';
 
 export interface AnalyticsProviderContext {
   onPageView(params?: {[key: string]: any}): void;
+  onEvent(name: string, params?: {[key: string]: any}): void;
 }
 
 export const initialState: AnalyticsProviderContext = {
   onPageView: () => null,
+  onEvent: () => null,
 };
 
 const AnalyticsProviderContext = createContext<AnalyticsProviderContext>(initialState);

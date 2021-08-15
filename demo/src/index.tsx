@@ -13,8 +13,12 @@ ReactDOM.render(
       }}
       onPageView={params => {
         const path = window.location.pathname + window.location.search;
-        console.info('GA: Default PageView', path, params); // NOTE: Google Analytics(Universal analytics)는 기본적으로 페이지뷰가 적용됩니다 - 따로 추가 필요X
+        console.info('✅GA: Default PageView', path, params); // NOTE: Google Analytics(Universal analytics)는 기본적으로 페이지뷰가 적용됩니다 - 따로 추가 필요X
         fruitLogger.pageView(path, params);
+      }}
+      onEvent={(name, params) => {
+        googleAnalytics.event(name, params);
+        fruitLogger.event(name, params);
       }}
     >
       <App />

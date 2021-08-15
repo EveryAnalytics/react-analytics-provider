@@ -5,11 +5,11 @@ import AnalyticsProviderContext from '../../contexts/AnalyticsProviderContext';
 interface Props {
   onInitialize(): void;
   onPageView?(params?: {[key: string]: any}): void;
-  onClick?(): void;
+  onEvent?(name: string, params?: {[key: string]: any}): void;
   children: React.ReactNode;
 }
 
-export function AnalyticsProvider({onInitialize, onPageView = () => null, children}: Props) {
+export function AnalyticsProvider({onInitialize, onPageView = () => null, onEvent = () => null, children}: Props) {
   React.useEffect(() => {
     onInitialize();
   }, []);
@@ -19,6 +19,7 @@ export function AnalyticsProvider({onInitialize, onPageView = () => null, childr
       <AnalyticsProviderContext.Provider
         value={{
           onPageView,
+          onEvent,
         }}
       >
         {children}
