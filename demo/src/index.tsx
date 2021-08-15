@@ -11,9 +11,10 @@ ReactDOM.render(
       onInitialize={() => {
         googleAnalytics.initialize(process.env.REACT_APP_GA_TRACKING_ID!, {userNo: 123});
       }}
-      onPageView={path => {
-        console.info('GA: Default PageView', path); // NOTE: Google Analytics(Universal analytics)는 기본적으로 페이지뷰가 적용됩니다 - 따로 추가 필요X
-        fruitLogger.pageView(path);
+      onPageView={params => {
+        const path = window.location.pathname + window.location.search;
+        console.info('GA: Default PageView', path, params); // NOTE: Google Analytics(Universal analytics)는 기본적으로 페이지뷰가 적용됩니다 - 따로 추가 필요X
+        fruitLogger.pageView(path, params);
       }}
     >
       <App />

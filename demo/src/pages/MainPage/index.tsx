@@ -1,12 +1,14 @@
 import {useEffect} from 'react';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {getQueryParams} from '../../utils/location';
 
 const MainPage = () => {
   const analytics = useAnalyticsContext();
+  const {referrer} = getQueryParams<{referrer: string}>();
+
   useEffect(() => {
-    analytics.onPageView('');
-    // analytics.onPageView('', {referrer: 'facebook'});
-  }, [analytics]);
+    analytics.onPageView({referrer});
+  }, [analytics, referrer]);
 
   return (
     <>

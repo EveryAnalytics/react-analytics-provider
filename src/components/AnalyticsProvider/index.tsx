@@ -4,7 +4,7 @@ import AnalyticsProviderContext from '../../contexts/AnalyticsProviderContext';
 
 interface Props {
   onInitialize(): void;
-  onPageView?(path: string): void;
+  onPageView?(params?: {[key: string]: any}): void;
   onClick?(): void;
   children: React.ReactNode;
 }
