@@ -1,21 +1,30 @@
 import * as React from 'react';
 
 import AnalyticsProviderContext from '../../contexts/AnalyticsProviderContext';
-import {initializeGA} from '../../utils/googleAnalytics/initialize';
 
 interface Props {
-  gaTrackingId: string;
+  onInitialize(): void;
+  onPageView?(params?: {[key: string]: any}): void;
+  onEvent?(name: string, params?: {[key: string]: any}): void;
   children: React.ReactNode;
 }
 
-export function AnalyticsProvider({gaTrackingId, children}: Props) {
+export function AnalyticsProvider({onInitialize, onPageView = () => null, onEvent = () => null, children}: Props) {
   React.useEffect(() => {
-    initializeGA(gaTrackingId);
-    // NOTE: 추후에는 본인이 원하는 Analytis tools 선택해서 자유롭게 넣을 수 있도록 유연하게 변경
+    onInitialize();
   }, []);
 
   return React.useMemo(
-    () => <AnalyticsProviderContext.Provider value={{}}>{children}</AnalyticsProviderContext.Provider>,
+    () => (
+      <AnalyticsProviderContext.Provider
+        value={{
+          onPageView,
+          onEvent,
+        }}
+      >
+        {children}
+      </AnalyticsProviderContext.Provider>
+    ),
     [children],
   );
 }

@@ -18,5 +18,6 @@ const SampleComponent = (props: IProps) => {
 };
 
 export default SampleComponent;
-export * from "./components/AnalyticsProvider";
-export * from "./utils/googleAnalytics";
+export * from './components/AnalyticsProvider';
+export * from './utils/googleAnalytics';
+export * from './contexts/useAnalyticsContext';

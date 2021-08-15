@@ -9,15 +9,16 @@ export const gtag = function(..._: any) {
 };
 
 /**
- * Initialize google analytics
+ * Initialize Google Analytics(Univarsal Analytics)
+ * TODO: Support analytics.js(Legacy version of Universal Analytics)
  */
 export const initializeGA = (
   /** Tracking id (e.g. G-YNXXXXX) */
   trackingId: string,
   /** To set values that will be sent with every event for a web page */
-  persistentValues: any = {}
+  persistentValues?: {[key: string]: any},
 ) => {
-  const scriptId = "ga-gtag";
+  const scriptId = 'ga-gtag';
 
   if (document.getElementById(scriptId)) return;
 
@@ -31,7 +32,7 @@ export const initializeGA = (
 
   window.dataLayer = window.dataLayer || [];
 
-  gtag("js", new Date());
-  gtag("config", trackingId, persistentValues);
+  gtag('js', new Date());
+  gtag('config', trackingId, persistentValues);
   console.info(`📊Initialized Google Analytics (${trackingId}).`);
 };
