@@ -9,6 +9,7 @@
   "scripts": {
     "pretty": "prettier --check . --ignore-path ./.prettierignore",
     "pretty-fix": "prettier --write . --ignore-path ./.prettierignore",
+    "lint": "eslint './**/*.+(js|ts)?(x)'",
     "serve": "rollup -c rollup.config.js -w",
     "build": "rollup -c",
     "test": "jest",
