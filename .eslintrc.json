@@ -20,6 +20,9 @@
     "@typescript-eslint/explicit-module-boundary-types": "off"
   },
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     // module resolve issue로 인해 추가, https://stackoverflow.com/questions/55198502/using-eslint-with-typescript-unable-to-resolve-path-to-module
     "import/resolver": {
       "node": {
