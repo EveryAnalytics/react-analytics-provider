@@ -17,7 +17,8 @@
   "rules": {
     // custom 해야할 규칙 선언
     "prettier/prettier": "error",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {
