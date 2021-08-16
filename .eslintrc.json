@@ -16,7 +16,8 @@
   },
   "rules": {
     // custom 해야할 규칙 선언
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   },
   "settings": {
     // module resolve issue로 인해 추가, https://stackoverflow.com/questions/55198502/using-eslint-with-typescript-unable-to-resolve-path-to-module

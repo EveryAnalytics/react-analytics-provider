@@ -1,9 +1,10 @@
 import {createContext} from 'react';
+import {UnknownRecord} from '../types/common';
 
 export interface AnalyticsProviderContext {
-  onPageView(params?: {[key: string]: any}): void;
-  onEvent(name: string, params?: {[key: string]: any}): void;
-  onClick(name: string, params?: {[key: string]: any}): void;
+  onPageView(params?: UnknownRecord): void;
+  onEvent(name: string, params?: UnknownRecord): void;
+  onClick(name: string, params?: UnknownRecord): void;
 }
 
 export const initialState: AnalyticsProviderContext = {
