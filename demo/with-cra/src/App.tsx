@@ -3,6 +3,7 @@ import MainPage from "./pages/MainPage";
 import ProductsPage from "./pages/ProductsPage";
 import LoginPage from "./pages/LoginPage";
 import Route from "./router/Route";
+import React from "react";
 
 function App() {
   return (
