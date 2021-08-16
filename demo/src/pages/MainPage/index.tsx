@@ -3,7 +3,7 @@ import {getQueryParams} from '../../utils/location';
 
 const MainPage = () => {
   const {referrer} = getQueryParams<{referrer: string}>();
-  useAnalyticsPageView({referrer})
+  useAnalyticsPageView({referrer});
 
   return (
     <>
