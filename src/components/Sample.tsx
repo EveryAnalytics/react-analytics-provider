@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-interface IProps {
+interface Props {
   text: string;
 }
 
-const SampleComponent = (props: IProps) => {
+const SampleComponent = (props: Props) => {
   const {text} = props;
   const [value] = React.useState('Ready to use React Hook!');
   return (

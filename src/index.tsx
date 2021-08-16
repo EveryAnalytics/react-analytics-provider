@@ -1,3 +1,4 @@
-export * from './components/AnalyticsProvider';
-export * from './utils/googleAnalytics';
-export * from './contexts/useAnalyticsContext';
+export * from './components';
+export * from './utils';
+export * from './contexts';
+export * from './hooks';
