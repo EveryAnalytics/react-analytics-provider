@@ -1,22 +1,24 @@
+import {UnknownRecord} from '../../types/common';
+
 declare global {
   interface Window {
-    dataLayer: Record<string, any>[];
+    dataLayer: unknown[];
   }
 }
 
-export const gtag = function(..._: any) {
-  window.dataLayer.push(arguments);
+export const gtag = function (...rest: unknown[]) {
+  window.dataLayer.push(...rest);
 };
 
 /**
- * Initialize Google Analytics(Univarsal Analytics)
- * TODO: Support analytics.js(Legacy version of Universal Analytics)
+ * Initialize Google Analytics(GA4)
+ * TODO: Support analytics.js(Universal analytics - Legacy version of GA4)
  */
 export const initialize = (
   /** Tracking id (e.g. G-YNXXXXX) */
   trackingId: string,
   /** To set values that will be sent with every event for a web page */
-  persistentValues?: {[key: string]: any},
+  persistentValues?: UnknownRecord,
 ) => {
   const scriptId = 'ga-gtag';
 

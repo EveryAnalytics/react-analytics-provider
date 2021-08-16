@@ -32,6 +32,14 @@ const NavBar = () => {
       >
         Yellow
       </NavItem>
+      <NavItem
+        href="/login"
+        onClick={() => {
+          analytics.onClick("Click login", { color: "yellow" })
+        }}
+      >
+        Login
+      </NavItem>
     </header>
   );
 };
