@@ -26,9 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # @TODO: eslint 세팅 이후에 활성화
-      # - name: Lint check
-      #   run: npm run lint
+      - name: Lint check
+        run: npm run lint
 
       - name: Unit test
         run: npm run test

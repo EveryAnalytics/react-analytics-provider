@@ -6,12 +6,6 @@ export function getQueryParams<T extends {[k: string]: string}>(): T {
   if (search === '') {
     return {} as T; // FIXME: 인자를 undefined로 바꿔서 return해야함
   }
-  return JSON.parse(
-    '{"' +
-      decodeURI(search)
-        .replace(/"/g, '\\"')
-        .replace(/&/g, '","')
-        .replace(/=/g, '":"') +
-      '"}',
-  );
+
+  return JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
 }
