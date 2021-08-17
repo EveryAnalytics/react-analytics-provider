@@ -9,7 +9,7 @@ const showToast = (children: React.ReactNode) => {
 export const showEventToast = (name: string, params?: UnknownRecord) => {
   showToast(
     <>
-      <div>✅GA: Event</div>
+      <div><span aria-label='Check'>✅</span>GA: Event</div>
       <div>name: {name}</div>
       <div>params: {JSON.stringify(params)}</div>
     </>,
@@ -19,7 +19,7 @@ export const showEventToast = (name: string, params?: UnknownRecord) => {
 export const showClickToast = (name: string, params?: UnknownRecord) => {
   showToast(
     <>
-      <div>🖱️GA: Click</div>
+      <div><span aria-label='Mouse'>🖱️</span>GA: Click</div>
       <div>name: {name}</div>
       <div>params: {JSON.stringify(params)}</div>
     </>,
@@ -29,7 +29,7 @@ export const showClickToast = (name: string, params?: UnknownRecord) => {
 export const showPageViewToast = (path: string, params?: UnknownRecord) => {
   showToast(
     <>
-      <div>📃GA: PageView</div>
+      <div><span aria-label="Paper">📃</span>GA: PageView</div>
       <div>path: {path}</div>
       <div>params: {JSON.stringify(params)}</div>
     </>,
