@@ -5,7 +5,7 @@ const showToast = (children: React.ReactNode) => {
   toast(() => <div style={{display: 'flex', flexDirection: 'column'}}>{children}</div>);
 };
 
-export const showEventToast = (name: string, params?: unknown) => {
+export const event = (name: string, params?: unknown) => {
   showToast(
     <>
       <div>GA: Event</div>
@@ -15,7 +15,7 @@ export const showEventToast = (name: string, params?: unknown) => {
   );
 };
 
-export const showClickToast = (name: string, params?: unknown) => {
+export const click = (name: string, params?: unknown) => {
   showToast(
     <>
       <div>GA: Click</div>
@@ -25,7 +25,7 @@ export const showClickToast = (name: string, params?: unknown) => {
   );
 };
 
-export const showPageViewToast = (path: string, params?: unknown) => {
+export const pageView = (path: string, params?: unknown) => {
   showToast(
     <>
       <div>GA: PageView</div>
@@ -36,7 +36,7 @@ export const showPageViewToast = (path: string, params?: unknown) => {
 };
 
 export const toaster = {
-  showEventToast,
-  showClickToast,
-  showPageViewToast,
+  event,
+  click,
+  pageView,
 };
