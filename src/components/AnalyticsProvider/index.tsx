@@ -5,6 +5,7 @@ import {UnknownRecord} from '../../types/common';
 
 interface Props {
   onInitialize(): void;
+  onModalView?(name: string, params?: UnknownRecord): void;
   onPageView?(params?: UnknownRecord): void;
   onEvent?(name: string, params?: UnknownRecord): void;
   onClick?(name: string, params?: UnknownRecord): void;
@@ -13,6 +14,7 @@ interface Props {
 
 export function AnalyticsProvider({
   onInitialize,
+  onModalView = () => null,
   onPageView = () => null,
   onEvent = () => null,
   onClick = () => null,
@@ -26,6 +28,7 @@ export function AnalyticsProvider({
     () => (
       <AnalyticsProviderContext.Provider
         value={{
+          onModalView,
           onPageView,
           onEvent,
           onClick,
@@ -34,6 +37,6 @@ export function AnalyticsProvider({
         {children}
       </AnalyticsProviderContext.Provider>
     ),
-    [children, onClick, onEvent, onPageView],
+    [children, onClick, onEvent, onPageView, onModalView],
   );
 }
