@@ -1,20 +1,7 @@
-<<<<<<< HEAD:demo/with-cra/src/router/Route.tsx
-import React, { Fragment, useEffect, useState } from "react";
-
-const Route = ({
-  path,
-  children,
-}: {
-  path: string;
-  children: React.ReactElement;
-}) => {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname + window.location.search);
-=======
-import React, {useEffect, useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 
 const Route = ({path, children}: {path: string; children: React.ReactElement}) => {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
->>>>>>> main:demo/with-cra/src/router/Route.ts
+  const [currentPath, setCurrentPath] = useState(window.location.pathname + window.location.search);
 
   useEffect(() => {
     const onLocationChange = () => {
@@ -25,9 +12,10 @@ const Route = ({path, children}: {path: string; children: React.ReactElement}) =
       window.removeEventListener('popstate', onLocationChange);
     };
   }, []);
-
-  return (currentPath.indexOf("?") !== -1 ? currentPath.slice(0, currentPath.indexOf("?")) : currentPath ) === path
-   ? <Fragment key={currentPath}>{children}</Fragment> : null;
+  // prettier-ignore
+  return (currentPath.indexOf('?') !== -1 ? currentPath.slice(0, currentPath.indexOf('?')) : currentPath ) === path ? (
+    <Fragment key={currentPath}>{children}</Fragment>
+  ) : null;
 };
 
 export default Route;
