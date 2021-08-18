@@ -1,11 +1,15 @@
-import executionEnv from '../index'
+import executionEnv from '../index';
 
-describe('Execution environment', function test() {
-  it('should be client side', function test() {
-    window.ssr = false
-
+describe('Execution environment', () => {
+  it('should not be client side', () => {
     const result = executionEnv.isClientSide
 
-    expect(result).toBe(true)
+    expect(result).toBe(false)
+  })
+
+  it('EventListeners should not be available', () => {
+    const result = executionEnv.canUseEventListeners
+
+    expect(result).toBe(false)
   })
 })

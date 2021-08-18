@@ -1,24 +1,19 @@
-declare global {
-  interface Window {
-    ssr: boolean
-  }
+type ConstraintType = boolean
+
+export interface ExecutionEnv<T = ConstraintType> {
+  isClientSide: T
+  canUseEventListeners: T
 }
 
-export const isClientSide = Boolean(
+export const isClientSide: ConstraintType = Boolean(
   typeof window !== 'undefined' && window.document && window.document.createElement
 )
 
-export const canUseEventListeners = isClientSide && Boolean(window.addEventListener)
+export const canUseEventListeners: ConstraintType = isClientSide && Boolean(window.addEventListener)
 
-const getExecutedEnv = () => {
-  if (process.env.NODE_ENV === 'test') {
-    return window.ssr
-  }
-
-  return {
-    isClientSide,
-    canUseEventListeners,
-  }
+const executionEnv: ExecutionEnv = {
+  isClientSide,
+  canUseEventListeners,
 }
 
-export default executionEnv = getExecutedEnv()
+export default executionEnv
