@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@every-analytics/react-analytics-provider": "file:../..",
     "next": "11.1.0",
     "react": "file:../../node_modules/react",
     "react-dom": "file:../../node_modules/react"

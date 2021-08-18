@@ -31,6 +31,10 @@ npm install
 npm run start
 ```
 
+## 개발 환경
+- [git](https://git-scm.com/downloads) -v 2.28
+- [npm](https://www.npmjs.com/) -v 6.14.13
+- [node](https://nodejs.org/ko/download/) -v v14.17.3
 ## 참고
 
 - [NPM에 React 모듈 배포하기](http://tlog.tammolo.com/blog/npm-react-module/)
