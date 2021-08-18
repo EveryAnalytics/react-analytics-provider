@@ -1,0 +1,23 @@
+{
+  "name": "with-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@every-analytics/react-analytics-provider": "file:../..",
+    "next": "11.1.0",
+    "react": "file:../../node_modules/react",
+    "react-dom": "file:../../node_modules/react"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.18",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "typescript": "4.3.5"
+  }
+}
