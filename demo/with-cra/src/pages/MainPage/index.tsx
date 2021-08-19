@@ -1,5 +1,5 @@
 import React from 'react';
-import {useAnalyticsPageView, useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {useAnalyticsPageView, useAnalyticsContext, AnalyticsModalView} from '@every-analytics/react-analytics-provider';
 import {getQueryParams} from '../../utils/location';
 import Modal from '../../components/Modal';
 
@@ -18,7 +18,11 @@ const MainPage = () => {
     <>
       <h1>Fruit Store</h1>
       <button onClick={handleClick}>modal</button>
-      {isOpen && <Modal setIsOpen={setIsOpen}>WELCOME TO FRUIT STORE</Modal>}
+      {isOpen && (
+        <AnalyticsModalView name={'mainmodal'} params={{message: true}}>
+          <Modal setIsOpen={setIsOpen}>WELCOME TO FRUIT STORE</Modal>
+        </AnalyticsModalView>
+      )}
     </>
   );
 };
