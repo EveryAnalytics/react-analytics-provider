@@ -14,15 +14,11 @@ const useClickInside = (
   name: string,
   params?: UnknownRecord,
 ) => {
-  // if (!ref) {
-  //   return;
-  // }
-
   const handleClick = useCallback(e => {
     if (ref.current && ref.current.contains(e.target)) {
       callback(name, params);
     }
-  }, []);
+  }, [ref, name, params]);
 
   useEffect(() => {
     document.addEventListener('click', handleClick);
@@ -42,12 +38,7 @@ export const AnalyticsClick: FC<AnalyticsClickProps> = props => {
 
   return (
     <div ref={ref}>
-      {/* button */}
       {children}
     </div>
   );
 };
-
-// children 받기 => button
-// button wrapper의 ref 객체 접근
-// 버튼이 클릭되면 버블링 체크하여 ref에서 콜백함수(이벤트 호출) 실행
