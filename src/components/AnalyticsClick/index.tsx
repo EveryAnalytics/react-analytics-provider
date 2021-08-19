@@ -14,11 +14,14 @@ const useClickInside = (
   name: string,
   params?: UnknownRecord,
 ) => {
-  const handleClick = useCallback(e => {
-    if (ref.current && ref.current.contains(e.target)) {
-      callback(name, params);
-    }
-  }, [ref, name, params]);
+  const handleClick = useCallback(
+    e => {
+      if (ref.current && ref.current.contains(e.target)) {
+        callback(name, params);
+      }
+    },
+    [ref, name, params],
+  );
 
   useEffect(() => {
     document.addEventListener('click', handleClick);
@@ -36,9 +39,5 @@ export const AnalyticsClick: FC<AnalyticsClickProps> = props => {
 
   useClickInside(ref, onClick, name, params);
 
-  return (
-    <div ref={ref}>
-      {children}
-    </div>
-  );
+  return <div ref={ref}>{children}</div>;
 };
