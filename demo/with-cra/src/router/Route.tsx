@@ -1,4 +1,3 @@
-<<<<<<< HEAD:demo/with-cra/src/router/Route.tsx
 import React, { Fragment, useEffect, useState } from "react";
 
 const Route = ({
@@ -9,12 +8,6 @@ const Route = ({
   children: React.ReactElement;
 }) => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname + window.location.search);
-=======
-import React, {useEffect, useState} from 'react';
-
-const Route = ({path, children}: {path: string; children: React.ReactElement}) => {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
->>>>>>> main:demo/with-cra/src/router/Route.ts
 
   useEffect(() => {
     const onLocationChange = () => {
