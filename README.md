@@ -19,6 +19,8 @@
 
 > Super convenient analytics provider for React
 
+[Web Analytics Handbook](https://everyanalytics.github.io/web-analytics-handbook/)
+
 - 💙 Typescript support
 - 👨‍👩‍👧‍👦 GA4 supported
 - 🏃 Currently maintaining
