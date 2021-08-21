@@ -16,7 +16,7 @@
   },
   "rules": {
     // custom 해야할 규칙 선언
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", {"endOfLine":"auto"}],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off"
