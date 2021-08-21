@@ -19,8 +19,11 @@ npm install
 ```bash
 SKIP_PREFLIGHT_CHECK=true
 REACT_APP_GA_TRACKING_ID=트래킹아이디를적으세요
+REACT_APP_AMPLITUDE_API_KEY=158ed40974495db744ed5ed2c375c868
 ```
-
+Amplitude API Key는 아래 페이지에서 얻으실 수있습니다. 
+https://analytics.amplitude.com/rap 
+![image](https://user-images.githubusercontent.com/35516239/130311482-9907ba07-2ae8-402b-a590-ec13ee8158e7.png)
 ## 실행방법
 1. `root` 폴더에서 라이브러리를 빌드합니다.
 ```bash
