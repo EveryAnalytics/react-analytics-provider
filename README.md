@@ -15,11 +15,12 @@
   <a aria-label="GitHub Stars" href="https://github.com/EveryAnalytics/react-analytics-provider">
     <img alt="" src="https://img.shields.io/github/stars/EveryAnalytics/react-analytics-provider?style=for-the-badge&labelColor=000000">
   </a>
+  <a aria-label="Web Analytics Handbook" href="https://everyanalytics.github.io/web-analytics-handbook/">
+    <img alt="" src="https://img.shields.io/badge/Web%20Analytics%20Handbook-skyblue.svg?style=for-the-badge&label=handbook&labelColor=000000&logoWidth=20">
+  </a>
 </p>
 
 > Super convenient analytics provider for React
-
-[Web Analytics Handbook](https://everyanalytics.github.io/web-analytics-handbook/)
 
 - 💙 Typescript support
 - 👨‍👩‍👧‍👦 GA4 support
