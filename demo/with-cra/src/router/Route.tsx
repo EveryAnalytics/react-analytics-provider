@@ -1,12 +1,6 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from 'react';
 
-const Route = ({
-  path,
-  children,
-}: {
-  path: string;
-  children: React.ReactElement;
-}) => {
+const Route = ({path, children}: {path: string; children: React.ReactElement}) => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname + window.location.search);
 
   useEffect(() => {
@@ -19,8 +13,9 @@ const Route = ({
     };
   }, []);
 
-  return (currentPath.indexOf("?") !== -1 ? currentPath.slice(0, currentPath.indexOf("?")) : currentPath ) === path
-   ? <Fragment key={currentPath}>{children}</Fragment> : null;
+  return (currentPath.indexOf('?') !== -1 ? currentPath.slice(0, currentPath.indexOf('?')) : currentPath) === path ? (
+    <Fragment key={currentPath}>{children}</Fragment>
+  ) : null;
 };
 
 export default Route;
