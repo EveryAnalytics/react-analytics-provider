@@ -1,7 +1,6 @@
 # Ignore
 build
 node_modules
-demo
 
 # Ignore files
 *.html
