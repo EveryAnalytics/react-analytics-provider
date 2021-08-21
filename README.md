@@ -22,7 +22,7 @@
 [Web Analytics Handbook](https://everyanalytics.github.io/web-analytics-handbook/)
 
 - 💙 Typescript support
-- 👨‍👩‍👧‍👦 GA4 supported
+- 👨‍👩‍👧‍👦 GA4 support
 - 🏃 Currently maintaining
 
 
