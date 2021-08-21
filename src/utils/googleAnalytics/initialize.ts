@@ -6,8 +6,9 @@ declare global {
   }
 }
 
-export const gtag = function (...rest: unknown[]) {
-  window.dataLayer.push(...rest);
+export const gtag = function (..._arg: unknown[]) {
+  // eslint-disable-next-line prefer-rest-params
+  window.dataLayer.push(arguments); // gtag.js validates only arguments
 };
 
 /**
