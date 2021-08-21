@@ -13,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <AnalyticsProvider
       onInitialize={() => {
-        googleAnalytics.initialize(process.env.REACT_APP_GA_TRACKING_ID!, persistentValues);
+        googleAnalytics.initialize(process.env.REACT_APP_GA_TRACKING_ID, persistentValues);
       }}
       onPageView={params => {
         // NOTE: Google Analytics(GA4)는 기본적으로 페이지뷰가 적용됩니다 - 따로 추가 필요X
