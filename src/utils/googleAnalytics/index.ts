@@ -3,6 +3,9 @@ import {click} from './click';
 import {initialize} from './initialize';
 import {set} from './set';
 import {impression} from './impression';
+import {product} from './product';
+import {promotion} from './promotion';
+import {action} from './action';
 
 export const googleAnalytics = {
   initialize,
@@ -10,4 +13,7 @@ export const googleAnalytics = {
   click,
   set,
   impression,
+  promotion,
+  product,
+  action,
 };
