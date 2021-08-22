@@ -1,10 +1,22 @@
 {
   "projectName": "react-analytics-provider",
   "projectOwner": "EveryAnalytics",
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "commit": false,
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "greatSumini",
+      "name": "Choi Sumin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48555121?v=4",
+      "profile": "https://sumini.dev",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
   "contributorsPerLine": 7,
   "repoType": "github",
   "repoHost": "https://github.com",
