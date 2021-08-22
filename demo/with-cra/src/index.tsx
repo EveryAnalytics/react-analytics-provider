@@ -34,6 +34,11 @@ ReactDOM.render(
         fruitLogger.click(name, params);
         toaster.click(name, params);
       }}
+      onException={params => {
+        // googleAnalytics.exception(params); // TODO: #96 merge 후 적용 https://github.com/EveryAnalytics/react-analytics-provider/issues/96#issue-976270381
+        fruitLogger.exception(params);
+        toaster.exception(params);
+      }}
     >
       <App />
     </AnalyticsProvider>

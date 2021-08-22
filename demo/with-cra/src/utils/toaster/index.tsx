@@ -25,6 +25,15 @@ export const click = (name: string, params?: unknown) => {
   );
 };
 
+export const exception = (params?: unknown) => {
+  showToast(
+    <>
+      <div>GA: Exception</div>
+      <div>params: {JSON.stringify(params)}</div>
+    </>,
+  );
+};
+
 export const pageView = (path: string, params?: unknown) => {
   showToast(
     <>
@@ -38,5 +47,6 @@ export const pageView = (path: string, params?: unknown) => {
 export const toaster = {
   event,
   click,
+  exception,
   pageView,
 };
