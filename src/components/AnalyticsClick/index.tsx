@@ -24,9 +24,11 @@ const useClickInside = (
   );
 
   useEffect(() => {
-    document.addEventListener('click', handleClick);
+    const rootNode = document.getElementById('root');
+
+    rootNode?.addEventListener('click', handleClick);
     return () => {
-      document.removeEventListener('click', handleClick);
+      rootNode?.removeEventListener('click', handleClick);
     };
   }, [handleClick]);
 };
