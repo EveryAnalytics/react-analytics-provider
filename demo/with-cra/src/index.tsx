@@ -38,6 +38,10 @@ ReactDOM.render(
         fruitLogger.set(...args);
         toaster.set(...args);
       }}
+      onSetUserId={userId => {
+        // TODO: UserId 설정하는 코드 추가
+        console.log(userId);
+      }}
       onSetUserProperty={params => {
         googleAnalyticsHelper.setUserProperty(params);
         fruitLogger.setUserProperty(params);
