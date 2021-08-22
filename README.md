@@ -63,6 +63,7 @@ This project exists thanks to all the people who contribute. [[Contributing](htt
 <table>
   <tr>
     <td align="center"><a href="http://miryang.dev"><img src="https://avatars.githubusercontent.com/u/48237511?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MiryangJung</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=MiryangJung" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://sumini.dev"><img src="https://avatars.githubusercontent.com/u/48555121?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Choi Sumin</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=greatSumini" title="Documentation">📖</a></td>
   </tr>
 </table>
 
