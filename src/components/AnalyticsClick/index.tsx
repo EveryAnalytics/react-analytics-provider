@@ -20,7 +20,7 @@ const useClickInside = (
         callback(name, params);
       }
     },
-    [ref, name, params],
+    [ref, name, params, callback],
   );
 
   useEffect(() => {
@@ -28,12 +28,10 @@ const useClickInside = (
     return () => {
       document.removeEventListener('click', handleClick);
     };
-  }, []);
+  }, [handleClick]);
 };
 
-export const AnalyticsClick: FC<AnalyticsClickProps> = props => {
-  const {children, name, params} = props;
-
+export const AnalyticsClick: FC = ({children, name, params}: AnalyticsClickProps) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const {onClick} = useAnalyticsContext();
 
