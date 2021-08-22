@@ -1,0 +1,12 @@
+{
+  "projectName": "react-analytics-provider",
+  "projectOwner": "EveryAnalytics",
+  "files": ["README.md"],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [],
+  "contributorsPerLine": 7,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": false
+}
