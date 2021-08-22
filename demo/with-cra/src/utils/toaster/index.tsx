@@ -35,8 +35,19 @@ export const pageView = (path: string, params?: unknown) => {
   );
 };
 
+export const timing = (name: string, value: number) => {
+  showToast(
+    <>
+      <div>GA: Timing</div>
+      <div>name: {name}</div>
+      <div>value: {value}</div>
+    </>,
+  );
+};
+
 export const toaster = {
   event,
   click,
   pageView,
+  timing,
 };

@@ -7,7 +7,7 @@ interface TimingParams {
   event_label?: string;
 }
 
-export function timing(params: TimingParams) {
+export function timing(params: TimingParams): void {
   console.info(`✅GA: timing`, params);
   gtag('event', 'timing_complete', params);
 }
