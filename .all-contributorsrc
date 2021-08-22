@@ -1,10 +1,22 @@
 {
   "projectName": "react-analytics-provider",
   "projectOwner": "EveryAnalytics",
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "commit": false,
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "MiryangJung",
+      "name": "MiryangJung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48237511?v=4",
+      "profile": "http://miryang.dev",
+      "contributions": [
+        "test"
+      ]
+    }
+  ],
   "contributorsPerLine": 7,
   "repoType": "github",
   "repoHost": "https://github.com",
