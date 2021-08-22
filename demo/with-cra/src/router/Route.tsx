@@ -12,8 +12,8 @@ const Route = ({path, children}: {path: string; children: React.ReactElement}) =
       window.removeEventListener('popstate', onLocationChange);
     };
   }, []);
-  // prettier-ignore
-  return (currentPath.indexOf('?') !== -1 ? currentPath.slice(0, currentPath.indexOf('?')) : currentPath ) === path ? (
+
+  return (currentPath.indexOf('?') !== -1 ? currentPath.slice(0, currentPath.indexOf('?')) : currentPath) === path ? (
     <Fragment key={currentPath}>{children}</Fragment>
   ) : null;
 };

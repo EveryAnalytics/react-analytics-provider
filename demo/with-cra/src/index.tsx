@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import amplitude from 'amplitude-js';
 import './index.css';
 import App from './App';
 import {AnalyticsProvider, googleAnalytics} from '@every-analytics/react-analytics-provider';
@@ -7,13 +8,14 @@ import {fruitLogger} from './utils/fruitLogger';
 import {Toaster} from 'react-hot-toast';
 import {toaster} from './utils/toaster';
 
+amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_API_KEY);
 const persistentValues = {userNo: 123};
 
 ReactDOM.render(
   <React.StrictMode>
     <AnalyticsProvider
       onInitialize={() => {
-        googleAnalytics.initialize(process.env.REACT_APP_GA_TRACKING_ID!, persistentValues);
+        googleAnalytics.initialize(process.env.REACT_APP_GA_TRACKING_ID, persistentValues);
       }}
       onModalView={(name, params) => {
         console.info('✅GA: ModalView', name, params); // ModalView는 ga('send', 'pageview', path) 필요함
@@ -23,9 +25,9 @@ ReactDOM.render(
       onPageView={params => {
         // NOTE: Google Analytics(GA4)는 기본적으로 페이지뷰가 적용됩니다 - 따로 추가 필요X
         const path = window.location.pathname + window.location.search;
-        // NOTE: Google Analytics(GA4)는 기본적으로 페이지뷰가 적용됩니다 - 따로 추가 필요X
         fruitLogger.pageView(path, params);
         toaster.pageView(path, params);
+        amplitude.getInstance().logEvent('pageView', {path});
       }}
       onEvent={(name, params) => {
         googleAnalytics.event(name, params);

@@ -6,8 +6,10 @@ declare global {
   }
 }
 
-export const gtag = function (...rest: unknown[]) {
-  window.dataLayer.push(...rest);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const gtag = function (..._arg: unknown[]) {
+  // eslint-disable-next-line prefer-rest-params
+  window.dataLayer.push(arguments); // gtag.js validates only arguments
 };
 
 /**
