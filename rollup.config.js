@@ -33,7 +33,7 @@ export default {
     serve('dist'),
     production &&
       strip({
-        include: '**/*.(ts|js)',
+        include: '**/*.[ts|js]x?',
       }),
   ],
 };
