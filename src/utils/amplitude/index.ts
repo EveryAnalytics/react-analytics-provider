@@ -1,1 +1,3 @@
-export const amplitude = {};
+import {initialize} from './initialize';
+
+export const amplitude = {initialize};
