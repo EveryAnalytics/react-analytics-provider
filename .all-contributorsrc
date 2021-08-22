@@ -42,6 +42,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "p-iknow",
+      "name": "Youngchang Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35516239?v=4",
+      "profile": "https://p-iknow.netlify.app/",
+      "contributions": [
+        "code",
+        "infra",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
