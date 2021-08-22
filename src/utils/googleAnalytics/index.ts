@@ -1,5 +1,5 @@
 import {event} from './event';
-import {exception} from './exceptions';
+import {exception} from './exception';
 import {click} from './click';
 import {initialize} from './initialize';
 import {set} from './set';
