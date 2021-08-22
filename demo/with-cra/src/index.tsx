@@ -21,7 +21,7 @@ ReactDOM.render(
         const path = window.location.pathname + window.location.search;
         fruitLogger.pageView(path, params);
         toaster.pageView(path, params);
-        //amplitude.getInstance().logEvent('pageView', {path});
+        amplitude.logEvent('pageView', {path});
       }}
       onEvent={(name, params) => {
         googleAnalytics.event(name, params);
