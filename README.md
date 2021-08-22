@@ -63,6 +63,7 @@ This project exists thanks to all the people who contribute. [[Contributing](htt
 <table>
   <tr>
     <td align="center"><a href="https://sumini.dev"><img src="https://avatars.githubusercontent.com/u/48555121?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Choi Sumin</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=greatSumini" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://velog.io/@gwsyl22"><img src="https://avatars.githubusercontent.com/u/60775453?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HyojinKim</b></sub></a><br /><a href="#example-hy57in" title="Examples">💡</a></td>
   </tr>
 </table>
 
