@@ -40,6 +40,14 @@ const NavBar = () => {
       >
         Login
       </NavItem>
+      <NavItem
+        href="/timing"
+        onClick={() => {
+          analytics.onClick('Click timing');
+        }}
+      >
+        Timing
+      </NavItem>
     </header>
   );
 };
