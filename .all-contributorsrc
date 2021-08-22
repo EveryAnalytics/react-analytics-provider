@@ -53,6 +53,15 @@
         "infra",
         "review"
       ]
+    },
+    {
+      "login": "hiphapis",
+      "name": "Johan Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18629?v=4",
+      "profile": "http://hiphapis.net",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
