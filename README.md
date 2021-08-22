@@ -66,6 +66,7 @@ This project exists thanks to all the people who contribute. [[Contributing](htt
     <td align="center"><a href="https://sumini.dev"><img src="https://avatars.githubusercontent.com/u/48555121?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Choi Sumin</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=greatSumini" title="Documentation">📖</a></td>
     <td align="center"><a href="https://velog.io/@gwsyl22"><img src="https://avatars.githubusercontent.com/u/60775453?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HyojinKim</b></sub></a><br /><a href="#example-hy57in" title="Examples">💡</a></td>
     <td align="center"><a href="https://milooy.wordpress.com/"><img src="https://avatars.githubusercontent.com/u/3839771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yurim Jalynne Jin</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=milooy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jhlee910609"><img src="https://avatars.githubusercontent.com/u/28521282?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JunHee Lee</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=jhlee910609" title="Code">💻</a> <a href="#infra-jhlee910609" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/EveryAnalytics/react-analytics-provider/pulls?q=is%3Apr+reviewed-by%3Ajhlee910609" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
