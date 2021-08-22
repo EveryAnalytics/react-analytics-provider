@@ -8,6 +8,8 @@ interface Props {
   onPageView?(params?: UnknownRecord): void;
   onEvent?(name: string, params?: UnknownRecord): void;
   onClick?(name: string, params?: UnknownRecord): void;
+  onSet?(name: string, params: UnknownRecord): void;
+  onSet?(params: UnknownRecord): void;
   children: React.ReactNode;
 }
 
@@ -16,6 +18,7 @@ export function AnalyticsProvider({
   onPageView = () => null,
   onEvent = () => null,
   onClick = () => null,
+  onSet = () => null,
   children,
 }: Props) {
   React.useEffect(() => {
@@ -29,11 +32,12 @@ export function AnalyticsProvider({
           onPageView,
           onEvent,
           onClick,
+          onSet,
         }}
       >
         {children}
       </AnalyticsProviderContext.Provider>
     ),
-    [children, onClick, onEvent, onPageView],
+    [children, onClick, onEvent, onPageView, onSet],
   );
 }
