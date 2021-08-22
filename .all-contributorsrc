@@ -15,6 +15,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "hy57in",
+      "name": "HyojinKim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60775453?v=4",
+      "profile": "https://velog.io/@gwsyl22",
+      "contributions": [
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7,
