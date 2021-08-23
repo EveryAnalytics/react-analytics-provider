@@ -7,9 +7,13 @@ const event = (name: string, params?: {[key: string]: any}) => {
 const click = (name: string, params?: {[key: string]: any}) => {
   console.info('🥝Fruit Logger - Click', name, params);
 };
+const impression = (name: string, params?: {[key: string]: any}) => {
+  console.info('🥝Fruit Logger - impression', name, params);
+};
 
 export const fruitLogger = {
   pageView,
   event,
   click,
+  impression,
 };

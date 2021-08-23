@@ -25,11 +25,21 @@ export const click = (name: string, params?: unknown) => {
   );
 };
 
-export const pageView = (path: string, params?: unknown) => {
+export const pageView = (name: string, params?: unknown) => {
   showToast(
     <>
       <div>GA: PageView</div>
-      <div>path: {path}</div>
+      <div>path: {name}</div>
+      <div>params: {JSON.stringify(params)}</div>
+    </>,
+  );
+};
+
+export const impression = (name: string, params?: unknown) => {
+  showToast(
+    <>
+      <div>GA: Impression</div>
+      <div>name: {name}</div>
       <div>params: {JSON.stringify(params)}</div>
     </>,
   );
@@ -39,4 +49,5 @@ export const toaster = {
   event,
   click,
   pageView,
+  impression,
 };
