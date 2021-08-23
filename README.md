@@ -74,6 +74,7 @@ This project exists thanks to all the people who contribute. [[Contributing](htt
   <tr>
     <td align="center"><a href="https://forhjy.medium.com/"><img src="https://avatars.githubusercontent.com/u/60052127?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jiyoon Hur</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=jiyoon1156" title="Code">💻</a> <a href="https://github.com/EveryAnalytics/react-analytics-provider/pulls?q=is%3Apr+reviewed-by%3Ajiyoon1156" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/josworks27"><img src="https://avatars.githubusercontent.com/u/48130830?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seongcheol Jo</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=josworks27" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/uoon-dev"><img src="https://avatars.githubusercontent.com/u/38661266?v=4?s=100" width="100px;" alt=""/><br /><sub><b>uoon (philos)</b></sub></a><br /><a href="https://github.com/EveryAnalytics/react-analytics-provider/commits?author=uoon-dev" title="Code">💻</a> <a href="https://github.com/EveryAnalytics/react-analytics-provider/pulls?q=is%3Apr+reviewed-by%3Auoon-dev" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
