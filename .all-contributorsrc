@@ -22,7 +22,10 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/48555121?v=4",
       "profile": "https://sumini.dev",
       "contributions": [
-        "doc"
+        "doc",
+        "infra",
+        "code",
+        "review"
       ]
     },
     {
@@ -51,6 +54,46 @@
       "contributions": [
         "code",
         "infra",
+        "review"
+      ]
+    },
+    {
+      "login": "p-iknow",
+      "name": "Youngchang Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35516239?v=4",
+      "profile": "https://p-iknow.netlify.app/",
+      "contributions": [
+        "code",
+        "infra",
+        "review"
+      ]
+    },
+    {
+      "login": "hiphapis",
+      "name": "Johan Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18629?v=4",
+      "profile": "http://hiphapis.net",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "Leehaeun0",
+      "name": "Leehaeun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59904672?v=4",
+      "profile": "https://www.youtube.com/channel/UCdnWPvHy7CbsWAgT7F8aS-A",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "jiyoon1156",
+      "name": "Jiyoon Hur",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60052127?v=4",
+      "profile": "https://forhjy.medium.com/",
+      "contributions": [
+        "code",
         "review"
       ]
     }
