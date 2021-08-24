@@ -9,6 +9,7 @@
   "scripts": {
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "lint:fix": "eslint './**/*.+(js|ts)?(x)' --fix",
+    "type-check": "tsc --noEmit",
     "serve": "rollup -c rollup.config.js -w",
     "build": "rollup -c",
     "test": "jest",
