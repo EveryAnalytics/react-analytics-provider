@@ -115,6 +115,16 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "chanheeis",
+      "name": "chanheeis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53820773?v=4",
+      "profile": "https://github.com/chanheeis",
+      "contributions": [
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
