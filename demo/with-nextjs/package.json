@@ -12,6 +12,7 @@
     "@every-analytics/react-analytics-provider": "file:../..",
     "@types/react": "file:../../node_modules/react",
     "@types/react-dom": "file:../../node_modules/react-dom",
+    "amplitude-js": "^8.5.0",
     "next": "11.1.0",
     "react": "file:../../node_modules/react",
     "react-dom": "file:../../node_modules/react-dom"
