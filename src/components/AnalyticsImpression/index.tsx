@@ -14,7 +14,7 @@ export const AnalyticsImpression = ({children, name, params}: AnalyticsImpressio
 
   React.useEffect(() => {
     analytics.onImpression(name, params);
-  }, [analytics, params]);
+  }, [analytics, name, params]);
 
   return <>{children}</>;
 };
