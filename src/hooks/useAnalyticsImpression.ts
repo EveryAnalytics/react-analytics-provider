@@ -7,6 +7,5 @@ export const useAnalyticsImpression = (name: string, params: Record<string, unkn
 
   React.useEffect(() => {
     analytics.onImpression(name, params);
-    console.log('onImpression');
   }, [analytics, params]);
 };
