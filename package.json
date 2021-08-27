@@ -46,6 +46,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-typescript2": "^0.24.3",
+    "@rollup/plugin-strip": "^2.1.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.9.10"
   },
