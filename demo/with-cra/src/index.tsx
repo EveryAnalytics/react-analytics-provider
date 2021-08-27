@@ -35,7 +35,7 @@ ReactDOM.render(
         toaster.click(name, params);
       }}
       onImpression={(name, params) => {
-        // Todo update util after impression() implemented
+        // TODO: update util after impression() implemented
         // googleAnalytics.impression(name, params);
         fruitLogger.impression(name, params);
         toaster.impression(name, params);

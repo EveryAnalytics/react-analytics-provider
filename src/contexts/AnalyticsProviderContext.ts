@@ -5,7 +5,7 @@ export interface AnalyticsProviderContext {
   onPageView(params?: UnknownRecord): void;
   onEvent(name: string, params?: UnknownRecord): void;
   onClick(name: string, params?: UnknownRecord): void;
-  // Todo modify params type
+  // TODO: modify params type
   onImpression(name: string, params?: UnknownRecord): void;
 }
 

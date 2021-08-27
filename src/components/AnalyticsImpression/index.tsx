@@ -5,7 +5,7 @@ import {UnknownRecord} from '../../types/common';
 export interface AnalyticsImpressionProps {
   children: React.ReactNode;
   name: string;
-  // Todo modify params type
+  // TODO: modify params type
   params: UnknownRecord;
 }
 
