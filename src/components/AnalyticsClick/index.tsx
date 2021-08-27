@@ -1,4 +1,4 @@
-import React, {FC, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import {useAnalyticsContext} from '../../contexts';
 import {UnknownRecord} from '../../types/common';
 
@@ -8,9 +8,8 @@ export interface AnalyticsClickProps {
   params?: UnknownRecord;
 }
 
-export const AnalyticsClick: FC = (props: AnalyticsClickProps) => {
+export const AnalyticsClick = ({children, name, params}: AnalyticsClickProps) => {
   const {onClick} = useAnalyticsContext();
-  const {children, name, params} = props;
 
   const child = React.Children.only(children) as React.ReactElement;
 
