@@ -31,10 +31,6 @@ describe('googleAnalytics.initialize', () => {
     consoleInfoSpy = jest.spyOn(global.console, 'info');
   });
 
-  afterEach(() => {
-    jest.restoreAllMocks();
-  });
-
   test('should return if script element already exists', () => {
     getElementByIdSpy.mockReturnValue({innerHTML: 'EXIST'});
 
