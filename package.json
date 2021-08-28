@@ -14,7 +14,7 @@
     "build": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "update-snapshot": "jest --updateSnapshot",
+    "update-snapshot": "jest --updateSnapshot"
   },
   "keywords": [],
   "author": "",
