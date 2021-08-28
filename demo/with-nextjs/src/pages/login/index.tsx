@@ -1,5 +1,7 @@
+import {AnalyticsPageView} from '@every-analytics/react-analytics-provider';
+
 const LoginPage = () => {
-  return <h1>Login page</h1>;
+  return <AnalyticsPageView params={{}}>login page</AnalyticsPageView>;
 };
 
 export default LoginPage;
