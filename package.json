@@ -13,8 +13,9 @@
     "serve": "rollup -c rollup.config.js -w",
     "build": "rollup -c",
     "test": "jest",
-    "test-codecov": "jest --ci --coverage && codecov",
-    "update-snapshot": "jest --updateSnapshot"
+    "test:coverage": "jest --coverage",
+    "update-snapshot": "jest --updateSnapshot",
+    "codecov": "codecov"
   },
   "keywords": [],
   "author": "",
