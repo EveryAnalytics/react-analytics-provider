@@ -33,3 +33,14 @@ jobs:
 
       - name: Unit test
         run: npm run test
+        
+      - name: coverage test
+        run: npm run test-codecov
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2.0.3
+        with:
+          files: ./coverage/coverage-final.json
+          fail_ci_if_error: true
+          name: codecov-umbrella
+          verbose: true
