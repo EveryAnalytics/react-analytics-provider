@@ -16,21 +16,21 @@
    3. "Use Workspace Version"을 선택합니다.
 
 2. 브랜치 생성:
-   ```
+   ```shell
    git checkout -b MY_BRANCH_NAME
    ```
 3. 의존성 설치:
    ```shell
    # can skip if you already installed
-   npm i =g yarn
+   npm i -g yarn
    yarn install
    ```
 4. 라이브러리 개발 서버 띄우기:
-   ```
+   ```shell
    yarn serve
    ```
 5. 그 외 여러가지 명령어들을 사용해볼 수 있습니다.
-   ```
+   ```shell
    # 빌드
    yarn build
 
