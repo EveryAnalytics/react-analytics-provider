@@ -5,9 +5,7 @@ import {gtag} from './initialize';
 /** Allows you to set values that persist across all the subsequent gtag() calls on the page.
  * {@link https://developers.google.com/gtagjs/reference/api#set API Reference}
  * @param params key-value pairs that are to persist across gtag() calls. */
-export function set(name: string, params: UnknownRecord): void;
-export function set(params: UnknownRecord): void;
-export function set(...args: unknown[]) {
+export function set(...args: [string, UnknownRecord] | [UnknownRecord]) {
   const params = args.pop();
   const name = args.pop();
   if (name === undefined) {

@@ -5,8 +5,7 @@ export interface AnalyticsProviderContext {
   onPageView(params?: UnknownRecord): void;
   onEvent(name: string, params?: UnknownRecord): void;
   onClick(name: string, params?: UnknownRecord): void;
-  onSet(name: string, params: UnknownRecord): void;
-  onSet(params: UnknownRecord): void;
+  onSet(...args: [string, UnknownRecord] | [UnknownRecord]): void;
 }
 
 export const initialState: AnalyticsProviderContext = {
