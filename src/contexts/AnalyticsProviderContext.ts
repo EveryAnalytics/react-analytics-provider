@@ -6,6 +6,7 @@ export interface AnalyticsProviderContext {
   onEvent(name: string, params?: UnknownRecord): void;
   onClick(name: string, params?: UnknownRecord): void;
   onSet(...args: [string, UnknownRecord] | [UnknownRecord]): void;
+  onSetUserProperty(params: UnknownRecord): void;
 }
 
 export const initialState: AnalyticsProviderContext = {
@@ -13,6 +14,7 @@ export const initialState: AnalyticsProviderContext = {
   onEvent: () => null,
   onClick: () => null,
   onSet: () => null,
+  onSetUserProperty: () => null,
 };
 
 const AnalyticsProviderContext = createContext<AnalyticsProviderContext>(initialState);

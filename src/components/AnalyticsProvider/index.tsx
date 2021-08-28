@@ -9,6 +9,7 @@ interface Props {
   onEvent?(name: string, params?: UnknownRecord): void;
   onClick?(name: string, params?: UnknownRecord): void;
   onSet?(...args: [string, UnknownRecord] | [UnknownRecord]): void;
+  onSetUserProperty?(params: UnknownRecord): void;
   children: React.ReactNode;
 }
 
@@ -18,6 +19,7 @@ export function AnalyticsProvider({
   onEvent = () => null,
   onClick = () => null,
   onSet = () => null,
+  onSetUserProperty = () => null,
   children,
 }: Props) {
   React.useEffect(() => {
@@ -32,11 +34,12 @@ export function AnalyticsProvider({
           onEvent,
           onClick,
           onSet,
+          onSetUserProperty,
         }}
       >
         {children}
       </AnalyticsProviderContext.Provider>
     ),
-    [children, onClick, onEvent, onPageView, onSet],
+    [children, onClick, onEvent, onPageView, onSet, onSetUserProperty],
   );
 }
