@@ -1,7 +1,5 @@
-import type {NextPage} from 'next';
-
-const Home: NextPage = () => {
-  return <div>Next Level</div>;
+const FruiteStorePage = () => {
+  return <h1>Fruite Store</h1>;
 };
 
-export default Home;
+export default FruiteStorePage;
