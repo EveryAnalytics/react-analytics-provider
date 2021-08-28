@@ -15,7 +15,6 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "update-snapshot": "jest --updateSnapshot",
-    "codecov": "codecov"
   },
   "keywords": [],
   "author": "",
