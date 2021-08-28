@@ -1675,8 +1675,9 @@ __metadata:
     rollup-plugin-node-resolve: ^5.2.0
     rollup-plugin-peer-deps-external: ^2.2.0
     rollup-plugin-serve: ^1.1.0
-    rollup-plugin-typescript2: ^0.24.3
+    rollup-plugin-typescript2: ^0.30.0
     ts-jest: ^27.0.5
+    tslib: ^2.3.1
     typescript: ^3.9.10
   peerDependencies:
     react: ^17.0.2
@@ -2017,6 +2018,16 @@ __metadata:
   peerDependencies:
     rollup: ^1.20.0||^2.0.0
   checksum: 8be16e27863c219edbb25a4e6ec2fe0e1e451d9e917b6a43cf2ae5bc025a6b8faaa40f82a6e53b66d0de37b58ff472c6c3d57a83037ae635041f8df959d6d9aa
+  languageName: node
+  linkType: hard
+
+"@rollup/pluginutils@npm:^4.1.0":
+  version: 4.1.1
+  resolution: "@rollup/pluginutils@npm:4.1.1"
+  dependencies:
+    estree-walker: ^2.0.1
+    picomatch: ^2.2.2
+  checksum: 405f681c7d32661980aa3caa928ff22e1c06f0e081db1550e6ab9c179dc9d3d8d63c05dcc7338fe65ab3f856a56c465696a51300b83e98171956fcb141106e39
   languageName: node
   linkType: hard
 
@@ -7367,7 +7378,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.0.0":
+"find-cache-dir@npm:^3.3.1":
   version: 3.3.1
   resolution: "find-cache-dir@npm:3.3.1"
   dependencies:
@@ -15043,12 +15054,13 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-resolve@1.12.0:
-  version: 1.12.0
-  resolution: "resolve@npm:1.12.0"
+"resolve@1.20.0, resolve@^1.1.7, resolve@^1.10.0, resolve@^1.11.0, resolve@^1.11.1, resolve@^1.14.2, resolve@^1.17.0, resolve@^1.20.0, resolve@^1.3.2, resolve@^1.5.0, resolve@^1.6.0, resolve@^1.8.1":
+  version: 1.20.0
+  resolution: "resolve@npm:1.20.0"
   dependencies:
+    is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: 16582239c4b10b733bbc343b7d80b3438f59566c28d66741d9a92dbcc83a90d847b010ece58b006a5538b2fd23847ff91eb46ee9fccdf236b15b3152461434f4
+  checksum: 40cf70b2cde00ef57f99daf2dc63c6a56d6c14a1b7fc51735d06a6f0a3b97cb67b4fb7ef6c747b4e13a7baba83b0ef625d7c4ce92a483cd5af923c3b65fd16fe
   languageName: node
   linkType: hard
 
@@ -15058,16 +15070,6 @@ resolve@1.8.1:
   dependencies:
     path-parse: ^1.0.5
   checksum: ae930cb4a64ec46582358f64fa97038b52168de1374bf694866e39d92090077ba3f780ef4670f6adffbae888659a343417ee3916cbf57ba998f597f7209855fc
-  languageName: node
-  linkType: hard
-
-"resolve@^1.1.7, resolve@^1.10.0, resolve@^1.11.0, resolve@^1.11.1, resolve@^1.14.2, resolve@^1.17.0, resolve@^1.20.0, resolve@^1.3.2, resolve@^1.5.0, resolve@^1.6.0, resolve@^1.8.1":
-  version: 1.20.0
-  resolution: "resolve@npm:1.20.0"
-  dependencies:
-    is-core-module: ^2.2.0
-    path-parse: ^1.0.6
-  checksum: 40cf70b2cde00ef57f99daf2dc63c6a56d6c14a1b7fc51735d06a6f0a3b97cb67b4fb7ef6c747b4e13a7baba83b0ef625d7c4ce92a483cd5af923c3b65fd16fe
   languageName: node
   linkType: hard
 
@@ -15088,12 +15090,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@1.12.0#~builtin<compat/resolve>":
-  version: 1.12.0
-  resolution: "resolve@patch:resolve@npm%3A1.12.0#~builtin<compat/resolve>::version=1.12.0&hash=00b1ff"
+"resolve@patch:resolve@1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.11.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.11.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.5.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.6.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.8.1#~builtin<compat/resolve>":
+  version: 1.20.0
+  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff"
   dependencies:
+    is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: bbca695c4572d68fce46947ba2e3730bfac3bdd88409bdb0d07a104d59f6847a4f73b6265c0234b0e1345e6648a3cf42869fb19f2f1e1c613bc9ab1d593a9810
+  checksum: bed00be983cd20a8af0e7840664f655c4b269786dbd9595c5f156cd9d8a0050e65cdbbbdafc30ee9b6245b230c78a2c8ab6447a52545b582f476c29adb188cc5
   languageName: node
   linkType: hard
 
@@ -15103,16 +15106,6 @@ resolve@^2.0.0-next.3:
   dependencies:
     path-parse: ^1.0.5
   checksum: d9d3056d7ce5860c4281be0a8df796379693af01cbbec1e30d7c33a3e6170aa53569e9192c28e6c45cbb1e739045cc1d75d6dc2c5336f27d1cdd06e1c01e4be5
-  languageName: node
-  linkType: hard
-
-"resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.11.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.11.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.5.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.6.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.8.1#~builtin<compat/resolve>":
-  version: 1.20.0
-  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff"
-  dependencies:
-    is-core-module: ^2.2.0
-    path-parse: ^1.0.6
-  checksum: bed00be983cd20a8af0e7840664f655c4b269786dbd9595c5f156cd9d8a0050e65cdbbbdafc30ee9b6245b230c78a2c8ab6447a52545b582f476c29adb188cc5
   languageName: node
   linkType: hard
 
@@ -15263,28 +15256,19 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"rollup-plugin-typescript2@npm:^0.24.3":
-  version: 0.24.3
-  resolution: "rollup-plugin-typescript2@npm:0.24.3"
+"rollup-plugin-typescript2@npm:^0.30.0":
+  version: 0.30.0
+  resolution: "rollup-plugin-typescript2@npm:0.30.0"
   dependencies:
-    find-cache-dir: ^3.0.0
+    "@rollup/pluginutils": ^4.1.0
+    find-cache-dir: ^3.3.1
     fs-extra: 8.1.0
-    resolve: 1.12.0
-    rollup-pluginutils: 2.8.1
-    tslib: 1.10.0
+    resolve: 1.20.0
+    tslib: 2.1.0
   peerDependencies:
-    rollup: ">=0.68.0"
+    rollup: ">=1.26.3"
     typescript: ">=2.4.0"
-  checksum: 2d810c951d3eb2c74c9c4e0e976b5782a22f214e1ff99993932ea0babddf6498dda5a74a6073d7b5b7ac009b85f635fea3b987e56d6d070f5cda071337a30851
-  languageName: node
-  linkType: hard
-
-"rollup-pluginutils@npm:2.8.1":
-  version: 2.8.1
-  resolution: "rollup-pluginutils@npm:2.8.1"
-  dependencies:
-    estree-walker: ^0.6.1
-  checksum: e68926d2449cda7fd790b47734ccf814c16e88b395f87feb42bb51be5027a332b319eac70f7c541e119e1bcad224f04b0cc24fe355b8c52cf0b9dad62e7030c7
+  checksum: e3097bb25c00e78cca556ed6a77b3bdf2330e5e5647847d1f967ade67dc6b66009b52bb8810de2b2c40857310693e4e663900a13da4f711f082fabac5165091a
   languageName: node
   linkType: hard
 
@@ -16955,10 +16939,10 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tslib@npm:1.10.0":
-  version: 1.10.0
-  resolution: "tslib@npm:1.10.0"
-  checksum: 1d0450dc6f64b918b14acaf3b956ebe1c72d7401c632adce932a60e3cd8d2a70f6040ceef6a7c3561146c3f29bcf584c41c2e09a5d20a27d6c3057f0d5f2a836
+"tslib@npm:2.1.0":
+  version: 2.1.0
+  resolution: "tslib@npm:2.1.0"
+  checksum: aa189c8179de0427b0906da30926fd53c59d96ec239dff87d6e6bc831f608df0cbd6f77c61dabc074408bd0aa0b9ae4ec35cb2c15f729e32f37274db5730cb78
   languageName: node
   linkType: hard
 
@@ -16966,6 +16950,13 @@ resolve@^2.0.0-next.3:
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "tslib@npm:2.3.1"
+  checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
   languageName: node
   linkType: hard
 
