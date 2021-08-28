@@ -5,34 +5,33 @@ import * as initUtils from '../../../src/utils/googleAnalytics/initialize';
 const SCRIPT_ID = 'ga-gtag';
 
 describe('googleAnalytics.initialize', () => {
-  let trackingId: string;
+  const setUp = () => {
+    const trackingId = faker.lorem.word();
 
-  let mockDate: Date;
-
-  let gtagSpy: jest.SpyInstance;
-
-  let getElementByIdSpy: jest.SpyInstance;
-  let createElementSpy: jest.SpyInstance;
-  let insertBeforeSpy: jest.SpyInstance;
-  let consoleInfoSpy: jest.SpyInstance;
-
-  beforeEach(() => {
-    trackingId = faker.lorem.word();
-
-    mockDate = faker.datatype.datetime();
+    const mockDate = faker.datatype.datetime();
     jest.useFakeTimers();
     jest.setSystemTime(mockDate);
 
-    gtagSpy = jest.spyOn(initUtils, 'gtag');
+    const gtagSpy = jest.spyOn(initUtils, 'gtag');
+    const getElementByIdSpy = jest.spyOn(document, 'getElementById');
+    const createElementSpy = jest.spyOn(document, 'createElement');
+    const insertBeforeSpy = jest.spyOn(document, 'createElement');
+    const consoleInfoSpy = jest.spyOn(global.console, 'info');
 
-    getElementByIdSpy = jest.spyOn(document, 'getElementById');
-    createElementSpy = jest.spyOn(document, 'createElement');
-    insertBeforeSpy = jest.spyOn(document, 'createElement');
-    consoleInfoSpy = jest.spyOn(global.console, 'info');
-  });
+    return {
+      trackingId,
+      mockDate,
+      gtagSpy,
+      getElementByIdSpy,
+      createElementSpy,
+      insertBeforeSpy,
+      consoleInfoSpy,
+    };
+  };
 
   test('should return if script element already exists', () => {
-    getElementByIdSpy.mockReturnValue({innerHTML: 'EXIST'});
+    const {trackingId, getElementByIdSpy, createElementSpy} = setUp();
+    getElementByIdSpy.mockReturnValue({innerHTML: 'EXIST'} as HTMLElement);
 
     initUtils.initialize(trackingId);
 
@@ -41,6 +40,9 @@ describe('googleAnalytics.initialize', () => {
   });
 
   test('should create correct script element', () => {
+    const {trackingId, getElementByIdSpy, insertBeforeSpy, gtagSpy, consoleInfoSpy, mockDate, createElementSpy} =
+      setUp();
+
     initUtils.initialize(trackingId);
 
     expect(getElementByIdSpy).toHaveBeenCalledWith(SCRIPT_ID);
