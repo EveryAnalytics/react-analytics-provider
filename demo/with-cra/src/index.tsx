@@ -34,6 +34,11 @@ ReactDOM.render(
         fruitLogger.click(name, params);
         toaster.click(name, params);
       }}
+      onSet={(...args: Parameters<typeof googleAnalytics.set>) => {
+        googleAnalytics.set(...args);
+        fruitLogger.set(...args);
+        toaster.set(...args);
+      }}
     >
       <App />
     </AnalyticsProvider>

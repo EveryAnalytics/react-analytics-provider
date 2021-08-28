@@ -35,8 +35,21 @@ export const pageView = (path: string, params?: unknown) => {
   );
 };
 
+export const set = (...args: [string, unknown] | [unknown]) => {
+  const params = args.pop();
+  const name = args.pop();
+  showToast(
+    <>
+      <div>GA: Set</div>
+      {name && <div>name: {name}</div>}
+      <div>params: {JSON.stringify(params)}</div>
+    </>,
+  );
+};
+
 export const toaster = {
   event,
   click,
   pageView,
+  set,
 };

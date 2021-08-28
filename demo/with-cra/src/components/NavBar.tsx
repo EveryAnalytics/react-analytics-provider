@@ -40,6 +40,14 @@ const NavBar = () => {
       >
         Login
       </NavItem>
+      <NavItem
+        href="/set-currency"
+        onClick={() => {
+          analytics.onSet({currency: 'KRW'});
+        }}
+      >
+        Currency
+      </NavItem>
     </header>
   );
 };
