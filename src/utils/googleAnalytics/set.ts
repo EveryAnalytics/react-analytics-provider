@@ -14,7 +14,7 @@ export function set(...args: unknown[]) {
     console.info(`✅GA: set`, params);
     gtag('set', params);
   } else {
-    console.info(`✅GA: set`, name, params);
+    console.info(`✅GA: set ${name}`, params);
     gtag('set', name, params);
   }
 }
