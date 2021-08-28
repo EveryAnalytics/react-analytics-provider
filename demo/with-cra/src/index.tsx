@@ -39,6 +39,11 @@ ReactDOM.render(
         fruitLogger.set(...args);
         toaster.set(...args);
       }}
+      onSetUserProperty={params => {
+        googleAnalytics.setUserProperty(params);
+        fruitLogger.setUserProperty(params);
+        toaster.setUserProperty(params);
+      }}
     >
       <App />
     </AnalyticsProvider>

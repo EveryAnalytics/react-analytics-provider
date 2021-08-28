@@ -48,6 +48,7 @@ const NavBar = () => {
       >
         Currency
       </NavItem>
+      <NavItem href="/set-user-property">UserProperty</NavItem>
     </header>
   );
 };

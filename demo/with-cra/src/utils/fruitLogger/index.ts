@@ -18,10 +18,14 @@ const set = (...args: [string, UnknownRecord] | [UnknownRecord]) => {
     console.info('🥝Fruit Logger - Set', name, params);
   }
 };
+const setUserProperty = (params: UnknownRecord) => {
+  set('user_properties', params);
+};
 
 export const fruitLogger = {
   pageView,
   event,
   click,
   set,
+  setUserProperty,
 };

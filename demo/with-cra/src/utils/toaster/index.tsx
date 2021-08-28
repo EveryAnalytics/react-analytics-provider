@@ -47,9 +47,14 @@ export const set = (...args: [string, unknown] | [unknown]) => {
   );
 };
 
+export const setUserProperty = (params: unknown) => {
+  set('user_properties', params);
+};
+
 export const toaster = {
   event,
   click,
   pageView,
   set,
+  setUserProperty,
 };
