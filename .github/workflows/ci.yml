@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [12.x, 14.x]
 
     steps:
       - name: Use Node.js ${{ matrix.node-version }}
@@ -22,22 +22,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install yarn
+        run: npm i -g yarn
+
       - name: Install dependencies
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
+        run: yarn install
 
       - name: Lint check
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: lint
+        run: yarn lint
 
       - name: Type check
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: type-check
+        run: yarn type-check
 
       - name: Unit test
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: test
+        run: yarn test
