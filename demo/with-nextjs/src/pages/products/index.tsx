@@ -1,20 +1,20 @@
-import {NextPage} from 'next';
 import {useRouter} from 'next/dist/client/router';
+import {AnalyticsPageView} from '@every-analytics/react-analytics-provider';
 import styles from './index.module.css';
 
-const ColorPage: NextPage = () => {
+const ColorPage = () => {
   const router = useRouter();
   const {color} = router.query;
 
   return (
-    <>
+    <AnalyticsPageView params={{color}}>
       <h1>{color} fruites</h1>
       <ul className={styles.container}>
         {getProductsByColor(color).map(_color => (
           <li key={_color}>{_color}</li>
         ))}
       </ul>
-    </>
+    </AnalyticsPageView>
   );
 };
 

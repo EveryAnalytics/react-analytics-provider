@@ -1,5 +1,11 @@
+import {AnalyticsPageView} from '@every-analytics/react-analytics-provider';
+
 const FruiteStorePage = () => {
-  return <h1>Fruite Store</h1>;
+  return (
+    <AnalyticsPageView params={{}}>
+      <h1>Fruite Store</h1>
+    </AnalyticsPageView>
+  );
 };
 
 export default FruiteStorePage;
