@@ -37,7 +37,6 @@ describe('googleAnalytics.initialize', () => {
 
   test('should return if script element already exists', () => {
     getElementByIdSpy.mockReturnValue({innerHTML: 'EXIST'});
-    createElementSpy.mockImplementation(() => null);
 
     initUtils.initialize(trackingId);
 
