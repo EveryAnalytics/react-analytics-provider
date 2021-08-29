@@ -6,5 +6,6 @@ export const initialize = (
   config?: Config,
   callback?: (client: AmplitudeClient) => void,
 ) => {
+  // eslint-disable-next-line import/no-named-as-default-member
   amplitude.getInstance().init(apiKey, userId, config, callback);
 };
