@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import amplitude from 'amplitude-js';
 import './index.css';
 import App from './App';
-import {AnalyticsProvider, googleAnalytics} from '@every-analytics/react-analytics-provider';
+import {AnalyticsProvider, googleAnalytics, amplitudeHelper} from '@every-analytics/react-analytics-provider';
 import {fruitLogger} from './utils/fruitLogger';
 import {Toaster} from 'react-hot-toast';
 import {toaster} from './utils/toaster';
 
-amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_API_KEY);
+amplitudeHelper.initialize(process.env.REACT_APP_AMPLITUDE_API_KEY);
 const persistentValues = {userNo: 123};
 
 ReactDOM.render(
@@ -22,7 +21,7 @@ ReactDOM.render(
         const path = window.location.pathname + window.location.search;
         fruitLogger.pageView(path, params);
         toaster.pageView(path, params);
-        amplitude.getInstance().logEvent('pageView', {path});
+        amplitudeHelper.logEvent('pageView', {path});
       }}
       onEvent={(name, params) => {
         googleAnalytics.event(name, params);
@@ -33,6 +32,16 @@ ReactDOM.render(
         googleAnalytics.click(name, params);
         fruitLogger.click(name, params);
         toaster.click(name, params);
+      }}
+      onSet={(...args: Parameters<typeof googleAnalytics.set>) => {
+        googleAnalytics.set(...args);
+        fruitLogger.set(...args);
+        toaster.set(...args);
+      }}
+      onSetUserProperty={params => {
+        googleAnalytics.setUserProperty(params);
+        fruitLogger.setUserProperty(params);
+        toaster.setUserProperty(params);
       }}
     >
       <App />
