@@ -3,7 +3,7 @@ import * as faker from 'faker';
 import * as initUtils from '../../../src/utils/googleAnalytics/initialize';
 import {event} from '../../../src/utils/googleAnalytics/event';
 
-describe('googleAnalytics.initialize', () => {
+describe('googleAnalytics.event', () => {
   const setUp = () => {
     const trackingId = faker.lorem.word();
     initUtils.initialize(trackingId);
