@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import amplitude from 'amplitude-js';
+import amplitude from 'amplitde-js';
 import './index.css';
 import App from './App';
-import {AnalyticsProvider, googleAnalytics} from '@every-analytics/react-analytics-provider';
+import {AnalyticsProvider, googleAnalytics, AnalyticsPageView} from '@every-analytics/react-analytics-provider';
 import {fruitLogger} from './utils/fruitLogger';
 import {Toaster} from 'react-hot-toast';
 import {toaster} from './utils/toaster';
