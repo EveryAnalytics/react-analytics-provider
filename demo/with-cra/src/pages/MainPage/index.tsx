@@ -7,7 +7,6 @@ import {
 import {getQueryParams} from 'utils/location';
 import Modal from 'components/Modal';
 
-
 const MainPage = () => {
   const analytics = useAnalyticsContext();
 
