@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {AnalyticsProvider, googleAnalytics, amplitude} from '@every-analytics/react-analytics-provider';
+import {AnalyticsProvider, googleAnalytics, amplitudeHelper} from '@every-analytics/react-analytics-provider';
 import {fruitLogger} from './utils/fruitLogger';
 import {Toaster} from 'react-hot-toast';
 import {toaster} from './utils/toaster';
 
-amplitude.initialize(process.env.REACT_APP_AMPLITUDE_API_KEY);
+amplitudeHelper.initialize(process.env.REACT_APP_AMPLITUDE_API_KEY);
 const persistentValues = {userNo: 123};
 
 ReactDOM.render(
@@ -21,7 +21,7 @@ ReactDOM.render(
         const path = window.location.pathname + window.location.search;
         fruitLogger.pageView(path, params);
         toaster.pageView(path, params);
-        amplitude.logEvent('pageView', {path});
+        amplitudeHelper.logEvent('pageView', {path});
       }}
       onEvent={(name, params) => {
         googleAnalytics.event(name, params);
