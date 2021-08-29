@@ -1,0 +1,135 @@
+{
+  "projectName": "react-analytics-provider",
+  "projectOwner": "EveryAnalytics",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "MiryangJung",
+      "name": "MiryangJung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48237511?v=4",
+      "profile": "http://miryang.dev",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "greatSumini",
+      "name": "Choi Sumin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48555121?v=4",
+      "profile": "https://sumini.dev",
+      "contributions": [
+        "doc",
+        "infra",
+        "code",
+        "review",
+        "test"
+      ]
+    },
+    {
+      "login": "hy57in",
+      "name": "HyojinKim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60775453?v=4",
+      "profile": "https://velog.io/@gwsyl22",
+      "contributions": [
+        "example"
+      ]
+    },
+    {
+      "login": "milooy",
+      "name": "Yurim Jalynne Jin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3839771?v=4",
+      "profile": "https://milooy.wordpress.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jhlee910609",
+      "name": "JunHee Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28521282?v=4",
+      "profile": "https://github.com/jhlee910609",
+      "contributions": [
+        "code",
+        "infra",
+        "review"
+      ]
+    },
+    {
+      "login": "p-iknow",
+      "name": "Youngchang Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35516239?v=4",
+      "profile": "https://p-iknow.netlify.app/",
+      "contributions": [
+        "code",
+        "infra",
+        "review"
+      ]
+    },
+    {
+      "login": "hiphapis",
+      "name": "Johan Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18629?v=4",
+      "profile": "http://hiphapis.net",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "Leehaeun0",
+      "name": "Leehaeun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59904672?v=4",
+      "profile": "https://www.youtube.com/channel/UCdnWPvHy7CbsWAgT7F8aS-A",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "jiyoon1156",
+      "name": "Jiyoon Hur",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60052127?v=4",
+      "profile": "https://forhjy.medium.com/",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "josworks27",
+      "name": "Seongcheol Jo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48130830?v=4",
+      "profile": "https://github.com/josworks27",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "uoon-dev",
+      "name": "uoon (philos)",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38661266?v=4",
+      "profile": "https://github.com/uoon-dev",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "chanheeis",
+      "name": "chanheeis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53820773?v=4",
+      "profile": "https://github.com/chanheeis",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": false
+}

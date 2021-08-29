@@ -4,8 +4,9 @@ import {
   useAnalyticsContext,
   AnalyticsVirtualPageView,
 } from '@every-analytics/react-analytics-provider';
-import {getQueryParams} from '../../utils/location';
-import Modal from '../../components/Modal';
+import {getQueryParams} from 'utils/location';
+import Modal from 'components/Modal';
+
 
 const MainPage = () => {
   const analytics = useAnalyticsContext();
