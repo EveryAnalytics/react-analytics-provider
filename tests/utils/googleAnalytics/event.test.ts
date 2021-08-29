@@ -5,7 +5,6 @@ import {event} from '../../../src/utils/googleAnalytics/event';
 
 describe('googleAnalytics.event', () => {
   const setUp = () => {
-
     if (!window.dataLayer || !Array.isArray(window.dataLayer)) {
       window.dataLayer = window.dataLayer ?? [];
     }
