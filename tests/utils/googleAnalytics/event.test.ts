@@ -31,7 +31,7 @@ describe('googleAnalytics.event', () => {
 
     event(name);
 
-    expect(gtagSpy).toHaveBeenNthCalledWith(1, 'event', name, undefined);
+    expect(gtagSpy).toHaveBeenCalledWith('event', name, undefined);
     expect(consoleInfoSpy).toHaveBeenCalledTimes(1);
   });
 
