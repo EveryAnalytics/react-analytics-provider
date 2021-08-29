@@ -1,2 +1,2 @@
-export * from './useAnalyticsModalView';
+export * from './useAnalyticsVirtualPageView';
 export * from './useAnalyticsPageView';
