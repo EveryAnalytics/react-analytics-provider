@@ -35,10 +35,10 @@ export const pageView = (path: string, params?: unknown) => {
   );
 };
 
-export const modalView = (name: string, params?: unknown) => {
+export const virtualPageView = (name: string, params?: unknown) => {
   showToast(
     <>
-      <div>GA: ModalView</div>
+      <div>GA: VirtualPageView</div>
       <div>name: {name}</div>
       <div>params: {JSON.stringify(params)}</div>
     </>,
@@ -49,5 +49,5 @@ export const toaster = {
   event,
   click,
   pageView,
-  modalView,
+  virtualPageView,
 };

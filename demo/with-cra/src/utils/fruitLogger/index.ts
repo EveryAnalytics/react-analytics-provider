@@ -1,5 +1,5 @@
-const modalView = (name: string, params?: {[key: string]: any}) => {
-  console.info('🥝Fruit Logger - ModalView', name, params);
+const VirtualPageView = (name: string, params?: {[key: string]: any}) => {
+  console.info('🥝Fruit Logger - VirtualPageView', name, params);
 };
 
 const pageView = (path: string, params?: {[key: string]: any}) => {
@@ -13,7 +13,7 @@ const click = (name: string, params?: {[key: string]: any}) => {
 };
 
 export const fruitLogger = {
-  modalView,
+  VirtualPageView,
   pageView,
   event,
   click,

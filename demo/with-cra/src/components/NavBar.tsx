@@ -1,7 +1,7 @@
 // import { logEvent } from "@every-analytics/react-analytics-provider";
 import React from 'react';
 import navigate from '../router/navigate';
-import {useAnalyticsContext, useAnalyticsModalView} from '@every-analytics/react-analytics-provider';
+import {useAnalyticsContext, useAnalyticsVirtualPageView} from '@every-analytics/react-analytics-provider';
 
 const NavBar = () => {
   const analytics = useAnalyticsContext();
@@ -69,8 +69,9 @@ const NavItem = ({
 };
 
 const ContactModal = ({setIsOpen}: {setIsOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
-  const modalName = 'modal/contact';
-  useAnalyticsModalView(modalName, {phoneNumber: true});
+  const name = 'contact';
+
+  useAnalyticsVirtualPageView(name, {phoneNumber: true});
   return (
     <>
       <button onClick={() => setIsOpen(false)}>x</button>

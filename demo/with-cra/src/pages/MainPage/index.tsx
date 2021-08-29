@@ -1,5 +1,9 @@
 import React from 'react';
-import {useAnalyticsPageView, useAnalyticsContext, AnalyticsModalView} from '@every-analytics/react-analytics-provider';
+import {
+  useAnalyticsPageView,
+  useAnalyticsContext,
+  AnalyticsVirtualPageView,
+} from '@every-analytics/react-analytics-provider';
 import {getQueryParams} from '../../utils/location';
 import Modal from '../../components/Modal';
 
@@ -12,16 +16,16 @@ const MainPage = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const handleClick = () => {
     setIsOpen(true);
-    analytics.onClick('click mainpage/modal');
+    analytics.onClick('click mainpage/VirtualPage');
   };
   return (
     <>
       <h1>Fruit Store</h1>
-      <button onClick={handleClick}>modal</button>
+      <button onClick={handleClick}>VirtualPage</button>
       {isOpen && (
-        <AnalyticsModalView name={'mainmodal'} params={{message: true}}>
+        <AnalyticsVirtualPageView name={'modal'} params={{message: true}}>
           <Modal setIsOpen={setIsOpen}>WELCOME TO FRUIT STORE</Modal>
-        </AnalyticsModalView>
+        </AnalyticsVirtualPageView>
       )}
     </>
   );
