@@ -19,7 +19,8 @@
     "prettier/prettier": ["error", {"endOfLine":"auto"}],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/react-in-jsx-scope": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "jsx-a11y/no-onchange": "off"
   },
   "settings": {
     "react": {

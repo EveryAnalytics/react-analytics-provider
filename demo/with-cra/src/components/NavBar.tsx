@@ -48,6 +48,14 @@ const NavBar = () => {
       >
         Timing
       </NavItem>
+        href="/set-currency"
+        onClick={() => {
+          analytics.onSet({currency: 'KRW'});
+        }}
+      >
+        Currency
+      </NavItem>
+      <NavItem href="/set-user-property">UserProperty</NavItem>
     </header>
   );
 };

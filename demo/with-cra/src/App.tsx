@@ -2,6 +2,8 @@ import NavBar from './components/NavBar';
 import MainPage from './pages/MainPage';
 import ProductsPage from './pages/ProductsPage';
 import LoginPage from './pages/LoginPage';
+import CurrencyPage from './pages/CurrencyPage';
+import UserPropertyPage from './pages/UserPropertyPage';
 import Route from './router/Route';
 import TimingPage from './pages/TimingPage';
 
@@ -20,6 +22,11 @@ function App() {
       </Route>
       <Route path="/timing">
         <TimingPage />
+      <Route path="/set-currency">
+        <CurrencyPage />
+      </Route>
+      <Route path="/set-user-property">
+        <UserPropertyPage />
       </Route>
     </div>
   );

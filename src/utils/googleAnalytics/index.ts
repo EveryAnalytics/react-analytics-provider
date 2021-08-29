@@ -3,6 +3,7 @@ import {click} from './click';
 import {initialize} from './initialize';
 import {set} from './set';
 import {timing} from './timing';
+import {setUserProperty} from './setUserProperty';
 
 export const googleAnalytics = {
   initialize,
@@ -10,4 +11,5 @@ export const googleAnalytics = {
   click,
   set,
   timing,
+  setUserProperty,
 };
