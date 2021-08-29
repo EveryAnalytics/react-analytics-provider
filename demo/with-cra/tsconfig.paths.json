@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@every-analytics/react-analytics-provider": ["../../../build"],
+      "@every-analytics/react-analytics-provider/*": ["../../../build/*"]
+    }
+  }
+}

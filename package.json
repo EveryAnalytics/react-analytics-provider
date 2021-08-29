@@ -9,6 +9,7 @@
   "scripts": {
     "lint": "eslint './**/*.+(js|ts)?(x)'",
     "lint:fix": "eslint './**/*.+(js|ts)?(x)' --fix",
+    "type-check": "tsc --noEmit",
     "serve": "rollup -c rollup.config.js -w",
     "build": "rollup -c",
     "test": "jest",
@@ -18,7 +19,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^24.0.20",
+    "@rollup/plugin-strip": "^2.1.0",
+    "@types/faker": "^5.5.8",
+    "@types/jest": "^27.0.1",
     "@types/react": "^16.14.13",
     "@types/react-dom": "^16.9.14",
     "@types/react-test-renderer": "^16.9.1",
@@ -26,6 +29,7 @@
     "@typescript-eslint/parser": "^4.29.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -33,7 +37,8 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^4.10.1",
-    "jest": "^24.9.0",
+    "faker": "^5.5.3",
+    "jest": "^27.1.0",
     "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -45,7 +50,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-typescript2": "^0.24.3",
-    "ts-jest": "^24.1.0",
+    "ts-jest": "^27.0.5",
     "typescript": "^3.9.10"
   },
   "peerDependencies": {
@@ -53,5 +58,3 @@
     "react-dom": "^17.0.2"
   }
 }
-
-
