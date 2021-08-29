@@ -4,6 +4,13 @@ import * as clickUtils from '../../../src/utils/googleAnalytics/click';
 
 describe('googleAnalytics.click', () => {
   const setUp = () => {
+    /**
+     *  Suppose GA is initialized
+     */
+    if (!window.dataLayer || !Array.isArray(window.dataLayer)) {
+      window.dataLayer = window.dataLayer ?? [];
+    }
+
     const name = faker.lorem.word();
     const params = {foo: 'bar'};
     const gtagSpy = jest.spyOn(initUtils, 'gtag');
