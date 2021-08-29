@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@rollup/plugin-strip", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.1.0"],
+            ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/faker", "npm:5.5.8"],
             ["@types/jest", "npm:27.0.1"],
             ["@types/react", "npm:16.14.14"],
@@ -44,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.29.3"],
             ["@typescript-eslint/parser", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.29.3"],
             ["@yarnpkg/pnpify", "npm:3.0.1"],
+            ["amplitude-js", "npm:8.5.0"],
             ["eslint", "npm:7.32.0"],
             ["eslint-config-prettier", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:8.3.0"],
             ["eslint-import-resolver-typescript", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.4.0"],
@@ -72,6 +74,35 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A3.9.10#~builtin<compat/typescript>::version=3.9.10&hash=d8b4e7"]
           ],
           "linkType": "SOFT",
+        }]
+      ]],
+      ["@amplitude/types", [
+        ["npm:1.8.2", {
+          "packageLocation": "./.yarn/cache/@amplitude-types-npm-1.8.2-4ea61b2863-d698826a11.zip/node_modules/@amplitude/types/",
+          "packageDependencies": [
+            ["@amplitude/types", "npm:1.8.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@amplitude/ua-parser-js", [
+        ["npm:0.7.24", {
+          "packageLocation": "./.yarn/cache/@amplitude-ua-parser-js-npm-0.7.24-642874df8f-7622852a6c.zip/node_modules/@amplitude/ua-parser-js/",
+          "packageDependencies": [
+            ["@amplitude/ua-parser-js", "npm:0.7.24"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@amplitude/utils", [
+        ["npm:1.8.2", {
+          "packageLocation": "./.yarn/cache/@amplitude-utils-npm-1.8.2-e8263458e2-b010a45250.zip/node_modules/@amplitude/utils/",
+          "packageDependencies": [
+            ["@amplitude/utils", "npm:1.8.2"],
+            ["@amplitude/types", "npm:1.8.2"],
+            ["tslib", "npm:1.14.1"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@arcanis/slice-ansi", [
@@ -3646,6 +3677,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@every-analytics/react-analytics-provider", "workspace:."],
             ["@rollup/plugin-strip", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.1.0"],
+            ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/faker", "npm:5.5.8"],
             ["@types/jest", "npm:27.0.1"],
             ["@types/react", "npm:16.14.14"],
@@ -3654,6 +3686,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.29.3"],
             ["@typescript-eslint/parser", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.29.3"],
             ["@yarnpkg/pnpify", "npm:3.0.1"],
+            ["amplitude-js", "npm:8.5.0"],
             ["eslint", "npm:7.32.0"],
             ["eslint-config-prettier", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:8.3.0"],
             ["eslint-import-resolver-typescript", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.4.0"],
@@ -4170,6 +4203,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@tootallnate-once-npm-1.1.2-0517220057-e1fb1bbbc1.zip/node_modules/@tootallnate/once/",
           "packageDependencies": [
             ["@tootallnate/once", "npm:1.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/amplitude-js", [
+        ["npm:8.0.1", {
+          "packageLocation": "./.yarn/cache/@types-amplitude-js-npm-8.0.1-4706f83812-538fe5d43d.zip/node_modules/@types/amplitude-js/",
+          "packageDependencies": [
+            ["@types/amplitude-js", "npm:8.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -5308,6 +5350,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/alphanum-sort-npm-1.0.2-78a592b492-5a32d0b3c0.zip/node_modules/alphanum-sort/",
           "packageDependencies": [
             ["alphanum-sort", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["amplitude-js", [
+        ["npm:8.5.0", {
+          "packageLocation": "./.yarn/cache/amplitude-js-npm-8.5.0-dfbbbf091e-0f4427a34c.zip/node_modules/amplitude-js/",
+          "packageDependencies": [
+            ["amplitude-js", "npm:8.5.0"],
+            ["@amplitude/ua-parser-js", "npm:0.7.24"],
+            ["@amplitude/utils", "npm:1.8.2"],
+            ["blueimp-md5", "npm:2.18.0"],
+            ["query-string", "npm:5.1.1"]
           ],
           "linkType": "HARD",
         }]
@@ -6663,6 +6718,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/bluebird-npm-3.7.2-6a54136ee3-869417503c.zip/node_modules/bluebird/",
           "packageDependencies": [
             ["bluebird", "npm:3.7.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["blueimp-md5", [
+        ["npm:2.18.0", {
+          "packageLocation": "./.yarn/cache/blueimp-md5-npm-2.18.0-cc2254687c-2f4e5c77af.zip/node_modules/blueimp-md5/",
+          "packageDependencies": [
+            ["blueimp-md5", "npm:2.18.0"]
           ],
           "linkType": "HARD",
         }]
@@ -18572,6 +18636,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["query-string", [
+        ["npm:5.1.1", {
+          "packageLocation": "./.yarn/cache/query-string-npm-5.1.1-86edac70d6-4ac760d977.zip/node_modules/query-string/",
+          "packageDependencies": [
+            ["query-string", "npm:5.1.1"],
+            ["decode-uri-component", "npm:0.2.0"],
+            ["object-assign", "npm:4.1.1"],
+            ["strict-uri-encode", "npm:1.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["querystring", [
         ["npm:0.2.0", {
           "packageLocation": "./.yarn/cache/querystring-npm-0.2.0-421b870c92-8258d6734f.zip/node_modules/querystring/",
@@ -20692,6 +20768,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["any-promise", "npm:1.3.0"],
             ["end-of-stream", "npm:1.1.0"],
             ["stream-to-array", "npm:2.3.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["strict-uri-encode", [
+        ["npm:1.1.0", {
+          "packageLocation": "./.yarn/cache/strict-uri-encode-npm-1.1.0-a79c6f7f24-9466d371f7.zip/node_modules/strict-uri-encode/",
+          "packageDependencies": [
+            ["strict-uri-encode", "npm:1.1.0"]
           ],
           "linkType": "HARD",
         }]
