@@ -1,7 +1,7 @@
 import * as faker from 'faker';
 
 import * as initUtils from '../../../src/utils/googleAnalytics/initialize';
-import { event } from '../../../src/utils/googleAnalytics/event';
+import {event} from '../../../src/utils/googleAnalytics/event';
 
 describe('googleAnalytics.initialize', () => {
   const setUp = () => {
@@ -34,12 +34,12 @@ describe('googleAnalytics.initialize', () => {
     expect(gtagSpy).toHaveBeenNthCalledWith(1, 'event', name, undefined);
     expect(consoleInfoSpy).toHaveBeenCalledTimes(1);
   });
-  
+
   test('should record a event with fake name and params', () => {
     const {name, params, gtagSpy, consoleInfoSpy} = setUp();
 
     event(name, params);
-    
+
     expect(gtagSpy).toHaveBeenNthCalledWith(1, 'event', name, params);
     expect(consoleInfoSpy).toHaveBeenCalledTimes(1);
   });
