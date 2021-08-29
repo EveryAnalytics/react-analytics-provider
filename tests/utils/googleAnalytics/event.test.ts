@@ -5,12 +5,10 @@ import {event} from '../../../src/utils/googleAnalytics/event';
 
 describe('googleAnalytics.event', () => {
   const setUp = () => {
-    const trackingId = faker.lorem.word();
-    initUtils.initialize(trackingId);
 
-    const mockDate = faker.datatype.datetime();
-    jest.useFakeTimers();
-    jest.setSystemTime(mockDate);
+    if (!window.dataLayer || !Array.isArray(window.dataLayer)) {
+      window.dataLayer = window.dataLayer ?? [];
+    }
 
     const name = faker.lorem.word();
     const params = {foo: 'bar'};
@@ -40,7 +38,7 @@ describe('googleAnalytics.event', () => {
 
     event(name, params);
 
-    expect(gtagSpy).toHaveBeenNthCalledWith(1, 'event', name, params);
+    expect(gtagSpy).toHaveBeenCalledWith('event', name, params);
     expect(consoleInfoSpy).toHaveBeenCalledTimes(1);
   });
 });
