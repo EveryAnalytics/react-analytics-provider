@@ -4,7 +4,7 @@ import {initialize} from './initialize';
 import {set} from './set';
 import {setUserProperty} from './setUserProperty';
 
-export const googleAnalytics = {
+export const googleAnalyticsHelper = {
   initialize,
   event,
   click,

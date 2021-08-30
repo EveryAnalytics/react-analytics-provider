@@ -4,7 +4,7 @@ import * as initUtils from '../../../src/utils/googleAnalytics/initialize';
 
 const SCRIPT_ID = 'ga-gtag';
 
-describe('googleAnalytics.initialize', () => {
+describe('googleAnalyticsHelper.initialize', () => {
   const setUp = () => {
     const trackingId = faker.lorem.word();
 
