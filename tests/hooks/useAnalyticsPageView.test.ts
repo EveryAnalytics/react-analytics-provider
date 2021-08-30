@@ -35,7 +35,7 @@ describe('useAnalyticsPageView', () => {
     const {params, onPageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(params);
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 0));
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
@@ -46,7 +46,7 @@ describe('useAnalyticsPageView', () => {
     const {params, callback, onPageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(callback);
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 0));
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
@@ -57,7 +57,7 @@ describe('useAnalyticsPageView', () => {
     const {params, asyncCallback, onPageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(asyncCallback);
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 0));
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
