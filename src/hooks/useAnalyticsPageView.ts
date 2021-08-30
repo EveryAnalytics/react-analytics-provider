@@ -7,5 +7,6 @@ export const useAnalyticsPageView = (params: UnknownRecord) => {
 
   React.useEffect(() => {
     analytics.onPageView(params);
-  }, [analytics, params]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [analytics]);
 };
