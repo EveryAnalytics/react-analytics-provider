@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "11.1.0",
     "@every-analytics/react-analytics-provider": "file:../..",
     "@types/react": "file:../../node_modules/react",
     "@types/react-dom": "file:../../node_modules/react-dom",
+    "next": "11.1.0",
     "react": "file:../../node_modules/react",
     "react-dom": "file:../../node_modules/react-dom"
   },
   "devDependencies": {
+    "@types/amplitude-js": "^8.0.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
     "typescript": "4.3.5"

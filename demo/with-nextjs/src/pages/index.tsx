@@ -1,7 +1,11 @@
-import type {NextPage} from 'next';
+import {AnalyticsPageView} from '@every-analytics/react-analytics-provider';
 
-const Home: NextPage = () => {
-  return <div>Next Level</div>;
+const FruiteStorePage = () => {
+  return (
+    <AnalyticsPageView params={{}}>
+      <h1>Fruite Store</h1>
+    </AnalyticsPageView>
+  );
 };
 
-export default Home;
+export default FruiteStorePage;

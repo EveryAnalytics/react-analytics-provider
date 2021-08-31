@@ -1,7 +1,7 @@
 # Contributing to React-Analytics-Provider
 
 ## Develop Environment
-- [npm](https://www.npmjs.com/) -v 6.14.13
+- [yarn berry](https://yarnpkg.com/) -v 3.0.1
 - [node](https://nodejs.org/ko/download/) -v v14.17.3
 - [vscode](https://code.visualstudio.com/)
 - [vscode plugin - eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -10,25 +10,32 @@
 
 1. 이 저장소를 [Fork](https://help.github.com/articles/fork-a-repo/) 한 후
    로컬 기기에 [clone](https://help.github.com/articles/cloning-a-repository/) 합니다.
+2. VSCode를 사용한다면 아래 과정을 통해 custom TS setting을 활성화해야합니다.
+   1. TypeScript 파일이 열러있는 상태로 `ctrl(cmd) + shift + p`를 입력합니다.
+   2. "Select TypeScript Version"을 선택합니다.
+   3. "Use Workspace Version"을 선택합니다.
+
 2. 브랜치 생성:
-   ```
+   ```shell
    git checkout -b MY_BRANCH_NAME
    ```
 3. 의존성 설치:
-   ```
-   npm install
+   ```shell
+   # can skip if you already installed
+   npm i -g yarn
+   yarn install
    ```
 4. 라이브러리 개발 서버 띄우기:
-   ```
-   npm run serve
+   ```shell
+   yarn serve
    ```
 5. 그 외 여러가지 명령어들을 사용해볼 수 있습니다.
-   ```
+   ```shell
    # 빌드
-   npm run build
+   yarn build
 
    # 테스트
-   npm run test
+   yarn test
    ```
 6. [demo README](https://github.com/EveryAnalytics/react-analytics-provider/tree/main/demo)를 참고해 demo앱도 실행해보세요.
 
