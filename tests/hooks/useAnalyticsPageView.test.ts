@@ -42,7 +42,7 @@ describe('useAnalyticsPageView', () => {
     expect(onPageView).toHaveBeenCalledWith(params);
   });
 
-  test('should call analytics.onPageView with params', async () => {
+  test('should call analytics.onPageView with callback', async () => {
     const {params, callback, onPageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(callback);
@@ -53,7 +53,7 @@ describe('useAnalyticsPageView', () => {
     expect(onPageView).toHaveBeenCalledWith(params);
   });
 
-  test('should call analytics.onPageView with params', async () => {
+  test('should call analytics.onPageView with asyncCallback', async () => {
     const {params, asyncCallback, onPageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(asyncCallback);
