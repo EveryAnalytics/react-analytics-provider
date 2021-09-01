@@ -20,6 +20,7 @@ describe('useAnalyticsPageView', () => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any),
     );
+    jest.spyOn(console, 'info').mockImplementation(() => null);
 
     return {
       params,
