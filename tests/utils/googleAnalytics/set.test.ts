@@ -28,7 +28,7 @@ describe('googleAnalytics.set', () => {
     expect(consoleInfoSpy).toHaveBeenCalledTimes(1);
   });
 
-  test('should record a set with fake name and paramss', () => {
+  test('should record a set with fake name and params', () => {
     const {name, params, gtagSpy, consoleInfoSpy} = setUp();
 
     set(name, params);
