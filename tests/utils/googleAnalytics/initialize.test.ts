@@ -4,7 +4,7 @@ import * as initUtils from '../../../src/utils/googleAnalytics/initialize';
 
 const SCRIPT_ID = 'ga-gtag';
 
-describe('googleAnalytics.initialize', () => {
+describe('googleAnalyticsHelper.initialize', () => {
   const setUp = () => {
     const trackingId = faker.lorem.word();
 
@@ -16,7 +16,7 @@ describe('googleAnalytics.initialize', () => {
     const getElementByIdSpy = jest.spyOn(document, 'getElementById');
     const createElementSpy = jest.spyOn(document, 'createElement');
     const insertBeforeSpy = jest.spyOn(document, 'createElement');
-    const consoleInfoSpy = jest.spyOn(global.console, 'info');
+    const consoleInfoSpy = jest.spyOn(console, 'info');
 
     return {
       trackingId,
