@@ -4,14 +4,26 @@
 .DS_Store
 .git
 
-# npm
-node_modules/
+# yarn
+.yarn/*
+.yarnrc.yml
+.pnp.cjs
 
 # dev
 .github
 .vscode
 demo
 src
+tests
+
+#config
+.all-contributorsrc
+.eslint*
+.prettier*
+jest*
 .gitignore
 rollup.config.js
 tsconfig.json
+
+# test coverage
+coverage/

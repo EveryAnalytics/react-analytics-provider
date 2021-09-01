@@ -34,7 +34,7 @@ export const initialize = (
   script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
   head.insertBefore(script, head.firstChild);
 
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer ?? [];
 
   gtag('js', new Date());
   gtag('config', trackingId, persistentValues);
