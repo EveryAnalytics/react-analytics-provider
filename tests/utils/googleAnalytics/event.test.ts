@@ -9,7 +9,7 @@ describe('googleAnalytics.event', () => {
     const params = {foo: 'bar'};
 
     const gtagSpy = jest.spyOn(initUtils, 'gtag').mockImplementation(() => null);
-    const consoleInfoSpy = jest.spyOn(global.console, 'info');
+    const consoleInfoSpy = jest.spyOn(console, 'info');
 
     return {
       name,
