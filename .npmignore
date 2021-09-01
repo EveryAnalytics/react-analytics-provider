@@ -14,6 +14,16 @@
 .vscode
 demo
 src
+tests
+
+#config
+.all-contributorsrc
+.eslint*
+.prettier*
+jest*
 .gitignore
 rollup.config.js
 tsconfig.json
+
+# test coverage
+coverage/

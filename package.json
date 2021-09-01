@@ -13,6 +13,7 @@
     "serve": "rollup -c rollup.config.js -w",
     "build": "rollup -c",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "update-snapshot": "jest --updateSnapshot"
   },
   "keywords": [],

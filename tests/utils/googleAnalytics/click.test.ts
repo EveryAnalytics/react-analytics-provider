@@ -2,7 +2,7 @@ import * as faker from 'faker';
 import * as initUtils from '../../../src/utils/googleAnalytics/initialize';
 import * as clickUtils from '../../../src/utils/googleAnalytics/click';
 
-describe('googleAnalytics.click', () => {
+describe('googleAnalyticsHelper.click', () => {
   const setUp = () => {
     const name = faker.lorem.word();
     const params = {foo: 'bar'};
