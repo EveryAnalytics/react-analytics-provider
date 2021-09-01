@@ -3,13 +3,13 @@ import * as faker from 'faker';
 import * as initUtils from '../../../src/utils/googleAnalytics/initialize';
 import {set} from '../../../src/utils/googleAnalytics/set';
 
-describe('googleAnalytics.set', () => {
+describe('googleAnalyticsHelper.set', () => {
   const setUp = () => {
     const name = faker.lorem.word();
     const params = {foo: 'bar'};
 
     const gtagSpy = jest.spyOn(initUtils, 'gtag').mockImplementation(() => null);
-    const consoleInfoSpy = jest.spyOn(global.console, 'info');
+    const consoleInfoSpy = jest.spyOn(console, 'info');
 
     return {
       name,
