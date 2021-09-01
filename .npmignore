@@ -24,3 +24,6 @@ jest*
 .gitignore
 rollup.config.js
 tsconfig.json
+
+# test coverage
+coverage/
