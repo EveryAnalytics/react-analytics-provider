@@ -6,10 +6,10 @@ import {set} from '../../../src/utils/googleAnalytics/set';
 describe('googleAnalyticsHelper.set', () => {
   const setUp = () => {
     const name = faker.lorem.word();
-    const params = {foo: faker.lorem.text() };
+    const params = {foo: faker.lorem.text()};
 
     const gtagSpy = jest.spyOn(initUtils, 'gtag').mockImplementation(() => null);
-    const consoleInfoSpy = jest.spyOn(console, 'info');
+    const consoleInfoSpy = jest.spyOn(console, 'info').mockImplementation(() => null);
 
     return {
       name,
