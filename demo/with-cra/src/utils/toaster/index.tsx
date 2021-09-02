@@ -25,14 +25,30 @@ export const click = (name: string, params?: unknown) => {
   );
 };
 
-export const pageView = (name: string, params?: unknown) => {
+export const pageView = (path: string, params?: unknown) => {
   showToast(
     <>
       <div>GA: PageView</div>
-      <div>path: {name}</div>
+      <div>path: {path}</div>
       <div>params: {JSON.stringify(params)}</div>
     </>,
   );
+};
+
+export const set = (...args: [string, unknown] | [unknown]) => {
+  const params = args.pop();
+  const name = args.pop();
+  showToast(
+    <>
+      <div>GA: Set</div>
+      {name && <div>name: {name}</div>}
+      <div>params: {JSON.stringify(params)}</div>
+    </>,
+  );
+};
+
+export const setUserProperty = (params: unknown) => {
+  set('user_properties', params);
 };
 
 export const impression = (name: string, params?: unknown) => {
@@ -49,5 +65,7 @@ export const toaster = {
   event,
   click,
   pageView,
+  set,
+  setUserProperty,
   impression,
 };

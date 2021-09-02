@@ -1,6 +1,6 @@
 // import { logEvent } from "@every-analytics/react-analytics-provider";
 import React from 'react';
-import navigate from '../router/navigate';
+import navigate from 'router/navigate';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 
 const NavBar = () => {
@@ -40,6 +40,15 @@ const NavBar = () => {
       >
         Login
       </NavItem>
+      <NavItem
+        href="/set-currency"
+        onClick={() => {
+          analytics.onSet({currency: 'KRW'});
+        }}
+      >
+        Currency
+      </NavItem>
+      <NavItem href="/set-user-property">UserProperty</NavItem>
     </header>
   );
 };

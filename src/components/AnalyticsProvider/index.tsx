@@ -8,6 +8,8 @@ interface Props {
   onPageView?(params?: UnknownRecord): void;
   onEvent?(name: string, params?: UnknownRecord): void;
   onClick?(name: string, params?: UnknownRecord): void;
+  onSet?(...args: [string, UnknownRecord] | [UnknownRecord]): void;
+  onSetUserProperty?(params: UnknownRecord): void;
   // TODO: modify params type
   onImpression?(name: string, params?: UnknownRecord): void;
   children: React.ReactNode;
@@ -18,6 +20,8 @@ export function AnalyticsProvider({
   onPageView = () => null,
   onEvent = () => null,
   onClick = () => null,
+  onSet = () => null,
+  onSetUserProperty = () => null,
   onImpression = () => null,
   children,
 }: Props) {
@@ -32,12 +36,14 @@ export function AnalyticsProvider({
           onPageView,
           onEvent,
           onClick,
+          onSet,
+          onSetUserProperty,
           onImpression,
         }}
       >
         {children}
       </AnalyticsProviderContext.Provider>
     ),
-    [children, onClick, onEvent, onPageView, onImpression],
+    [children, onClick, onEvent, onPageView, onSet, onSetUserProperty, onImpression],
   );
 }
