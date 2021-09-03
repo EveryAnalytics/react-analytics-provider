@@ -1,8 +1,8 @@
 import {RefObject, useEffect, useRef, useState} from 'react';
 
 export interface useOnScreenProps {
-  rootMargin?: string;
-  threshold?: number | number[];
+  rootMargin?: string; // margin around the root. Can have values similar to the CSS margin property
+  threshold?: number | number[]; // number between 0 and 1 indicating the percentage that should be visible before triggering
   triggerOnce?: boolean; // only trigger the observer once.
   delay?: number; // the delay in milliseconds between notifications from this observer for a given target.
 }
