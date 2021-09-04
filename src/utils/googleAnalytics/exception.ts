@@ -13,12 +13,10 @@ export interface ExceptionParameters {
 
 /**
  * Send an exception event to Google Analytics.
- *
- * See more details and examples code on {@link https://developers.google.com/analytics/devguides/collection/gtagjs/exceptions}
- *
- * @param exceptionParameters
+ * {@link https://developers.google.com/analytics/devguides/collection/gtagjs/exceptions API Reference}
+ * @param params
  */
-export const exception = (exceptionParameters?: ExceptionParameters) => {
-  console.info(`⚠️GA: exception`, exceptionParameters);
-  gtag('event', 'exception', exceptionParameters);
+export const exception = (params?: ExceptionParameters) => {
+  console.info(`⚠️GA: exception`, params);
+  gtag('event', 'exception', params);
 };
