@@ -10823,38 +10823,7 @@ fsevents@1.2.4:
   languageName: node
   linkType: hard
 
-"jest-runtime@npm:^23.6.0":
-  version: 23.6.0
-  resolution: "jest-runtime@npm:23.6.0"
-  dependencies:
-    babel-core: ^6.0.0
-    babel-plugin-istanbul: ^4.1.6
-    chalk: ^2.0.1
-    convert-source-map: ^1.4.0
-    exit: ^0.1.2
-    fast-json-stable-stringify: ^2.0.0
-    graceful-fs: ^4.1.11
-    jest-config: ^23.6.0
-    jest-haste-map: ^23.6.0
-    jest-message-util: ^23.4.0
-    jest-regex-util: ^23.3.0
-    jest-resolve: ^23.6.0
-    jest-snapshot: ^23.6.0
-    jest-util: ^23.4.0
-    jest-validate: ^23.6.0
-    micromatch: ^2.3.11
-    realpath-native: ^1.0.0
-    slash: ^1.0.0
-    strip-bom: 3.0.0
-    write-file-atomic: ^2.1.0
-    yargs: ^11.0.0
-  bin:
-    jest-runtime: ./bin/jest-runtime.js
-  checksum: 4eacd27dc2f4ec1cb17aed6626acb2e95eddea51b8b0ba618ca7cf4136d7e55e699f134609e332b70a48c01b2737bf96e241c3eef7abe062921be8a308d6188b
-  languageName: node
-  linkType: hard
-
-"jest-runtime@npm:^27.1.0":
+"jest-runtime@npm:*, jest-runtime@npm:^27.1.0":
   version: 27.1.0
   resolution: "jest-runtime@npm:27.1.0"
   dependencies:
@@ -10886,6 +10855,37 @@ fsevents@1.2.4:
     strip-bom: ^4.0.0
     yargs: ^16.0.3
   checksum: 83c090763a0b0b269eba5736d70016db2a5984010e9f974bd037bcf7746c09d4e064c83da8b34048dbcd2c029d28cc49a7ac7d547b406f9b46fdd0428b77f2e5
+  languageName: node
+  linkType: hard
+
+"jest-runtime@npm:^23.6.0":
+  version: 23.6.0
+  resolution: "jest-runtime@npm:23.6.0"
+  dependencies:
+    babel-core: ^6.0.0
+    babel-plugin-istanbul: ^4.1.6
+    chalk: ^2.0.1
+    convert-source-map: ^1.4.0
+    exit: ^0.1.2
+    fast-json-stable-stringify: ^2.0.0
+    graceful-fs: ^4.1.11
+    jest-config: ^23.6.0
+    jest-haste-map: ^23.6.0
+    jest-message-util: ^23.4.0
+    jest-regex-util: ^23.3.0
+    jest-resolve: ^23.6.0
+    jest-snapshot: ^23.6.0
+    jest-util: ^23.4.0
+    jest-validate: ^23.6.0
+    micromatch: ^2.3.11
+    realpath-native: ^1.0.0
+    slash: ^1.0.0
+    strip-bom: 3.0.0
+    write-file-atomic: ^2.1.0
+    yargs: ^11.0.0
+  bin:
+    jest-runtime: ./bin/jest-runtime.js
+  checksum: 4eacd27dc2f4ec1cb17aed6626acb2e95eddea51b8b0ba618ca7cf4136d7e55e699f134609e332b70a48c01b2737bf96e241c3eef7abe062921be8a308d6188b
   languageName: node
   linkType: hard
 
