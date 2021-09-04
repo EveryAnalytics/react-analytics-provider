@@ -11,7 +11,7 @@ describe('amplitudeHelper.logRevenueV2', () => {
     const getInstanceSpy = jest.spyOn(amplitude, 'getInstance').mockImplementation(
       () =>
         ({
-          mockLogRevenueV2,
+          logRevenueV2: mockLogRevenueV2,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any),
     );
@@ -24,7 +24,7 @@ describe('amplitudeHelper.logRevenueV2', () => {
   };
 
   test('should call amplitude logRevenueV2 with proper param', () => {
-    const {mockRevenue, mockLogRevenueV2, getInstanceSpy} = setUp();
+    const {mockRevenue, getInstanceSpy, mockLogRevenueV2} = setUp();
 
     logRevenueV2(mockRevenue);
 
