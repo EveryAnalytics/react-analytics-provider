@@ -1,10 +1,15 @@
 import amplitude from 'amplitude-js';
+import * as faker from 'faker';
 
 import {Revenue, logRevenueV2} from '../../../src/utils/amplitude/logRevenueV2';
 
 describe('amplitudeHelper.logRevenueV2', () => {
   const setUp = () => {
-    const mockRevenue = new Revenue();
+    const mockRevenue = new Revenue()
+      .setPrice(faker.datatype.number())
+      .setProductId(faker.datatype.uuid())
+      .setQuantity(faker.datatype.number())
+      .setRevenueType(faker.lorem.word());
 
     const mockLogRevenueV2 = jest.fn();
 
