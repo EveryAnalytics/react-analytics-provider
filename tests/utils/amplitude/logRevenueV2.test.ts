@@ -4,31 +4,31 @@ import {Revenue, logRevenueV2} from '../../../src/utils/amplitude/logRevenueV2';
 
 describe('amplitudeHelper.logRevenueV2', () => {
   const setUp = () => {
-    const revenue = new Revenue();
+    const mockRevenue = new Revenue();
 
-    const logRevenueV2Mock = jest.fn();
+    const mockLogRevenueV2 = jest.fn();
 
     const getInstanceSpy = jest.spyOn(amplitude, 'getInstance').mockImplementation(
       () =>
         ({
-          logRevenueV2: logRevenueV2Mock,
+          mockLogRevenueV2,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any),
     );
 
     return {
-      revenue,
-      logRevenueV2Mock,
+      mockRevenue,
+      mockLogRevenueV2,
       getInstanceSpy,
     };
   };
 
   test('should call amplitude logRevenueV2 with proper param', () => {
-    const {revenue, logRevenueV2Mock, getInstanceSpy} = setUp();
+    const {mockRevenue, mockLogRevenueV2, getInstanceSpy} = setUp();
 
-    logRevenueV2(revenue);
+    logRevenueV2(mockRevenue);
 
     expect(getInstanceSpy).toHaveBeenCalled();
-    expect(logRevenueV2Mock).toHaveBeenCalledWith(revenue);
+    expect(mockLogRevenueV2).toHaveBeenCalledWith(mockRevenue);
   });
 });
