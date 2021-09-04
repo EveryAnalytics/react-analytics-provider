@@ -1,6 +1,6 @@
 import * as faker from 'faker';
 import amplitude from 'amplitude-js';
-import {amplitudeHelper} from '../../../../src/utils';
+import {amplitudeHelper} from '../../../src/utils';
 
 describe('amplitudeHelper.initialize', () => {
   const setUp = () => {
