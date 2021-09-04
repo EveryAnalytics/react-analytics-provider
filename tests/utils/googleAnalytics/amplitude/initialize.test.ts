@@ -1,3 +1,4 @@
+import * as faker from 'faker';
 import amplitude from 'amplitude-js';
 import {amplitudeHelper} from '../../../../src/utils';
 
@@ -19,12 +20,12 @@ describe('amplitudeHelper.initialize', () => {
   };
   test('should call amplitude initialize with proper param', () => {
     const {amplitudeInitializeMock, getInstanceSpy} = setUp();
-    const MOCK_TEST_ID = 'test';
-    const MOCK_USER_ID = 'test';
+    const MOCK_TEST_ID = faker.lorem.word();
+    const MOCK_USER_ID = faker.lorem.word();
     const MOCK_OPTION = {
-      saveEvents: true,
-      includeUtm: true,
-      includeReferrer: true,
+      saveEvents: faker.datatype.boolean(),
+      includeUtm: faker.datatype.boolean(),
+      includeReferrer: faker.datatype.boolean(),
     };
     const mockCallback = jest.fn();
 
