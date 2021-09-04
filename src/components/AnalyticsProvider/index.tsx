@@ -9,7 +9,7 @@ interface Props {
   onEvent?(name: string, params?: UnknownRecord): void;
   onClick?(name: string, params?: UnknownRecord): void;
   onSet?(...args: [string, UnknownRecord] | [UnknownRecord]): void;
-  onSetUserId?(userId: string | number | null): void;
+  onSetUserId?(userId: string | null): void;
   onSetUserProperty?(params: UnknownRecord): void;
   children: React.ReactNode;
 }
