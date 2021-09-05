@@ -22,38 +22,6 @@ describe('amplitudeHelper.setUserId', () => {
     };
   };
 
-  test('should warn if setUserId is called with falsy value', () => {
-    const {consoleWarnSpy, getInstanceSpy} = setUp();
-    const warning = 'userId is required for setUserId';
-
-    setUserIdUtils.setUserId('');
-    setUserIdUtils.setUserId(undefined as any);
-    setUserIdUtils.setUserId(false as any);
-    setUserIdUtils.setUserId(0 as any);
-
-    expect(consoleWarnSpy).toBeCalledTimes(4);
-    expect(consoleWarnSpy).toHaveBeenNthCalledWith(1, warning);
-    expect(consoleWarnSpy).toHaveBeenNthCalledWith(2, warning);
-    expect(consoleWarnSpy).toHaveBeenNthCalledWith(3, warning);
-    expect(consoleWarnSpy).toHaveBeenNthCalledWith(4, warning);
-    expect(getInstanceSpy).toBeCalledTimes(0);
-  });
-
-  test('should warn if setUserId is called with incorrect Type', () => {
-    const {consoleWarnSpy, getInstanceSpy} = setUp();
-    const warning = 'userId must be string or null';
-
-    setUserIdUtils.setUserId(9999 as any);
-    setUserIdUtils.setUserId({} as any);
-    setUserIdUtils.setUserId(new Function() as any);
-
-    expect(consoleWarnSpy).toBeCalledTimes(3);
-    expect(consoleWarnSpy).toHaveBeenNthCalledWith(1, warning);
-    expect(consoleWarnSpy).toHaveBeenNthCalledWith(2, warning);
-    expect(consoleWarnSpy).toHaveBeenNthCalledWith(3, warning);
-    expect(getInstanceSpy).toBeCalledTimes(0);
-  });
-
   test(`should call amplitude setUserId with null userId`, () => {
     const {consoleWarnSpy, getInstanceSpy, amplitudeSetUserIdMock} = setUp();
     const userId = null;
