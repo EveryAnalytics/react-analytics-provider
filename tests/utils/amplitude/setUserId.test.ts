@@ -6,12 +6,13 @@ describe('amplitudeHelper.setUserId', () => {
   const setUp = () => {
     const userId = faker.lorem.word();
     const consoleWarnSpy = jest.spyOn(console, 'info');
-    const amplitudeSetUserIdMock = jest.fn()
+    const amplitudeSetUserIdMock = jest.fn();
     const getInstanceSpy = jest.spyOn(amplitude, 'getInstance').mockImplementation(
-      () => ({
-        setUserId: amplitudeSetUserIdMock
-      }) as any
-    )
+      () =>
+        ({
+          setUserId: amplitudeSetUserIdMock,
+        } as any),
+    );
 
     return {
       userId,
@@ -23,12 +24,12 @@ describe('amplitudeHelper.setUserId', () => {
 
   test('should warn if setUserId is called with falsy value', () => {
     const {consoleWarnSpy, getInstanceSpy} = setUp();
-    const warning = 'userId is required for setUserId'
+    const warning = 'userId is required for setUserId';
 
-    setUserIdUtils.setUserId('')
-    setUserIdUtils.setUserId(undefined as any)
-    setUserIdUtils.setUserId(false as any)
-    setUserIdUtils.setUserId(0 as any)
+    setUserIdUtils.setUserId('');
+    setUserIdUtils.setUserId(undefined as any);
+    setUserIdUtils.setUserId(false as any);
+    setUserIdUtils.setUserId(0 as any);
 
     expect(consoleWarnSpy).toBeCalledTimes(4);
     expect(consoleWarnSpy).toHaveBeenNthCalledWith(1, warning);
@@ -40,11 +41,11 @@ describe('amplitudeHelper.setUserId', () => {
 
   test('should warn if setUserId is called with incorrect Type', () => {
     const {consoleWarnSpy, getInstanceSpy} = setUp();
-    const warning = 'userId must be string or null'
+    const warning = 'userId must be string or null';
 
-    setUserIdUtils.setUserId(9999 as any)
-    setUserIdUtils.setUserId({} as any)
-    setUserIdUtils.setUserId(new Function() as any)
+    setUserIdUtils.setUserId(9999 as any);
+    setUserIdUtils.setUserId({} as any);
+    setUserIdUtils.setUserId(new Function() as any);
 
     expect(consoleWarnSpy).toBeCalledTimes(3);
     expect(consoleWarnSpy).toHaveBeenNthCalledWith(1, warning);
@@ -57,7 +58,7 @@ describe('amplitudeHelper.setUserId', () => {
     const {consoleWarnSpy, getInstanceSpy, amplitudeSetUserIdMock} = setUp();
     const userId = null;
 
-    setUserIdUtils.setUserId(userId)
+    setUserIdUtils.setUserId(userId);
 
     expect(consoleWarnSpy).toBeCalledTimes(0);
     expect(getInstanceSpy).toBeCalledTimes(1);
@@ -68,7 +69,7 @@ describe('amplitudeHelper.setUserId', () => {
   test(`should call amplitude setUserId with string userId`, () => {
     const {userId, consoleWarnSpy, getInstanceSpy, amplitudeSetUserIdMock} = setUp();
 
-    setUserIdUtils.setUserId(userId)
+    setUserIdUtils.setUserId(userId);
 
     expect(consoleWarnSpy).toBeCalledTimes(0);
     expect(getInstanceSpy).toBeCalledTimes(1);
