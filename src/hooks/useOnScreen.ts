@@ -1,4 +1,5 @@
 import {RefObject, useEffect, useRef, useState} from 'react';
+import 'intersection-observer';
 
 export interface useOnScreenProps {
   rootMargin?: string; // margin around the root. Can have values similar to the CSS margin property
