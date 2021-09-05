@@ -39,10 +39,12 @@ describe('amplitudeHelper.setUserProperties', () => {
   });
 
   test('should call amplitude setUserProperties with empty userProperties', () => {
-    const {consoleWarnMock} = setUp();
+    const {amplitudeSetUserPropertiesMock, getInstanceSpy, consoleWarnMock} = setUp();
 
     amplitudeHelper.setUserProperties({});
 
     expect(consoleWarnMock).toHaveBeenCalled();
+    expect(getInstanceSpy).toHaveBeenCalledTimes(0);
+    expect(amplitudeSetUserPropertiesMock).toHaveBeenCalledTimes(0);
   });
 });
