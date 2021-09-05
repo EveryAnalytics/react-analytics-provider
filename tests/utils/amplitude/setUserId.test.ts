@@ -5,7 +5,7 @@ import * as setUserIdUtils from '../../../src/utils/amplitude/setUserId';
 describe('amplitudeHelper.setUserId', () => {
   const setUp = () => {
     const userId = faker.lorem.word();
-    const consoleWarnSpy = jest.spyOn(console, 'info');
+    const consoleWarnSpy = jest.spyOn(console, 'warn');
     const amplitudeSetUserIdMock = jest.fn();
     const getInstanceSpy = jest.spyOn(amplitude, 'getInstance').mockImplementation(
       () =>
