@@ -5,12 +5,12 @@ import * as setUserIdUtils from '../../../src/utils/amplitude/setUserId';
 describe('amplitudeHelper.setUserId', () => {
   const setUp = () => {
     const userId = faker.lorem.word();
-    const consoleWarnSpy = jest.spyOn(console, 'warn');
+    const consoleWarnSpy = jest.spyOn(console, 'info');
     const amplitudeSetUserIdMock = jest.fn()
     const getInstanceSpy = jest.spyOn(amplitude, 'getInstance').mockImplementation(
       () => ({
         setUserId: amplitudeSetUserIdMock
-      })
+      }) as any
     )
 
     return {
@@ -26,9 +26,9 @@ describe('amplitudeHelper.setUserId', () => {
     const warning = 'userId is required for setUserId'
 
     setUserIdUtils.setUserId('')
-    setUserIdUtils.setUserId(undefined)
-    setUserIdUtils.setUserId(false)
-    setUserIdUtils.setUserId(0)
+    setUserIdUtils.setUserId(undefined as any)
+    setUserIdUtils.setUserId(false as any)
+    setUserIdUtils.setUserId(0 as any)
 
     expect(consoleWarnSpy).toBeCalledTimes(4);
     expect(consoleWarnSpy).toHaveBeenNthCalledWith(1, warning);
@@ -40,11 +40,11 @@ describe('amplitudeHelper.setUserId', () => {
 
   test('should warn if setUserId is called with incorrect Type', () => {
     const {consoleWarnSpy, getInstanceSpy} = setUp();
-    const warning = 'userId must be a string or null'
+    const warning = 'userId must be string or null'
 
-    setUserIdUtils.setUserId(9999)
-    setUserIdUtils.setUserId({})
-    setUserIdUtils.setUserId(() => {})
+    setUserIdUtils.setUserId(9999 as any)
+    setUserIdUtils.setUserId({} as any)
+    setUserIdUtils.setUserId(new Function() as any)
 
     expect(consoleWarnSpy).toBeCalledTimes(3);
     expect(consoleWarnSpy).toHaveBeenNthCalledWith(1, warning);
@@ -55,13 +55,14 @@ describe('amplitudeHelper.setUserId', () => {
 
   test(`should call amplitude setUserId with null userId`, () => {
     const {consoleWarnSpy, getInstanceSpy, amplitudeSetUserIdMock} = setUp();
+    const userId = null;
 
-    setUserIdUtils.setUserId(null)
+    setUserIdUtils.setUserId(userId)
 
     expect(consoleWarnSpy).toBeCalledTimes(0);
     expect(getInstanceSpy).toBeCalledTimes(1);
     expect(getInstanceSpy).toHaveBeenCalledWith();
-    expect(amplitudeSetUserIdMock).toHaveBeenCalledWith(null);
+    expect(amplitudeSetUserIdMock).toHaveBeenCalledWith(userId);
   });
 
   test(`should call amplitude setUserId with string userId`, () => {
