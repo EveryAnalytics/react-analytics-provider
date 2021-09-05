@@ -47,6 +47,7 @@ import {AnalyticsProvider} from '@every-analytics/react-analytics-provider';
   onPageView={(params) => console.log('pageview', params)}
   onEvent={(name, params) => console.log('event', name, params)}
   onClick={(name, params) => console.log('click', name, params)}
+  onSetUserId={(userId) => console.log('setUserId', userId)}
 >
   <App />
 </AnalyticsProvider>
