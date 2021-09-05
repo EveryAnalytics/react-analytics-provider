@@ -14,8 +14,6 @@ describe('amplitudeHelper.setUserProperties', () => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any),
     );
-      
-    
 
     return {
       amplitudeSetUserPropertiesMock,
@@ -41,11 +39,10 @@ describe('amplitudeHelper.setUserProperties', () => {
   });
 
   test('should call amplitude setUserProperties with empty userProperties', () => {
-    const { consoleWarnMock } = setUp();
+    const {consoleWarnMock} = setUp();
 
     amplitudeHelper.setUserProperties({});
 
     expect(consoleWarnMock).toHaveBeenCalled();
   });
-
 });
