@@ -20,7 +20,7 @@ export const AnalyticsImpression = ({
   delay,
 }: AnalyticsImpressionProps) => {
   const analytics = useAnalyticsContext();
-  const [ref, isIntersecting] = useOnScreen<HTMLHeadingElement>({rootMargin, threshold, triggerOnce, delay});
+  const [ref, isIntersecting] = useOnScreen<HTMLDivElement>({rootMargin, threshold, triggerOnce, delay});
 
   React.useEffect(() => {
     if (isIntersecting) analytics.onImpression(name, params);
