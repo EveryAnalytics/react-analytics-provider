@@ -1,5 +1,6 @@
-import {useRouter} from 'next/dist/client/router';
 import {AnalyticsPageView} from '@every-analytics/react-analytics-provider';
+import {useRouter} from 'next/router';
+import {AnalyticsClick} from '@every-analytics/react-analytics-provider';
 import styles from './index.module.css';
 
 const ColorPage = () => {
@@ -10,9 +11,13 @@ const ColorPage = () => {
     <AnalyticsPageView params={{color}}>
       <h1>{color} fruites</h1>
       <ul className={styles.container}>
-        {getProductsByColor(color).map(product => (
-          <li key={product}>{product}</li>
-        ))}
+        {getProductsByColor(color).map(product => {
+          return (
+            <AnalyticsClick key={product} name="color" params={{product}}>
+              <li key={product}>{product}</li>
+            </AnalyticsClick>
+          );
+        })}
       </ul>
     </AnalyticsPageView>
   );

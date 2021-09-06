@@ -9,6 +9,7 @@ interface Props {
   onEvent?(name: string, params?: UnknownRecord): void;
   onClick?(name: string, params?: UnknownRecord): void;
   onSet?(...args: [string, UnknownRecord] | [UnknownRecord]): void;
+  onSetUserId?(userId: string | null): void;
   onSetUserProperty?(params: UnknownRecord): void;
   // TODO: modify params type
   onImpression?(name: string, params?: UnknownRecord): void;
@@ -21,6 +22,7 @@ export function AnalyticsProvider({
   onEvent = () => null,
   onClick = () => null,
   onSet = () => null,
+  onSetUserId = () => null,
   onSetUserProperty = () => null,
   onImpression = () => null,
   children,
@@ -37,6 +39,7 @@ export function AnalyticsProvider({
           onEvent,
           onClick,
           onSet,
+          onSetUserId,
           onSetUserProperty,
           onImpression,
         }}
@@ -44,6 +47,6 @@ export function AnalyticsProvider({
         {children}
       </AnalyticsProviderContext.Provider>
     ),
-    [children, onClick, onEvent, onPageView, onSet, onSetUserProperty, onImpression],
+    [children, onClick, onEvent, onPageView, onSet, onSetUserId, onSetUserProperty, onImpression],
   );
 }
