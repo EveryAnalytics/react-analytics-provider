@@ -11,7 +11,7 @@ export interface useOnScreenProps {
 export type useOnScreenReturn<T> = [RefObject<T>, boolean];
 
 export function useOnScreen<T extends Element>(props?: useOnScreenProps): useOnScreenReturn<T> {
-  const {rootMargin = '0px', threshold = 0.5, delay = 500, triggerOnce = true} = props ?? {};
+  const {rootMargin = '0px', threshold = 0.5, delay = 0, triggerOnce = false} = props ?? {};
 
   const [isIntersecting, setIntersecting] = useState<boolean>(false);
   const ref = useRef<T>(null);
