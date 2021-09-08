@@ -65,6 +65,30 @@
 
 `vscode`의 `eslint` 플러그인을 통해 미리 설정된 코드 컨벤션을 적용하고 검사해볼 수 있습니다.
 
+## NPM Publish
+[Semantic versioning](https://semver.org/)을 기준으로 npm 패키지 버전을 관리합니다. 
+
+- MAJOR version when you make incompatible API changes,
+- MINOR version when you add functionality in a backwards compatible manner, and
+- PATCH version when you make backwards compatible bug fixes.
+
+이에 맞게 아래 명령어 중 하나를 입력합니다.
+
+```sh
+npm version major
+npm version minor
+npm version patch
+```
+자동으로 commit과 tag가 생성되고 package.json의 버전이 올라갑니다.
+
+npm 저장소 publish를 원한다면 @milooy 에게 권한을 요청합니다.
+https://www.npmjs.com/package/@every-analytics/react-analytics-provider
+```sh
+npm login
+npm publish
+```
+
+
 ## Add yourself as a contributor
 
 기여자 목록에 자신을 추가하려면 [All Contributors 봇 설명서](https://allcontributors.org/docs/en/bot/usage)를 참고하세요 :)
