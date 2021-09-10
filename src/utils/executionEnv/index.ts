@@ -1,17 +1,10 @@
-type ConstraintType = boolean;
-
-export interface ExecutionEnv<T = ConstraintType> {
-  isClientSide: T;
-  canUseEventListeners: T;
-}
-
-export const isClientSide: ConstraintType = Boolean(
+export const isClientSide = Boolean(
   typeof window !== 'undefined' && window.document && window.document.createElement,
 );
 
-export const canUseEventListeners: ConstraintType = isClientSide && Boolean(window.addEventListener);
+export const canUseEventListeners = isClientSide && Boolean(window.addEventListener);
 
-const executionEnv: ExecutionEnv = {
+const executionEnv = {
   isClientSide,
   canUseEventListeners,
 };

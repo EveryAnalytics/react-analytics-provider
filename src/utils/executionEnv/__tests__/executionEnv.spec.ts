@@ -1,13 +1,27 @@
 import executionEnv from '../index';
 
-describe('Execution environment', () => {
-  it('should not be client side', () => {
+describe('execution environment', () => {
+  test('should be client side environment with JSDOM', () => {
+    const result = executionEnv.isClientSide;
+
+    expect(result).toBe(true);
+  });
+
+  test('should not be client side environment', () => {
+    executionEnv.isClientSide = false;
     const result = executionEnv.isClientSide;
 
     expect(result).toBe(false);
   });
 
-  it('EventListeners should not be available', () => {
+  test('eventListeners should be available with JSDOM', () => {
+    const result = executionEnv.canUseEventListeners;
+
+    expect(result).toBe(true);
+  });
+
+  test('eventListeners should be available', () => {
+    executionEnv.canUseEventListeners = false;
     const result = executionEnv.canUseEventListeners;
 
     expect(result).toBe(false);
