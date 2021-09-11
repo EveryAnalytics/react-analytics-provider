@@ -16,7 +16,7 @@ demo
 src
 tests
 
-#config
+# config
 .all-contributorsrc
 .eslint*
 .prettier*
@@ -27,3 +27,6 @@ tsconfig.json
 
 # test coverage
 coverage/
+
+# license
+LICENSE
