@@ -10,5 +10,5 @@ export const setUserProperties = (userProperties: UnknownRecord) => {
     );
     return;
   }
-  return amplitude.getInstance().setUserProperties(userProperties);
+  amplitude.getInstance().setUserProperties(userProperties);
 };
