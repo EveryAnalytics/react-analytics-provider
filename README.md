@@ -43,6 +43,7 @@ You can check examples [here](https://github.com/EveryAnalytics/react-analytics-
 import {Analytics, AnalyticsProvider} from '@every-analytics/react-analytics-provider';
 
 const analytics: Analytics = {
+  initialize: () => console.log('onInitialize'),
   trackPageView: params => console.log('onTrackPageView', params),
   trackEvent: (name, params) => console.log('onTrackEvent', name, params),
   trackClick: (name, params) => console.log('onTrackClick', name, params),

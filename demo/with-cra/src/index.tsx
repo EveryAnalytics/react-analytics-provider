@@ -16,6 +16,9 @@ amplitudeHelper.initialize(process.env.REACT_APP_AMPLITUDE_API_KEY);
 const persistentValues = {userNo: 123};
 
 const analytics: Analytics = {
+  initialize: () => {
+    googleAnalyticsHelper.initialize(process.env.REACT_APP_GA_TRACKING_ID, persistentValues);
+  },
   trackPageView: params => {
     // NOTE: Google Analytics(GA4)는 기본적으로 페이지뷰가 적용됩니다 - 따로 추가 필요X
     const path = window.location.pathname + window.location.search;
@@ -51,12 +54,7 @@ const analytics: Analytics = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <AnalyticsProvider
-      onInitialize={() => {
-        googleAnalyticsHelper.initialize(process.env.REACT_APP_GA_TRACKING_ID, persistentValues);
-      }}
-      analytics={analytics}
-    >
+    <AnalyticsProvider analytics={analytics}>
       <App />
     </AnalyticsProvider>
     <Toaster

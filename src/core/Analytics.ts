@@ -1,6 +1,7 @@
 import {UnknownRecord} from '../types/common';
 
 export interface Analytics {
+  initialize(): void;
   trackPageView(params?: UnknownRecord): void;
   trackEvent(name: string, params?: UnknownRecord): void;
   trackClick(name: string, params?: UnknownRecord): void;
