@@ -40,14 +40,20 @@ yarn add @every-analytics/react-analytics-provider
 You can check examples [here](https://github.com/EveryAnalytics/react-analytics-provider/tree/main/demo)
 
 ```tsx
-import {AnalyticsProvider} from '@every-analytics/react-analytics-provider';
+import {Analytics, AnalyticsProvider} from '@every-analytics/react-analytics-provider';
+
+const analytics: Analytics = {
+  trackPageView: params => console.log('onTrackPageView', params),
+  trackEvent: (name, params) => console.log('onTrackEvent', name, params),
+  trackClick: (name, params) => console.log('onTrackClick', name, params),
+  set: (...args) => console.log('onSet', args),
+  setUserId: userId => console.log("onSetUserId", userId),
+  setUserProperty: params => console.log("onSetUserProperty", params),
+}
 
 <AnalyticsProvider
   onInitialize={() => console.log('initialized')}
-  onPageView={(params) => console.log('pageview', params)}
-  onEvent={(name, params) => console.log('event', name, params)}
-  onClick={(name, params) => console.log('click', name, params)}
-  onSetUserId={(userId) => console.log('setUserId', userId)}
+  analytics={analytics}
 >
   <App />
 </AnalyticsProvider>

@@ -1,27 +1,17 @@
 import * as React from 'react';
 
 import AnalyticsProviderContext from '../../contexts/AnalyticsProviderContext';
-import {UnknownRecord} from '../../types/common';
+import {Analytics} from '../../core';
 
 interface Props {
   onInitialize(): void;
-  onPageView?(params?: UnknownRecord): void;
-  onEvent?(name: string, params?: UnknownRecord): void;
-  onClick?(name: string, params?: UnknownRecord): void;
-  onSet?(...args: [string, UnknownRecord] | [UnknownRecord]): void;
-  onSetUserId?(userId: string | null): void;
-  onSetUserProperty?(params: UnknownRecord): void;
+  analytics: Analytics;
   children: React.ReactNode;
 }
 
 export function AnalyticsProvider({
   onInitialize,
-  onPageView = () => null,
-  onEvent = () => null,
-  onClick = () => null,
-  onSet = () => null,
-  onSetUserId = () => null,
-  onSetUserProperty = () => null,
+  analytics,
   children,
 }: Props) {
   React.useEffect(() => {
@@ -29,20 +19,7 @@ export function AnalyticsProvider({
   }, [onInitialize]);
 
   return React.useMemo(
-    () => (
-      <AnalyticsProviderContext.Provider
-        value={{
-          trackPageView: onPageView,
-          trackEvent: onEvent,
-          trackClick: onClick,
-          set: onSet,
-          setUserId: onSetUserId,
-          setUserProperty: onSetUserProperty,
-        }}
-      >
-        {children}
-      </AnalyticsProviderContext.Provider>
-    ),
-    [children, onClick, onEvent, onPageView, onSet, onSetUserId, onSetUserProperty],
+    () => <AnalyticsProviderContext.Provider value={analytics}>{children}</AnalyticsProviderContext.Provider>,
+    [children, analytics],
   );
 }
