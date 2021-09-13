@@ -1,8 +1,8 @@
 import {useEffect} from 'react';
-import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {useAnalytics} from '@every-analytics/react-analytics-provider';
 
 const CurrencyPage = () => {
-  const analytics = useAnalyticsContext();
+  const analytics = useAnalytics();
   useEffect(() => {
     analytics.onPageView();
   }, [analytics]);

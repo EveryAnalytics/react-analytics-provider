@@ -1,11 +1,11 @@
 import {useEffect} from 'react';
 import {getQueryParams} from 'utils/location';
-import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {useAnalytics} from '@every-analytics/react-analytics-provider';
 
 const ProductsPage = () => {
   const {color} = getQueryParams<{color: string}>();
   const products = getProductsByColor(color);
-  const analytics = useAnalyticsContext();
+  const analytics = useAnalytics();
 
   useEffect(() => {
     analytics.onPageView();

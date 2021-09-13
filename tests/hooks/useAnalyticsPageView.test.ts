@@ -1,7 +1,7 @@
 import React from 'react';
 import * as faker from 'faker';
 
-import * as contextModule from '../../src/contexts/useAnalyticsContext';
+import * as contextModule from '../../src/contexts/useAnalytics';
 import {useAnalyticsPageView} from '../../src/hooks/useAnalyticsPageView';
 
 describe('useAnalyticsPageView', () => {
@@ -13,7 +13,7 @@ describe('useAnalyticsPageView', () => {
     const onPageView = jest.fn();
 
     const useEffectSpy = jest.spyOn(React, 'useEffect').mockImplementationOnce(cb => cb());
-    const useContextSpy = jest.spyOn(contextModule, 'useAnalyticsContext').mockImplementationOnce(
+    const useContextSpy = jest.spyOn(contextModule, 'useAnalytics').mockImplementationOnce(
       () =>
         ({
           onPageView,

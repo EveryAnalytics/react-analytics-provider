@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {useAnalyticsContext} from '../../contexts';
+import {useAnalytics} from '../../contexts';
 import {UnknownRecord} from '../../types/common';
 
 export interface AnalyticsClickProps {
@@ -9,7 +9,7 @@ export interface AnalyticsClickProps {
 }
 
 export const AnalyticsClick = ({children, name, params}: AnalyticsClickProps) => {
-  const {onClick} = useAnalyticsContext();
+  const {onClick} = useAnalytics();
 
   const child = React.Children.only(children) as React.ReactElement;
 

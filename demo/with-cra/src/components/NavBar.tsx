@@ -1,10 +1,10 @@
 // import { logEvent } from "@every-analytics/react-analytics-provider";
 import React from 'react';
 import navigate from 'router/navigate';
-import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {useAnalytics} from '@every-analytics/react-analytics-provider';
 
 const NavBar = () => {
-  const analytics = useAnalyticsContext();
+  const analytics = useAnalytics();
 
   return (
     <header className="App-header">

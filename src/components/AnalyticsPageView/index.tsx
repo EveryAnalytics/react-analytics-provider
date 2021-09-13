@@ -1,5 +1,5 @@
 import React from 'react';
-import {useAnalyticsContext} from '../../contexts/useAnalyticsContext';
+import {useAnalytics} from '../../contexts/useAnalytics';
 import {UnknownRecord} from '../../types/common';
 
 export interface AnalyticsPageViewProps {
@@ -8,7 +8,7 @@ export interface AnalyticsPageViewProps {
 }
 
 export const AnalyticsPageView = ({children, params}: AnalyticsPageViewProps) => {
-  const analytics = useAnalyticsContext();
+  const analytics = useAnalytics();
 
   React.useEffect(() => {
     analytics.onPageView(params);

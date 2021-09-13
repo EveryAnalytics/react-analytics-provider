@@ -1,1 +1,1 @@
-export * from './useAnalyticsContext';
+export * from './useAnalytics';
