@@ -8,7 +8,7 @@ const ProductsPage = () => {
   const analytics = useAnalytics();
 
   useEffect(() => {
-    analytics.onPageView();
+    analytics.trackPageView();
   }, [analytics]);
 
   return (

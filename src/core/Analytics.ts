@@ -1,10 +1,10 @@
 import {UnknownRecord} from '../types/common';
 
 export interface Analytics {
-  onPageView(params?: UnknownRecord): void;
-  onEvent(name: string, params?: UnknownRecord): void;
-  onClick(name: string, params?: UnknownRecord): void;
-  onSet(...args: [string, UnknownRecord] | [UnknownRecord]): void;
-  onSetUserId(userId: string | null): void;
-  onSetUserProperty(params: UnknownRecord): void;
+  trackPageView(params?: UnknownRecord): void;
+  trackEvent(name: string, params?: UnknownRecord): void;
+  trackClick(name: string, params?: UnknownRecord): void;
+  set(...args: [string, UnknownRecord] | [UnknownRecord]): void;
+  setUserId(userId: string | null): void;
+  setUserProperty(params: UnknownRecord): void;
 }

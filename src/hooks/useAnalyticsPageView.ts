@@ -10,7 +10,7 @@ export function useAnalyticsPageView(paramsOrCallback: UnknownRecord | (() => Pr
 
   const pageView = async () => {
     const params = typeof paramsOrCallback === 'function' ? await paramsOrCallback() : paramsOrCallback;
-    analytics.onPageView(params);
+    analytics.trackPageView(params);
   };
 
   React.useEffect(() => {

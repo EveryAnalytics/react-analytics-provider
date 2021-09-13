@@ -10,13 +10,13 @@ describe('useAnalyticsPageView', () => {
     const callback = () => params;
     const asyncCallback = async () => params;
 
-    const onPageView = jest.fn();
+    const trackPageView = jest.fn();
 
     const useEffectSpy = jest.spyOn(React, 'useEffect').mockImplementationOnce(cb => cb());
     const useContextSpy = jest.spyOn(contextModule, 'useAnalytics').mockImplementationOnce(
       () =>
         ({
-          onPageView,
+          trackPageView,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any),
     );
@@ -26,7 +26,7 @@ describe('useAnalyticsPageView', () => {
       params,
       callback,
       asyncCallback,
-      onPageView,
+      trackPageView,
       useEffectSpy,
       useContextSpy,
     };
@@ -34,36 +34,36 @@ describe('useAnalyticsPageView', () => {
 
   const waitForAsync = () => new Promise(resolve => setTimeout(resolve, 0));
 
-  test('should call analytics.onPageView with params', async () => {
-    const {params, onPageView, useContextSpy, useEffectSpy} = setUp();
+  test('should call analytics.trackPageView with params', async () => {
+    const {params, trackPageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(params);
     await waitForAsync();
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
-    expect(onPageView).toHaveBeenCalledWith(params);
+    expect(trackPageView).toHaveBeenCalledWith(params);
   });
 
-  test('should call analytics.onPageView with callback', async () => {
-    const {params, callback, onPageView, useContextSpy, useEffectSpy} = setUp();
+  test('should call analytics.trackPageView with callback', async () => {
+    const {params, callback, trackPageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(callback);
     await waitForAsync();
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
-    expect(onPageView).toHaveBeenCalledWith(params);
+    expect(trackPageView).toHaveBeenCalledWith(params);
   });
 
-  test('should call analytics.onPageView with asyncCallback', async () => {
-    const {params, asyncCallback, onPageView, useContextSpy, useEffectSpy} = setUp();
+  test('should call analytics.trackPageView with asyncCallback', async () => {
+    const {params, asyncCallback, trackPageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(asyncCallback);
     await waitForAsync();
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
-    expect(onPageView).toHaveBeenCalledWith(params);
+    expect(trackPageView).toHaveBeenCalledWith(params);
   });
 });

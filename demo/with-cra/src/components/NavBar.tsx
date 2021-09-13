@@ -11,7 +11,7 @@ const NavBar = () => {
       <NavItem
         href="/"
         onClick={() => {
-          analytics.onEvent('Click logo');
+          analytics.trackEvent('Click logo');
         }}
       >
         Fruit Store
@@ -19,7 +19,7 @@ const NavBar = () => {
       <NavItem
         href="/products?color=red"
         onClick={() => {
-          analytics.onEvent('Click products', {color: 'red'});
+          analytics.trackEvent('Click products', {color: 'red'});
         }}
       >
         Red
@@ -27,7 +27,7 @@ const NavBar = () => {
       <NavItem
         href="/products?color=yellow"
         onClick={() => {
-          analytics.onEvent('Click products', {color: 'yellow'});
+          analytics.trackEvent('Click products', {color: 'yellow'});
         }}
       >
         Yellow
@@ -35,7 +35,7 @@ const NavBar = () => {
       <NavItem
         href="/login"
         onClick={() => {
-          analytics.onClick('Click login', {color: 'yellow'});
+          analytics.trackClick('Click login', {color: 'yellow'});
         }}
       >
         Login
@@ -43,7 +43,7 @@ const NavBar = () => {
       <NavItem
         href="/set-currency"
         onClick={() => {
-          analytics.onSet({currency: 'KRW'});
+          analytics.set({currency: 'KRW'});
         }}
       >
         Currency

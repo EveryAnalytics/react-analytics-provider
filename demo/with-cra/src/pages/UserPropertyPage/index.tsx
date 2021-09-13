@@ -4,13 +4,13 @@ import {useAnalytics} from '@every-analytics/react-analytics-provider';
 const SetUserPropertyPage = () => {
   const analytics = useAnalytics();
   useEffect(() => {
-    analytics.onPageView();
+    analytics.trackPageView();
   }, [analytics]);
 
   const [favoriteFood, setFavoriteFood] = useState('한식');
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    analytics.onSetUserProperty({favoriteFood});
+    analytics.setUserProperty({favoriteFood});
   };
 
   return (

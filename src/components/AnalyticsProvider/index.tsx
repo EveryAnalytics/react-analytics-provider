@@ -32,12 +32,12 @@ export function AnalyticsProvider({
     () => (
       <AnalyticsProviderContext.Provider
         value={{
-          onPageView,
-          onEvent,
-          onClick,
-          onSet,
-          onSetUserId,
-          onSetUserProperty,
+          trackPageView: onPageView,
+          trackEvent: onEvent,
+          trackClick: onClick,
+          set: onSet,
+          setUserId: onSetUserId,
+          setUserProperty: onSetUserProperty,
         }}
       >
         {children}

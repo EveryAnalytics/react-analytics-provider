@@ -11,7 +11,7 @@ export const AnalyticsPageView = ({children, params}: AnalyticsPageViewProps) =>
   const analytics = useAnalytics();
 
   React.useEffect(() => {
-    analytics.onPageView(params);
+    analytics.trackPageView(params);
   }, [analytics, params]);
 
   return <>{children}</>;
