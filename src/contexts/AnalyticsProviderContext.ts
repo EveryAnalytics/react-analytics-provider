@@ -1,7 +1,7 @@
 import {createContext} from 'react';
 import {UnknownRecord} from '../types/common';
 
-export interface AnalyticsProviderContext {
+export interface Analytics {
   onPageView(params?: UnknownRecord): void;
   onEvent(name: string, params?: UnknownRecord): void;
   onClick(name: string, params?: UnknownRecord): void;
@@ -10,7 +10,7 @@ export interface AnalyticsProviderContext {
   onSetUserProperty(params: UnknownRecord): void;
 }
 
-export const initialState: AnalyticsProviderContext = {
+export const initialState: Analytics = {
   onPageView: () => null,
   onEvent: () => null,
   onClick: () => null,
@@ -19,6 +19,6 @@ export const initialState: AnalyticsProviderContext = {
   onSetUserProperty: () => null,
 };
 
-const AnalyticsProviderContext = createContext<AnalyticsProviderContext>(initialState);
+const AnalyticsProviderContext = createContext<Analytics>(initialState);
 
 export default AnalyticsProviderContext;
