@@ -8,6 +8,7 @@ export interface AnalyticsProviderContext {
   onSet(...args: [string, UnknownRecord] | [UnknownRecord]): void;
   onSetUserId(userId: string | null): void;
   onSetUserProperty(params: UnknownRecord): void;
+  onException(params?: UnknownRecord): void;
 }
 
 export const initialState: AnalyticsProviderContext = {
@@ -17,6 +18,7 @@ export const initialState: AnalyticsProviderContext = {
   onSet: () => null,
   onSetUserId: () => null,
   onSetUserProperty: () => null,
+  onException: () => null,
 };
 
 const AnalyticsProviderContext = createContext<AnalyticsProviderContext>(initialState);

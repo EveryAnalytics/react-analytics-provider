@@ -21,6 +21,9 @@ const set = (...args: [string, UnknownRecord] | [UnknownRecord]) => {
 const setUserProperty = (params: UnknownRecord) => {
   set('user_properties', params);
 };
+const exception = (params?: UnknownRecord) => {
+  console.info('🥝Fruit Logger - Exception', params);
+};
 
 export const fruitLogger = {
   pageView,
@@ -28,4 +31,5 @@ export const fruitLogger = {
   click,
   set,
   setUserProperty,
+  exception,
 };
