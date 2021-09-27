@@ -19,7 +19,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint './**/*.+(js|ts)?(x)'",
+    "lint:fix": "eslint './**/*.+(js|ts)?(x)' --fix",
+    "type-check": "tsc --noEmit"
   },
   "browserslist": {
     "production": [
@@ -48,13 +51,27 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "react-app",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "prettier",
+      "@typescript-eslint"
     ],
     "rules": {
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
-      "jsx-a11y/no-onchange": "off"
+      "jsx-a11y/no-onchange": "off",
+      "prettier/prettier": "error"
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
     }
   }
 }

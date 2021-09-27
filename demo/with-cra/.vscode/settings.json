@@ -5,5 +5,5 @@
     "source.fixAll": true
   },
   "eslint.nodePath": "node_modules",
-  "prettier.prettierPath": "node_modules/prettier/index.js",
+  "prettier.prettierPath": "node_modules/prettier/index.js"
 }
