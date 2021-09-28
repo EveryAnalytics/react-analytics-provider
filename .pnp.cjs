@@ -13611,6 +13611,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-jasmine2", "npm:22.4.4"],
             ["jest-regex-util", "npm:22.4.3"],
             ["jest-resolve", "npm:22.4.3"],
+            ["jest-runtime", "npm:27.1.0"],
             ["jest-util", "npm:22.4.3"],
             ["jest-validate", "npm:22.4.4"],
             ["pretty-format", "npm:22.4.3"]
@@ -13631,6 +13632,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-jasmine2", "npm:23.6.0"],
             ["jest-regex-util", "npm:23.3.0"],
             ["jest-resolve", "npm:23.6.0"],
+            ["jest-runtime", "npm:27.1.0"],
             ["jest-util", "npm:23.4.0"],
             ["jest-validate", "npm:23.6.0"],
             ["micromatch", "npm:2.3.11"],
@@ -13667,6 +13669,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-regex-util", "npm:27.0.6"],
             ["jest-resolve", "npm:27.1.0"],
             ["jest-runner", "npm:27.1.0"],
+            ["jest-runtime", "npm:27.1.0"],
             ["jest-util", "npm:27.1.0"],
             ["jest-validate", "npm:27.1.0"],
             ["micromatch", "npm:4.0.4"],

@@ -1,6 +1,6 @@
 {
   "name": "@every-analytics/react-analytics-provider",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -19,7 +19,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-strip": "^2.1.0",
     "@types/amplitude-js": "^8.0.1",
