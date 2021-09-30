@@ -4,6 +4,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "eslint.nodePath": "node_modules",
-  "prettier.prettierPath": "node_modules/prettier/index.js"
+  "eslint.nodePath": "../../../.yarn/sdks",
+  "prettier.prettierPath": "../../../.yarn/sdks/prettier/index.js"
 }

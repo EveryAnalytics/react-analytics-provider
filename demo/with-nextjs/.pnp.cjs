@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:0.2.0"],
+            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A."],
             ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/node", "npm:16.10.2"],
             ["@types/react", "npm:17.0.25"],
@@ -46,7 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:11.1.0"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:17.0.2"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
+            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"]
           ],
           "linkType": "SOFT",
         }]
@@ -194,17 +194,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@every-analytics/react-analytics-provider", [
-        ["npm:0.2.0", {
-          "packageLocation": "./.yarn/cache/@every-analytics-react-analytics-provider-npm-0.2.0-414c19313e-1c5e987fbd.zip/node_modules/@every-analytics/react-analytics-provider/",
+        ["portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A.", {
+          "packageLocation": "../../",
           "packageDependencies": [
-            ["@every-analytics/react-analytics-provider", "npm:0.2.0"]
+            ["@every-analytics/react-analytics-provider", "portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A."]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:0.2.0", {
-          "packageLocation": "./.yarn/__virtual__/@every-analytics-react-analytics-provider-virtual-9edbae7bbc/0/cache/@every-analytics-react-analytics-provider-npm-0.2.0-414c19313e-1c5e987fbd.zip/node_modules/@every-analytics/react-analytics-provider/",
+        ["virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A.", {
+          "packageLocation": "./.yarn/__virtual__/@every-analytics-react-analytics-provider-virtual-77fce0ae10/3/",
           "packageDependencies": [
-            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:0.2.0"],
+            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A."],
             ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/react", "npm:17.0.25"],
             ["@types/react-dom", "npm:17.0.9"],
@@ -220,7 +220,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "react-dom",
             "react"
           ],
-          "linkType": "HARD",
+          "linkType": "SOFT",
         }]
       ]],
       ["@gar/promisify", [
@@ -547,7 +547,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/typescript-estree", "virtual:20d5345b0b01798b1a8c8b95faf4cfbbe7f30790c97bdad63870401d0547fa3848265ea03b48aa7e4e064095d1b88c73c4452e5fd383419aadc67ccb75c4d3c9#npm:4.29.2"],
             ["debug", "virtual:ee1bbcab87c0701d4ea83dd18afa59b10c6343191c17b3a8e7844ecdde3ca8e8977791131460b822baae289e9261b3b228709bc45987d850e69091b4d363edfa#npm:4.3.2"],
             ["eslint", "npm:7.32.0"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
+            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"]
           ],
           "packagePeers": [
             "@types/eslint",
@@ -596,7 +596,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["is-glob", "npm:4.0.1"],
             ["semver", "npm:7.3.5"],
             ["tsutils", "virtual:e4f618133e23a9ee96d5599494f8fee074773d1df4d5921070dade27e3e0b4dc16e7b02bfb76d43d64136f61df9178576b63c835a2cec32718f27a5b2d94bfbe#npm:3.21.0"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
+            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"]
           ],
           "packagePeers": [
             "typescript"
@@ -2042,7 +2042,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:0942efeb6e9c393d0678978d8d19aaaea9d85d4f1b98f906d081bc399c685e425f36939a34388c8b3c6712890c591fcbee2944f883a9f52c1f96234910325a7e#npm:7.24.0"],
             ["eslint-plugin-react-hooks", "virtual:0942efeb6e9c393d0678978d8d19aaaea9d85d4f1b98f906d081bc399c685e425f36939a34388c8b3c6712890c591fcbee2944f883a9f52c1f96234910325a7e#npm:4.2.0"],
             ["next", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:11.1.0"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
+            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"]
           ],
           "packagePeers": [
             "@types/eslint",
@@ -5530,7 +5530,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tsutils", "virtual:e4f618133e23a9ee96d5599494f8fee074773d1df4d5921070dade27e3e0b4dc16e7b02bfb76d43d64136f61df9178576b63c835a2cec32718f27a5b2d94bfbe#npm:3.21.0"],
             ["@types/typescript", null],
             ["tslib", "npm:1.14.1"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
+            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"]
           ],
           "packagePeers": [
             "@types/typescript",
@@ -5582,10 +5582,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typescript", [
-        ["patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7", {
-          "packageLocation": "./.yarn/cache/typescript-patch-bb3b548ba1-bc2c4fdf0f.zip/node_modules/typescript/",
+        ["patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b", {
+          "packageLocation": "./.yarn/cache/typescript-patch-6e3648db44-4e2edec3c9.zip/node_modules/typescript/",
           "packageDependencies": [
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
+            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"]
           ],
           "linkType": "HARD",
         }]
@@ -5831,7 +5831,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["with-nextjs", "workspace:."],
-            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:0.2.0"],
+            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A."],
             ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/node", "npm:16.10.2"],
             ["@types/react", "npm:17.0.25"],
@@ -5842,7 +5842,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:11.1.0"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#npm:17.0.2"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
+            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"]
           ],
           "linkType": "SOFT",
         }]
@@ -11905,7 +11905,7 @@ class VirtualFS extends ProxiedFS {
     if (this.pathUtils.isAbsolute(p)) return VirtualFS.resolveVirtual(p);
     const resolvedRoot = VirtualFS.resolveVirtual(this.baseFs.resolve(PortablePath.dot));
     const resolvedP = VirtualFS.resolveVirtual(this.baseFs.resolve(p));
-    return ppath.relative(resolvedRoot, resolvedP);
+    return ppath.relative(resolvedRoot, resolvedP) || PortablePath.dot;
   }
 
   mapFromBase(p) {

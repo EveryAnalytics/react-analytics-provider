@@ -1,7 +1,6 @@
-// import { logEvent } from "@every-analytics/react-analytics-provider";
 import React from 'react';
-import navigate from 'router/navigate';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import navigate from '../router/navigate';
 
 const NavBar = () => {
   const analytics = useAnalyticsContext();
