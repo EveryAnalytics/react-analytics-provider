@@ -23,7 +23,7 @@ export type Product = {
 };
 
 export type Action = {
-  items?: Array<Product>;
+  items: Array<Product>;
 };
 
 export type Transaction = {
