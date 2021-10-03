@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A."],
+            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:../..::locator=with-nextjs%40workspace%3A."],
             ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/node", "npm:16.10.2"],
             ["@types/react", "npm:17.0.25"],
@@ -194,17 +194,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@every-analytics/react-analytics-provider", [
-        ["portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A.", {
+        ["portal:../..::locator=with-nextjs%40workspace%3A.", {
           "packageLocation": "../../",
           "packageDependencies": [
-            ["@every-analytics/react-analytics-provider", "portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A."]
+            ["@every-analytics/react-analytics-provider", "portal:../..::locator=with-nextjs%40workspace%3A."]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A.", {
-          "packageLocation": "./.yarn/__virtual__/@every-analytics-react-analytics-provider-virtual-77fce0ae10/3/",
+        ["virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:../..::locator=with-nextjs%40workspace%3A.", {
+          "packageLocation": "./.yarn/__virtual__/@every-analytics-react-analytics-provider-virtual-4f63ddda8f/3/",
           "packageDependencies": [
-            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A."],
+            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:../..::locator=with-nextjs%40workspace%3A."],
             ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/react", "npm:17.0.25"],
             ["@types/react-dom", "npm:17.0.9"],
@@ -5831,7 +5831,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["with-nextjs", "workspace:."],
-            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:/Users/leejunhee/Desktop/workspace/everyAnalytics/react-analytics-provider::locator=with-nextjs%40workspace%3A."],
+            ["@every-analytics/react-analytics-provider", "virtual:e1278e3325cdcd9bead80a5643962beb7ef78becefffcac16c187d53d25d3727deb0abfc5b13f1c3c586be9a010eb7e6ef55e49cb5e5533ff5782e7abedef408#portal:../..::locator=with-nextjs%40workspace%3A."],
             ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/node", "npm:16.10.2"],
             ["@types/react", "npm:17.0.25"],

@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["@every-analytics/react-analytics-provider", ["virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#workspace:.", "virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#workspace:.", "workspace:."]],
+      ["@every-analytics/react-analytics-provider", ["workspace:."]],
       ["demo", ["workspace:demo/with-cra"]],
       ["with-nextjs", ["workspace:demo/with-nextjs"]]
     ],
@@ -7088,47 +7088,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@every-analytics/react-analytics-provider", [
-        ["virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#workspace:.", {
-          "packageLocation": "./.yarn/__virtual__/@every-analytics-react-analytics-provider-virtual-cacb3d4cb7/1/",
+        ["portal:../..::locator=demo%40workspace%3Ademo%2Fwith-cra", {
+          "packageLocation": "./",
           "packageDependencies": [
-            ["@every-analytics/react-analytics-provider", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#workspace:."],
-            ["@rollup/plugin-strip", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.1.0"],
+            ["@every-analytics/react-analytics-provider", "portal:../..::locator=demo%40workspace%3Ademo%2Fwith-cra"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["portal:../..::locator=with-nextjs%40workspace%3Ademo%2Fwith-nextjs", {
+          "packageLocation": "./",
+          "packageDependencies": [
+            ["@every-analytics/react-analytics-provider", "portal:../..::locator=with-nextjs%40workspace%3Ademo%2Fwith-nextjs"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#portal:../..::locator=demo%40workspace%3Ademo%2Fwith-cra", {
+          "packageLocation": "./.yarn/__virtual__/@every-analytics-react-analytics-provider-virtual-f7a7cff17f/1/",
+          "packageDependencies": [
+            ["@every-analytics/react-analytics-provider", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#portal:../..::locator=demo%40workspace%3Ademo%2Fwith-cra"],
             ["@types/amplitude-js", "npm:8.0.1"],
-            ["@types/faker", "npm:5.5.8"],
-            ["@types/jest", "npm:27.0.1"],
             ["@types/react", "npm:16.14.14"],
             ["@types/react-dom", "npm:16.9.14"],
-            ["@types/react-test-renderer", "npm:16.9.5"],
-            ["@typescript-eslint/eslint-plugin", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.29.3"],
-            ["@typescript-eslint/parser", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.29.3"],
-            ["@yarnpkg/pnpify", "npm:3.0.1"],
             ["amplitude-js", "npm:8.5.0"],
-            ["eslint", "npm:7.32.0"],
-            ["eslint-config-prettier", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:8.3.0"],
-            ["eslint-import-resolver-typescript", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.4.0"],
-            ["eslint-plugin-import", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.24.2"],
-            ["eslint-plugin-jest", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:24.4.0"],
-            ["eslint-plugin-jsx-a11y", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:6.4.1"],
-            ["eslint-plugin-prettier", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:3.4.1"],
-            ["eslint-plugin-react", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:7.24.0"],
-            ["eslint-plugin-react-hooks", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.2.0"],
-            ["eslint-plugin-testing-library", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.12.0"],
-            ["faker", "npm:5.5.3"],
-            ["jest", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:27.1.0"],
-            ["prettier", "npm:2.3.2"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:17.0.2"],
-            ["react-scripts-ts", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.0.8"],
-            ["react-test-renderer", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:16.14.0"],
-            ["rollup", "npm:1.32.1"],
-            ["rollup-plugin-commonjs", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:10.1.0"],
-            ["rollup-plugin-node-resolve", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:5.2.0"],
-            ["rollup-plugin-peer-deps-external", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.2.4"],
-            ["rollup-plugin-serve", "npm:1.1.0"],
-            ["rollup-plugin-typescript2", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:0.30.0"],
-            ["ts-jest", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:27.0.5"],
-            ["tslib", "npm:2.3.1"],
-            ["typescript", "patch:typescript@npm%3A3.9.10#~builtin<compat/typescript>::version=3.9.10&hash=32657b"]
+            ["react-dom", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:17.0.2"]
           ],
           "packagePeers": [
             "@types/amplitude-js",
@@ -7140,47 +7123,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#workspace:.", {
-          "packageLocation": "./.yarn/__virtual__/@every-analytics-react-analytics-provider-virtual-ad7d942903/1/",
+        ["virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#portal:../..::locator=with-nextjs%40workspace%3Ademo%2Fwith-nextjs", {
+          "packageLocation": "./.yarn/__virtual__/@every-analytics-react-analytics-provider-virtual-b565c10d43/1/",
           "packageDependencies": [
-            ["@every-analytics/react-analytics-provider", "virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#workspace:."],
-            ["@rollup/plugin-strip", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.1.0"],
+            ["@every-analytics/react-analytics-provider", "virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#portal:../..::locator=with-nextjs%40workspace%3Ademo%2Fwith-nextjs"],
             ["@types/amplitude-js", "npm:8.0.1"],
-            ["@types/faker", "npm:5.5.8"],
-            ["@types/jest", "npm:27.0.1"],
             ["@types/react", "npm:17.0.25"],
             ["@types/react-dom", "npm:17.0.9"],
-            ["@types/react-test-renderer", "npm:16.9.5"],
-            ["@typescript-eslint/eslint-plugin", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.29.3"],
-            ["@typescript-eslint/parser", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.29.3"],
-            ["@yarnpkg/pnpify", "npm:3.0.1"],
             ["amplitude-js", "npm:8.8.0"],
-            ["eslint", "npm:7.32.0"],
-            ["eslint-config-prettier", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:8.3.0"],
-            ["eslint-import-resolver-typescript", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.4.0"],
-            ["eslint-plugin-import", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.24.2"],
-            ["eslint-plugin-jest", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:24.4.0"],
-            ["eslint-plugin-jsx-a11y", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:6.4.1"],
-            ["eslint-plugin-prettier", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:3.4.1"],
-            ["eslint-plugin-react", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:7.24.0"],
-            ["eslint-plugin-react-hooks", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.2.0"],
-            ["eslint-plugin-testing-library", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.12.0"],
-            ["faker", "npm:5.5.3"],
-            ["jest", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:27.1.0"],
-            ["prettier", "npm:2.3.2"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#npm:17.0.2"],
-            ["react-scripts-ts", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.0.8"],
-            ["react-test-renderer", "virtual:ad7d942903de3409b8774047ef92fd2bbad0cddb7e53c54e0fbe05900f97990089482682d1ac588862f1938c7bf60922c38028d41dfa6ac9524f9082ffb26535#npm:16.14.0"],
-            ["rollup", "npm:1.32.1"],
-            ["rollup-plugin-commonjs", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:10.1.0"],
-            ["rollup-plugin-node-resolve", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:5.2.0"],
-            ["rollup-plugin-peer-deps-external", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:2.2.4"],
-            ["rollup-plugin-serve", "npm:1.1.0"],
-            ["rollup-plugin-typescript2", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:0.30.0"],
-            ["ts-jest", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:27.0.5"],
-            ["tslib", "npm:2.3.1"],
-            ["typescript", "patch:typescript@npm%3A3.9.10#~builtin<compat/typescript>::version=3.9.10&hash=32657b"]
+            ["react-dom", "virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#npm:17.0.2"]
           ],
           "packagePeers": [
             "@types/amplitude-js",
@@ -14469,7 +14421,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./demo/with-cra/",
           "packageDependencies": [
             ["demo", "workspace:demo/with-cra"],
-            ["@every-analytics/react-analytics-provider", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#workspace:."],
+            ["@every-analytics/react-analytics-provider", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#portal:../..::locator=demo%40workspace%3Ademo%2Fwith-cra"],
             ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/node", "npm:12.20.27"],
             ["@types/react", "npm:16.14.14"],
@@ -27013,23 +26965,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "react"
           ],
           "linkType": "HARD",
-        }],
-        ["virtual:ad7d942903de3409b8774047ef92fd2bbad0cddb7e53c54e0fbe05900f97990089482682d1ac588862f1938c7bf60922c38028d41dfa6ac9524f9082ffb26535#npm:16.14.0", {
-          "packageLocation": "./.yarn/__virtual__/react-test-renderer-virtual-94b2e16420/0/cache/react-test-renderer-npm-16.14.0-25f352205f-96eb8a2566.zip/node_modules/react-test-renderer/",
-          "packageDependencies": [
-            ["react-test-renderer", "virtual:ad7d942903de3409b8774047ef92fd2bbad0cddb7e53c54e0fbe05900f97990089482682d1ac588862f1938c7bf60922c38028d41dfa6ac9524f9082ffb26535#npm:16.14.0"],
-            ["@types/react", "npm:17.0.25"],
-            ["object-assign", "npm:4.1.1"],
-            ["prop-types", "npm:15.7.2"],
-            ["react", "npm:17.0.2"],
-            ["react-is", "npm:16.13.1"],
-            ["scheduler", "npm:0.19.1"]
-          ],
-          "packagePeers": [
-            "@types/react",
-            "react"
-          ],
-          "linkType": "HARD",
         }]
       ]],
       ["read-pkg", [
@@ -31884,7 +31819,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./demo/with-nextjs/",
           "packageDependencies": [
             ["with-nextjs", "workspace:demo/with-nextjs"],
-            ["@every-analytics/react-analytics-provider", "virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#workspace:."],
+            ["@every-analytics/react-analytics-provider", "virtual:c57dfd898baec45a3c0bdf81225a18b5f5a5b45daa62efaaa62e05fb423c6e852c00083257aec584d3381e9da0a4961a10cd40d5bbfe2962df6b06c7ac742ea1#portal:../..::locator=with-nextjs%40workspace%3Ademo%2Fwith-nextjs"],
             ["@types/amplitude-js", "npm:8.0.1"],
             ["@types/node", "npm:16.10.2"],
             ["@types/react", "npm:17.0.25"],
