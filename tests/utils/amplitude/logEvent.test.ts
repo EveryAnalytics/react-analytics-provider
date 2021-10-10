@@ -18,7 +18,7 @@ describe('amplitudeHelper.logEvent', () => {
       getInstanceSpy,
     };
   };
-  test('should call amplitude logEvent with proper param', () => {
+  test('should call amplitude logEvent with proper param', async () => {
     const {amplitudeLogEventMock, getInstanceSpy} = setUp();
     const MOCK_TEST_ID = faker.lorem.word();
     const MOCK_EVENT_PROPERTY = {
@@ -27,7 +27,7 @@ describe('amplitudeHelper.logEvent', () => {
     };
     const mockCallback = jest.fn();
 
-    amplitudeHelper.logEvent(MOCK_TEST_ID, MOCK_EVENT_PROPERTY, mockCallback);
+    await amplitudeHelper.logEvent(MOCK_TEST_ID, MOCK_EVENT_PROPERTY, mockCallback);
 
     expect(getInstanceSpy).toHaveBeenCalled();
     expect(amplitudeLogEventMock).toHaveBeenCalledWith(MOCK_TEST_ID, MOCK_EVENT_PROPERTY, mockCallback);

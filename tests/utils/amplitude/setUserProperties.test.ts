@@ -21,7 +21,7 @@ describe('amplitudeHelper.setUserProperties', () => {
     };
   };
 
-  test('should call amplitude setUserProperties with proper userProperties', () => {
+  test('should call amplitude setUserProperties with proper userProperties', async () => {
     const {amplitudeSetUserPropertiesMock, getInstanceSpy} = setUp();
 
     const MOCK_USER_PROPERTY = {
@@ -31,16 +31,16 @@ describe('amplitudeHelper.setUserProperties', () => {
       [faker.lorem.word()]: faker.datatype.boolean(),
     };
 
-    amplitudeHelper.setUserProperties(MOCK_USER_PROPERTY);
+    await amplitudeHelper.setUserProperties(MOCK_USER_PROPERTY);
 
     expect(getInstanceSpy).toHaveBeenCalled();
     expect(amplitudeSetUserPropertiesMock).toHaveBeenCalledWith(MOCK_USER_PROPERTY);
   });
 
-  test('should call amplitude setUserProperties with empty userProperties', () => {
+  test('should call amplitude setUserProperties with empty userProperties', async () => {
     const {amplitudeSetUserPropertiesMock, getInstanceSpy, consoleWarnMock} = setUp();
 
-    amplitudeHelper.setUserProperties({});
+    await amplitudeHelper.setUserProperties({});
 
     expect(consoleWarnMock).toHaveBeenCalled();
     expect(getInstanceSpy).toHaveBeenCalledTimes(0);

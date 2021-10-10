@@ -22,11 +22,11 @@ describe('amplitudeHelper.setUserId', () => {
     };
   };
 
-  test(`should call amplitude setUserId with null userId`, () => {
+  test(`should call amplitude setUserId with null userId`, async () => {
     const {consoleWarnSpy, getInstanceSpy, amplitudeSetUserIdMock} = setUp();
     const userId = null;
 
-    setUserIdUtils.setUserId(userId);
+    await setUserIdUtils.setUserId(userId);
 
     expect(consoleWarnSpy).toBeCalledTimes(0);
     expect(getInstanceSpy).toBeCalledTimes(1);
@@ -34,10 +34,10 @@ describe('amplitudeHelper.setUserId', () => {
     expect(amplitudeSetUserIdMock).toHaveBeenCalledWith(userId);
   });
 
-  test(`should call amplitude setUserId with string userId`, () => {
+  test(`should call amplitude setUserId with string userId`, async () => {
     const {userId, consoleWarnSpy, getInstanceSpy, amplitudeSetUserIdMock} = setUp();
 
-    setUserIdUtils.setUserId(userId);
+    await setUserIdUtils.setUserId(userId);
 
     expect(consoleWarnSpy).toBeCalledTimes(0);
     expect(getInstanceSpy).toBeCalledTimes(1);

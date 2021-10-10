@@ -1,11 +1,12 @@
-import amplitude, {Revenue} from 'amplitude-js';
+import amplitude from 'amplitude-js';
 import * as faker from 'faker';
 
 import {logRevenueV2} from '../../../src/utils/amplitude/logRevenueV2';
 
 describe('amplitudeHelper.logRevenueV2', () => {
   const setUp = () => {
-    const mockRevenue = new Revenue()
+    // eslint-disable-next-line import/no-named-as-default-member
+    const mockRevenue = new amplitude.Revenue()
       .setPrice(faker.datatype.number())
       .setProductId(faker.datatype.uuid())
       .setQuantity(faker.datatype.number())
@@ -28,10 +29,10 @@ describe('amplitudeHelper.logRevenueV2', () => {
     };
   };
 
-  test('should call amplitude logRevenueV2 with proper param', () => {
+  test('should call amplitude logRevenueV2 with proper param', async () => {
     const {mockRevenue, getInstanceSpy, mockLogRevenueV2} = setUp();
 
-    logRevenueV2(mockRevenue);
+    await logRevenueV2(mockRevenue);
 
     expect(getInstanceSpy).toHaveBeenCalled();
     expect(mockLogRevenueV2).toHaveBeenCalledWith(mockRevenue);
