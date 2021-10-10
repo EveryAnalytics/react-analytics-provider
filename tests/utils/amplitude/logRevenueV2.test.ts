@@ -1,7 +1,7 @@
-import amplitude from 'amplitude-js';
+import amplitude, {Revenue} from 'amplitude-js';
 import * as faker from 'faker';
 
-import {Revenue, logRevenueV2} from '../../../src/utils/amplitude/logRevenueV2';
+import {logRevenueV2} from '../../../src/utils/amplitude/logRevenueV2';
 
 describe('amplitudeHelper.logRevenueV2', () => {
   const setUp = () => {
