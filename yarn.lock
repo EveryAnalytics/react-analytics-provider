@@ -2539,7 +2539,7 @@ __metadata:
     rollup-plugin-typescript2: ^0.30.0
     ts-jest: ^27.0.5
     tslib: ^2.3.1
-    typescript: ^3.9.10
+    typescript: ^4.1.2
   peerDependencies:
     amplitude-js: ^8.5.0
     react: ^17.0.2
@@ -22993,16 +22993,6 @@ typescript@4.3.5:
   languageName: node
   linkType: hard
 
-typescript@^3.9.10:
-  version: 3.9.10
-  resolution: "typescript@npm:3.9.10"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 46c842e2cd4797b88b66ef06c9c41dd21da48b95787072ccf39d5f2aa3124361bc4c966aa1c7f709fae0509614d76751455b5231b12dbb72eb97a31369e1ff92
-  languageName: node
-  linkType: hard
-
 typescript@^4.1.2:
   version: 4.4.3
   resolution: "typescript@npm:4.4.3"
@@ -23020,16 +23010,6 @@ typescript@^4.1.2:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 4e2edec3c9b7b9a22ad9cbf9371339d9e13bfe44731f0e2d6a5287f991c3b0e3e0ac0c0ebbf9bf6fc2051e30559c789bfc9cf572cd6b836a0222ae141fac1dba
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^3.9.10#~builtin<compat/typescript>":
-  version: 3.9.10
-  resolution: "typescript@patch:typescript@npm%3A3.9.10#~builtin<compat/typescript>::version=3.9.10&hash=32657b"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 8dcd46a8a2cb81198497f00c7721a34c914bf6b3241bf9687b868bdec9e59f1f44da41e7917cfc1dcabee4595229c73bab047f2d85c1aedacc0d1b526cc81534
   languageName: node
   linkType: hard
 
