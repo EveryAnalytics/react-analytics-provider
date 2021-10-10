@@ -1,8 +1,7 @@
-import amplitude, {Revenue} from 'amplitude-js';
+import {Revenue} from 'amplitude-js';
+import {getInstanceSafely} from './getInstanceSafely';
 
-export {Revenue} from 'amplitude-js';
-
-export const logRevenueV2 = (revenue: Revenue) => {
-  // eslint-disable-next-line import/no-named-as-default-member
-  return amplitude.getInstance().logRevenueV2(revenue);
+export const logRevenueV2 = async (revenue: Revenue) => {
+  const instance = await getInstanceSafely();
+  return instance.logRevenueV2(revenue);
 };
