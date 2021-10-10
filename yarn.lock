@@ -8580,7 +8580,9 @@ __metadata:
     eslint-config-prettier: ^8.3.0
     eslint-config-react-app: ^6.0.0
     eslint-import-resolver-typescript: ^2.5.0
+    eslint-plugin-flowtype: ^6.1.0
     eslint-plugin-import: ^2.24.2
+    eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-react: ^7.26.0
     eslint-plugin-react-hooks: ^4.2.0
@@ -9505,6 +9507,18 @@ __metadata:
   peerDependencies:
     eslint: ^7.1.0
   checksum: 791cd53c886bf819d52d6353cdfb4d49276dcd8a14f564a85d275d5017d81c7b1cc1921013ac9749f69c3f1bc4d23f36182137aab42bc059c2ae3f9773dd7740
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-flowtype@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "eslint-plugin-flowtype@npm:6.1.0"
+  dependencies:
+    lodash: ^4.17.21
+    string-natural-compare: ^3.0.1
+  peerDependencies:
+    eslint: ^7.32.0
+  checksum: a3c865273150d6d37243ec4c70e350bf52027df3c11c22af387b78ad3a45ede32eeeaa2b07d5545a7fab6f1e75321282be0337f9561000f25dc089587508abe4
   languageName: node
   linkType: hard
 
