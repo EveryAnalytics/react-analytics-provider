@@ -1,0 +1,17 @@
+[
+    {
+        "id": "RED",
+        "name": "red",
+        "imageUrl": ""
+    },
+    {
+        "id": "YELLOW",
+        "name": "yellow",
+        "imageUrl": ""
+    },
+    {
+        "id": "GREEN",
+        "name": "green",
+        "imageUrl": ""
+    }
+]
