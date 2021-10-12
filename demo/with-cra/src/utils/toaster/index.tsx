@@ -47,6 +47,15 @@ export const set = (...args: [string, unknown] | [unknown]) => {
   );
 };
 
+export const exception = (params?: unknown) => {
+  showToast(
+    <>
+      <div>GA: Exception</div>
+      <div>params: {JSON.stringify(params)}</div>
+    </>,
+  );
+};
+
 export const setUserProperty = (params: unknown) => {
   set('user_properties', params);
 };
@@ -57,4 +66,5 @@ export const toaster = {
   pageView,
   set,
   setUserProperty,
+  exception,
 };
