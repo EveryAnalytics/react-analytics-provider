@@ -9,8 +9,13 @@ export class Analytics {
   static isInitialized = false;
   static client: IAnalyticsClient;
 
-  static preset(client: IAnalyticsClient) {
+  static clear() {
     this.isInitialized = false;
+    this.client = null;
+  }
+
+  static preset(client: IAnalyticsClient) {
+    this.clear();
     this.client = Object.freeze(client);
   }
 
