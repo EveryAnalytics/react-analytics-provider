@@ -1,38 +1,37 @@
 import logger from 'every-analytics/core';
-import logGA from 'every-analytics/helper/google-analytics';
-import logAmplitude from 'every-analytics/helper/amplitude';
 import fruitLogger from 'my-company/fruitLogger';
 
-/**
- * 1. beforeAll
- * 2. initialize
- */
-logger.initialize(() => {
-  logGA.initialize(gaid);
-  logAmplitude.initialize(amtid);
-  fruitLogger.init();
+//
+// every-analytics.config.js
+logger.initialize({
+  ga: 'gaId',
+  amplitude: 'amplitudeId',
 });
 
-/**
- * 1. track
- * 2. trackBehaviors
- * 3. setTrackers
- * 4. setActions
- * 5. setListeners
- * 6. setEvents
- */
-logger.setTrackers({
-  click: (name, params) => {
-    logGA.click(name, params);
-    logAmplitude.logEvent(name, params);
-  },
-  pageView: (name, params) => {
-    const path = window.location.pathname + window.location.search;
-    logAmplitude.logEvent(name, {action_type: 'pageView', path, ...params});
-  },
+// If you need some custom or other PA
+logger.initializeOther(() => {
+  fruitLogger.init('pineappleId');
 });
 
+//
+//
+// EA has default funtions
+// ex: pageView, click
 logger.pageView('회원가입');
 button.addEventListener('click', () => {
   logger.click('회원가입', {name: 'RAP'});
+});
+
+// You can make custom funtions
+logger.addFuntions({
+  outbound: (name, params) => {
+    logger.click(name, {
+      category: 'Outbound',
+      action: 'Click',
+      label: params?.label,
+    });
+  },
+});
+button.addEventListener('click', () => {
+  logger.outbound('나갈래', {label: '나는 광고임'});
 });
