@@ -29,12 +29,12 @@ export class Analytics {
     return this.client;
   }
 
-  static init() {
+  static async init() {
     const client = this.getClient();
     if (!client || this.isInitialized) {
       return;
     }
-    client.init();
+    await client.init();
     this.isInitialized = true;
   }
 
