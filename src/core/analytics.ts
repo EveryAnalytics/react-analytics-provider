@@ -17,6 +17,7 @@ export class Analytics {
   static preset(client: IAnalyticsClient) {
     this.clear();
     this.client = Object.freeze(client);
+    this.init();
   }
 
   static getClient(): IAnalyticsClient | void {
@@ -25,7 +26,6 @@ export class Analytics {
       return;
     }
 
-    this.init();
     return this.client;
   }
 
