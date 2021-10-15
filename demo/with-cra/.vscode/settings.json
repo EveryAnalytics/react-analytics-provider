@@ -4,6 +4,12 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "eslint.nodePath": "node_modules",
-  "prettier.prettierPath": "node_modules/prettier/index.js"
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": "../../.yarn/sdks",
+  "prettier.prettierPath": "../../.yarn/sdks/prettier/index.js",
+  "typescript.tsdk": "../../.yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

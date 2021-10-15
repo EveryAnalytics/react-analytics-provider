@@ -1,11 +1,13 @@
-import amplitude, {AmplitudeClient, Config} from 'amplitude-js';
+import {AmplitudeClient, Config} from 'amplitude-js';
+import {getInstanceSafely} from './getInstanceSafely';
 
-export const initialize = (
+export const initialize = async (
   apiKey: string,
   userId?: string,
   config?: Config,
   callback?: (client: AmplitudeClient) => void,
 ) => {
-  // eslint-disable-next-line import/no-named-as-default-member
-  amplitude.getInstance().init(apiKey, userId, config, callback);
+  const instance = await getInstanceSafely();
+  instance.init(apiKey, userId, config, callback);
+  console.info(`📊Initialized Amplitude (${apiKey}).`);
 };
