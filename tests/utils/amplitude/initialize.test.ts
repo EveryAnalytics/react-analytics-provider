@@ -18,7 +18,7 @@ describe('amplitudeHelper.initialize', () => {
       getInstanceSpy,
     };
   };
-  test('should call amplitude initialize with proper param', () => {
+  test('should call amplitude initialize with proper param', async () => {
     const {amplitudeInitializeMock, getInstanceSpy} = setUp();
     const MOCK_TEST_ID = faker.lorem.word();
     const MOCK_USER_ID = faker.lorem.word();
@@ -29,7 +29,7 @@ describe('amplitudeHelper.initialize', () => {
     };
     const mockCallback = jest.fn();
 
-    amplitudeHelper.initialize(MOCK_TEST_ID, MOCK_USER_ID, MOCK_OPTION, mockCallback);
+    await amplitudeHelper.initialize(MOCK_TEST_ID, MOCK_USER_ID, MOCK_OPTION, mockCallback);
 
     expect(getInstanceSpy).toHaveBeenCalled();
     expect(amplitudeInitializeMock).toHaveBeenCalledWith(MOCK_TEST_ID, MOCK_USER_ID, MOCK_OPTION, mockCallback);

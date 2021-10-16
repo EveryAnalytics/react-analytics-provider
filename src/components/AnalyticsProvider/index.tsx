@@ -11,6 +11,7 @@ interface Props {
   onSet?(...args: [string, UnknownRecord] | [UnknownRecord]): void;
   onSetUserId?(userId: string | null): void;
   onSetUserProperty?(params: UnknownRecord): void;
+  onException(params?: UnknownRecord): void;
   children: React.ReactNode;
 }
 
@@ -22,6 +23,7 @@ export function AnalyticsProvider({
   onSet = () => null,
   onSetUserId = () => null,
   onSetUserProperty = () => null,
+  onException = () => null,
   children,
 }: Props) {
   React.useEffect(() => {
@@ -38,11 +40,12 @@ export function AnalyticsProvider({
           onSet,
           onSetUserId,
           onSetUserProperty,
+          onException,
         }}
       >
         {children}
       </AnalyticsProviderContext.Provider>
     ),
-    [children, onClick, onEvent, onPageView, onSet, onSetUserId, onSetUserProperty],
+    [children, onClick, onEvent, onPageView, onSet, onSetUserId, onSetUserProperty, onException],
   );
 }

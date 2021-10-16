@@ -47,6 +47,11 @@ ReactDOM.render(
         fruitLogger.setUserProperty(params);
         toaster.setUserProperty(params);
       }}
+      onException={params => {
+        googleAnalyticsHelper.exception(params);
+        fruitLogger.exception(params);
+        toaster.exception(params);
+      }}
     >
       <App />
     </AnalyticsProvider>
