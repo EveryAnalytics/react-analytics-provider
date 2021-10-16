@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
     "@every-analytics/react-analytics-provider": "portal:../..",
     "@types/node": "^12.0.0",
     "@types/react": "^16.14.13",
