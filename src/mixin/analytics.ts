@@ -1,6 +1,6 @@
 import {IAnalyticsClient} from '../interfaces';
 import {googleAnalyticsHelper, amplitudeHelper} from '../utils';
-import {UnknownRecord} from '../types';
+import {UnknownRecord, SetUpParams} from '../types';
 
 export class Analytics {
   static googleAnalytics = googleAnalyticsHelper;
@@ -12,6 +12,37 @@ export class Analytics {
   static clear() {
     this.isInitialized = false;
     this.client = null;
+  }
+
+  static setUp(params: SetUpParams) {
+    const {googleAnalytics, amplitude} = params;
+
+    this.preset({
+      init: () => {
+        if (googleAnalytics) {
+          this.googleAnalytics.initialize(googleAnalytics.trakingId, googleAnalytics.persistentValues);
+        }
+        if (amplitude) {
+          this.amplitude.initialize(amplitude.apiKey, amplitude.userId, amplitude.config, amplitude.callback);
+        }
+      },
+      event: (name: string, data?: UnknownRecord) => {
+        if (googleAnalytics) {
+          this.googleAnalytics.event(name, data);
+        }
+        if (amplitude) {
+          this.amplitude.logEvent(name, data);
+        }
+      },
+      pageView: (pathname: string) => {
+        if (googleAnalytics) {
+          this.googleAnalytics.pageView(googleAnalytics.trakingId, pathname);
+        }
+        if (amplitude) {
+          this.amplitude.logEvent('pageView', {pathname});
+        }
+      },
+    });
   }
 
   static preset(client: IAnalyticsClient) {
