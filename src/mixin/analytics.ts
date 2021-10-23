@@ -54,6 +54,14 @@ export class Analytics {
     client.click?.(eventName, data);
   }
 
+  static pageView(pathname: string) {
+    const client = this.getClient();
+    if (!client) {
+      return;
+    }
+    client.pageView?.(pathname);
+  }
+
   static setUserId(id: string | number) {
     const client = this.getClient();
     if (!client) {
