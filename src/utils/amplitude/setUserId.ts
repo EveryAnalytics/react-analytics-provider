@@ -1,10 +1,10 @@
-import {getInstance} from 'amplitude-js';
+import {getInstanceSafely} from './getInstanceSafely';
 
-export const setUserId = (userId: string | null) => {
+export const setUserId = async (userId: string | null) => {
   if (typeof userId !== 'string' && userId !== null) {
     console.warn('userId must be string or null');
     return;
   }
-
-  getInstance().setUserId(userId);
+  const instance = await getInstanceSafely();
+  instance.setUserId(userId);
 };

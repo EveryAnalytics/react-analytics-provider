@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {getQueryParams} from 'utils/location';
+import {getQueryParams} from '../../utils/location';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 
 const ProductsPage = () => {

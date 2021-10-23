@@ -1,7 +1,7 @@
-import amplitude from 'amplitude-js';
 import {UnknownRecord} from '../../types/common';
+import {getInstanceSafely} from './getInstanceSafely';
 
-export const setUserProperties = (userProperties: UnknownRecord) => {
+export const setUserProperties = async (userProperties: UnknownRecord) => {
   // eslint-disable-next-line import/no-named-as-default-member
   const isEmptyUserProperties = Object.entries(userProperties).length == 0;
   if (isEmptyUserProperties) {
@@ -10,5 +10,6 @@ export const setUserProperties = (userProperties: UnknownRecord) => {
     );
     return;
   }
-  amplitude.getInstance().setUserProperties(userProperties);
+  const instance = await getInstanceSafely();
+  instance.setUserProperties(userProperties);
 };
