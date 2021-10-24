@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 const Card = ({
   title,
-  imageUrl,
+  imageUrl = NO_IMAGE_URL,
   onClick,
 }: {
   title: string;
@@ -53,3 +53,5 @@ const CardContainer = styled.section`
     box-shadow: 0px 0px 15px #ccc;
   }
 `;
+const NO_IMAGE_URL =
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png';
