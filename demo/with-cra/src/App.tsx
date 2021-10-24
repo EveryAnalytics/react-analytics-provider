@@ -3,7 +3,7 @@ import MainPage from './pages/MainPage';
 import ProductsPage from './pages/ProductsPage';
 import LoginPage from './pages/LoginPage';
 import CurrencyPage from './pages/CurrencyPage';
-import UserPropertyPage from './pages/UserPropertyPage';
+import UserPropertyPage from './pages/MyPage';
 import Route from './router/Route';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       <Route path="/set-currency">
         <CurrencyPage />
       </Route>
-      <Route path="/set-user-property">
+      <Route path="/mypage">
         <UserPropertyPage />
       </Route>
     </div>
