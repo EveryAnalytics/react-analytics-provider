@@ -13,7 +13,7 @@ const ProductsPage = () => {
 
   return (
     <>
-      <h1>{color} fruits</h1>
+      <h2>{color} fruits</h2>
       <ul>
         {products.map(product => (
           <li key={product}>{product}</li>

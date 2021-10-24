@@ -7,7 +7,7 @@ const MainPage = () => {
 
   return (
     <>
-      <h1>Fruit Store</h1>
+      <h2>Fruit Store</h2>
     </>
   );
 };

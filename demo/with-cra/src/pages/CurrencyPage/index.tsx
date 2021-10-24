@@ -7,7 +7,7 @@ const CurrencyPage = () => {
     analytics.onPageView();
   }, [analytics]);
 
-  return <h1>Set Currency KRW</h1>;
+  return <h2>Set Currency KRW</h2>;
 };
 
 export default CurrencyPage;
