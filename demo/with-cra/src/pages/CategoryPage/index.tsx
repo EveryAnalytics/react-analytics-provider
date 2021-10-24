@@ -42,4 +42,9 @@ export default CurrencyPage;
 const Cards = styled.div`
   display: flex;
   justify-content: space-around;
+  margin-top: 70px;
+  @media (max-width: 764px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;

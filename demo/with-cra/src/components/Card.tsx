@@ -30,7 +30,7 @@ const CardImage = styled.img`
   height: auto;
 `;
 const CardImageContainer = styled.div`
-  width: 250px;
+  width: 100%;
   height: 285px;
   border: solid 1px #000;
   border-radius: 10px;
@@ -47,6 +47,7 @@ const CardTitle = styled.h3`
 const CardContainer = styled.section`
   background: #fff;
   border-radius: 10px;
+  width: 250px;
   &:hover {
     cursor: pointer;
     background: #eee;
