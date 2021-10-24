@@ -5,10 +5,12 @@ import LoginPage from './pages/LoginPage';
 import CurrencyPage from './pages/CurrencyPage';
 import UserPropertyPage from './pages/UserPropertyPage';
 import Route from './router/Route';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <NavBar />
       <Route path="/">
         <MainPage />
