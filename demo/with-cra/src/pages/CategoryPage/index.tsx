@@ -15,22 +15,19 @@ const CurrencyPage = () => {
       <h1>Category</h1>
       <Cards>
         <Card
-          title="aaa"
-          imageUrl="https://www.wcrf-uk.org/sites/default/files/Apple_A-Z%20Fruit1.jpg"
+          title="RED"
           onClick={() => {
             navigate.push('products?color=red');
           }}
         ></Card>
         <Card
-          title="aaa"
-          imageUrl="https://www.wcrf-uk.org/sites/default/files/Apple_A-Z%20Fruit1.jpg"
+          title="YELLOW"
           onClick={() => {
             navigate.push('products?color=yellow');
           }}
         ></Card>
         <Card
-          title="aaa"
-          imageUrl="https://www.wcrf-uk.org/sites/default/files/Apple_A-Z%20Fruit1.jpg"
+          title="GREEN"
           onClick={() => {
             navigate.push('products?color=green');
           }}
