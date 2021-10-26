@@ -6,12 +6,19 @@ import {AnalyticsProvider, googleAnalyticsHelper, amplitudeHelper} from '@every-
 import {fruitLogger} from './utils/fruitLogger';
 import {Toaster} from 'react-hot-toast';
 import {toaster} from './utils/toaster';
+import {Global, css} from '@emotion/react';
+import globalStyle from './utils/globalStyle';
 
 amplitudeHelper.initialize(process.env.REACT_APP_AMPLITUDE_API_KEY);
 const persistentValues = {userNo: 123};
 
 ReactDOM.render(
   <React.StrictMode>
+    <Global
+      styles={css`
+        ${globalStyle}
+      `}
+    />
     <AnalyticsProvider
       onInitialize={() => {
         googleAnalyticsHelper.initialize(process.env.REACT_APP_GA_TRACKING_ID, persistentValues);
