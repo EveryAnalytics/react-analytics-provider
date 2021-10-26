@@ -1,12 +1,33 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import navigate from '../router/navigate';
+import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 
 export default function Header() {
+  const analytics = useAnalyticsContext();
+
+  const handleLogoClick = () => {
+    navigate.push('/');
+    analytics.onEvent('Click logo');
+  };
+
+  const handleCartClick = () => {
+    navigate.push('/cart');
+    analytics.onEvent('Click cart');
+  };
+
+  const handleLoginClick = () => {
+    navigate.push('/login');
+    analytics.onEvent('Click login');
+  };
+
   return (
     <PageHeader>
-      <Title>Fruit Store</Title>
-      <HeaderMenu>Cart</HeaderMenu>
-      <HeaderMenu>Login</HeaderMenu>
+      <Title>
+        <Link onClick={handleLogoClick}>Fruit Store</Link>
+      </Title>
+      <HeaderMenu onClick={handleCartClick}>Cart</HeaderMenu>
+      <HeaderMenu onClick={handleLoginClick}>Login</HeaderMenu>
     </PageHeader>
   );
 }
@@ -28,6 +49,8 @@ const Title = styled.h1`
   font-size: 3.2rem;
   font-weight: bold;
 `;
+
+const Link = styled.a``;
 
 const HeaderMenu = styled.button`
   background-color: transparent;
