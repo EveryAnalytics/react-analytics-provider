@@ -4,7 +4,7 @@ import navigate from '../router/navigate';
 import styled from '@emotion/styled';
 import {css} from '@emotion/react';
 
-export default function Navbar({children}: {children: React.ReactNode}) {
+export default function LayoutWithNav({children}: {children: React.ReactNode}) {
   const analytics = useAnalyticsContext();
 
   return (
