@@ -16,7 +16,7 @@ const PageHeader = styled.header`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 4rem;
+  height: 6rem;
   background-color: #ffffff;
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
 `;
@@ -25,6 +25,8 @@ const Title = styled.h1`
   margin: 0;
   margin-left: 24px;
   flex: 1;
+  font-size: 3.2rem;
+  font-weight: bold;
 `;
 
 const HeaderMenu = styled.button`
@@ -32,10 +34,9 @@ const HeaderMenu = styled.button`
   border: none;
   margin-left: 16px;
   padding: 8px;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  &:hover,
-  &:focus {
+  &:hover {
     color: #0095f6;
   }
   &:last-child {
