@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import {AnalyticsProvider, googleAnalyticsHelper, amplitudeHelper} from '@every-analytics/react-analytics-provider';
 import {fruitLogger} from './utils/fruitLogger';
