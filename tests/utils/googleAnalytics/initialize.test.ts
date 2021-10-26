@@ -17,6 +17,7 @@ describe('googleAnalyticsHelper.initialize', () => {
     const createElementSpy = jest.spyOn(document, 'createElement');
     const insertBeforeSpy = jest.spyOn(document, 'createElement');
     const consoleInfoSpy = jest.spyOn(console, 'info');
+    const consoleWarnSpy = jest.spyOn(console, 'warn');
 
     return {
       trackingId,
@@ -26,6 +27,7 @@ describe('googleAnalyticsHelper.initialize', () => {
       createElementSpy,
       insertBeforeSpy,
       consoleInfoSpy,
+      consoleWarnSpy,
     };
   };
 
@@ -51,12 +53,26 @@ describe('googleAnalyticsHelper.initialize', () => {
 
     expect(gtagSpy).toHaveBeenNthCalledWith(1, 'js', mockDate);
     expect(gtagSpy).toHaveBeenNthCalledWith(2, 'config', trackingId, undefined);
-    expect(consoleInfoSpy).toHaveBeenCalledTimes(1);
-
     const scriptElement = document.getElementById(SCRIPT_ID) as HTMLScriptElement;
+    scriptElement.addEventListener = jest.fn().mockImplementationOnce((_, callback) => callback());
+    scriptElement.dispatchEvent(new Event('load'));
+
+    expect(consoleInfoSpy).toHaveBeenCalledTimes(1);
     expect(scriptElement.id).toEqual(SCRIPT_ID);
     expect(scriptElement.type).toEqual('text/javascript');
     expect(scriptElement.async).toEqual(true);
     expect(scriptElement.src).toContain(trackingId);
+  });
+
+  test('should warn if failed to create correct script element', () => {
+    const {trackingId, consoleWarnSpy} = setUp();
+
+    initUtils.initialize(trackingId);
+
+    const scriptElement = document.getElementById(SCRIPT_ID) as HTMLScriptElement;
+    scriptElement.addEventListener = jest.fn().mockImplementationOnce((_, callback) => callback());
+    scriptElement.dispatchEvent(new Event('error'));
+
+    expect(consoleWarnSpy).toHaveBeenCalledTimes(1);
   });
 });
