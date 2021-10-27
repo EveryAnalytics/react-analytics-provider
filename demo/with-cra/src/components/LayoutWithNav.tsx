@@ -12,14 +12,6 @@ export default function LayoutWithNav({children}: {children: React.ReactNode}) {
       <Nav>
         <Ul>
           <NavItem
-            href="/"
-            onClick={() => {
-              analytics.onEvent('Click logo');
-            }}
-          >
-            Fruit Store
-          </NavItem>
-          <NavItem
             href="/products?color=red"
             onClick={() => {
               analytics.onEvent('Click products', {color: 'red'});
@@ -36,22 +28,13 @@ export default function LayoutWithNav({children}: {children: React.ReactNode}) {
             Yellow
           </NavItem>
           <NavItem
-            href="/login"
+            href="/products?color=green"
             onClick={() => {
-              analytics.onClick('Click login', {color: 'yellow'});
+              analytics.onEvent('Click products', {color: 'green'});
             }}
           >
-            Login
+            Green
           </NavItem>
-          <NavItem
-            href="/set-currency"
-            onClick={() => {
-              analytics.onSet({currency: 'KRW'});
-            }}
-          >
-            Currency
-          </NavItem>
-          <NavItem href="/set-user-property">UserProperty</NavItem>
         </Ul>
       </Nav>
       <Content>{children}</Content>
