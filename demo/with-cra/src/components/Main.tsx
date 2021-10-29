@@ -5,7 +5,9 @@ export default function Main({children}: {children: React.ReactNode}) {
   return <StyledMain>{children}</StyledMain>;
 }
 
+const HEADER_HEIGHT = '6rem';
+
 const StyledMain = styled.main`
-  min-height: calc(100vh - 6rem);
-  padding-top: 6rem;
+  min-height: calc(100vh - ${HEADER_HEIGHT});
+  padding-top: ${HEADER_HEIGHT};
 `;

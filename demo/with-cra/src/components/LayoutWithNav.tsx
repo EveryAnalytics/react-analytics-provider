@@ -67,9 +67,11 @@ const NavItem = ({
   );
 };
 
+const HEADER_HEIGHT = '6rem';
+
 const Wrapper = styled.div`
   display: flex;
-  height: calc(100vh - 6rem);
+  min-height: calc(100vh - ${HEADER_HEIGHT});
 `;
 
 const Nav = styled.aside`
