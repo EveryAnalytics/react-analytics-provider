@@ -1,16 +1,16 @@
 import {useAnalyticsPageView} from '@every-analytics/react-analytics-provider';
-import LayoutWithNav from '../../components/LayoutWithNav';
+import ProductNav from '../../components/ProductNav';
 import {getQueryParams} from '../../utils/location';
 
 const MainPage = () => {
   const {referrer} = getQueryParams<{referrer: string}>();
   useAnalyticsPageView({referrer});
 
-  // Todo: Remove the LayoutWithNav after the main page is complete
+  // Todo: Remove the ProductNav after the main page is complete
   return (
-    <LayoutWithNav>
+    <ProductNav>
       <h2>Fruit Store</h2>
-    </LayoutWithNav>
+    </ProductNav>
   );
 };
 
