@@ -14,7 +14,7 @@ export default function LayoutWithNav({children}: {children: React.ReactNode}) {
           <NavItem
             href="/products?color=red"
             onClick={() => {
-              analytics.onEvent('Click products', {color: 'red'});
+              analytics.onClick('products', {color: 'red'});
             }}
           >
             Red
@@ -22,7 +22,7 @@ export default function LayoutWithNav({children}: {children: React.ReactNode}) {
           <NavItem
             href="/products?color=yellow"
             onClick={() => {
-              analytics.onEvent('Click products', {color: 'yellow'});
+              analytics.onClick('products', {color: 'yellow'});
             }}
           >
             Yellow
@@ -30,7 +30,7 @@ export default function LayoutWithNav({children}: {children: React.ReactNode}) {
           <NavItem
             href="/products?color=green"
             onClick={() => {
-              analytics.onEvent('Click products', {color: 'green'});
+              analytics.onClick('products', {color: 'green'});
             }}
           >
             Green
@@ -52,8 +52,8 @@ const NavItem = ({
   onClick?: (e: React.MouseEvent) => void;
 }) => {
   const handleClick = (e: React.MouseEvent) => {
+    onClick?.(e);
     navigate.push(href);
-    onClick?.(e); // NOTE: prettier에서 에러로 인식하네?
   };
 
   const active = href === window.location.pathname + window.location.search;

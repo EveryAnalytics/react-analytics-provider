@@ -7,18 +7,18 @@ export default function Header() {
   const analytics = useAnalyticsContext();
 
   const handleLogoClick = () => {
+    analytics.onClick('logo');
     navigate.push('/');
-    analytics.onEvent('Click logo');
   };
 
   const handleCartClick = () => {
+    analytics.onClick('cart');
     navigate.push('/cart');
-    analytics.onEvent('Click cart');
   };
 
   const handleLoginClick = () => {
+    analytics.onClick('login');
     navigate.push('/login');
-    analytics.onEvent('Click login');
   };
 
   return (
