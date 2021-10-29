@@ -26,8 +26,16 @@ export default function Header() {
       <Title>
         <Link onClick={handleLogoClick}>Fruit Store</Link>
       </Title>
-      <HeaderMenu onClick={handleCartClick}>Cart</HeaderMenu>
-      <HeaderMenu onClick={handleLoginClick}>Login</HeaderMenu>
+      <Nav>
+        <Ul>
+          <Li onClick={handleCartClick}>
+            <Link>Cart</Link>
+          </Li>
+          <Li onClick={handleLoginClick}>
+            <Link>Login</Link>
+          </Li>
+        </Ul>
+      </Nav>
     </PageHeader>
   );
 }
@@ -52,17 +60,18 @@ const Title = styled.h1`
 
 const Link = styled.a``;
 
-const HeaderMenu = styled.button`
-  background-color: transparent;
-  border: none;
+const Nav = styled.nav`
+  margin-right: 24px;
+`;
+
+const Ul = styled.ul``;
+
+const Li = styled.li`
+  display: inline-block;
   margin-left: 16px;
   padding: 8px;
-  font-size: 1.6rem;
   font-weight: 600;
   &:hover {
     color: #0095f6;
-  }
-  &:last-child {
-    margin-right: 24px;
   }
 `;
