@@ -74,7 +74,7 @@ const Wrapper = styled.div`
   min-height: calc(100vh - ${HEADER_HEIGHT});
 `;
 
-const Nav = styled.aside`
+const Nav = styled.nav`
   width: 300px;
   border-right: 1px solid #ebebeb;
 `;
