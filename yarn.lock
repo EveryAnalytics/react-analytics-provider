@@ -8722,6 +8722,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^4.31.2
     "@typescript-eslint/parser": ^4.31.2
     amplitude-js: ^8.5.0
+    emotion-reset: ^3.0.1
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-config-react-app: ^6.0.0
@@ -9207,6 +9208,15 @@ __metadata:
   version: 3.0.0
   resolution: "emojis-list@npm:3.0.0"
   checksum: ddaaa02542e1e9436c03970eeed445f4ed29a5337dfba0fe0c38dfdd2af5da2429c2a0821304e8a8d1cadf27fdd5b22ff793571fa803ae16852a6975c65e8e70
+  languageName: node
+  linkType: hard
+
+"emotion-reset@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "emotion-reset@npm:3.0.1"
+  peerDependencies:
+    "@emotion/react": ">=11"
+  checksum: 788cfbf6f31fadd22da2d61558c5f7b30da3d355d646c28e0b48f453bdd6d86dd3c55d0d8f55e3cf37c09446d597ac1ada4273244c4141467024a70b1e178fa8
   languageName: node
   linkType: hard
 

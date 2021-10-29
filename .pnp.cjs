@@ -14625,6 +14625,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:4.32.0"],
             ["@typescript-eslint/parser", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:4.32.0"],
             ["amplitude-js", "npm:8.5.0"],
+            ["emotion-reset", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:3.0.1"],
             ["eslint", "npm:7.32.0"],
             ["eslint-config-prettier", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:8.3.0"],
             ["eslint-config-react-app", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:6.0.0"],
@@ -15155,6 +15156,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/emojis-list-npm-3.0.0-7faa48e6fd-ddaaa02542.zip/node_modules/emojis-list/",
           "packageDependencies": [
             ["emojis-list", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["emotion-reset", [
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/emotion-reset-npm-3.0.1-061e1e27b7-788cfbf6f3.zip/node_modules/emotion-reset/",
+          "packageDependencies": [
+            ["emotion-reset", "npm:3.0.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:3.0.1", {
+          "packageLocation": "./.yarn/__virtual__/emotion-reset-virtual-f19aab9246/0/cache/emotion-reset-npm-3.0.1-061e1e27b7-788cfbf6f3.zip/node_modules/emotion-reset/",
+          "packageDependencies": [
+            ["emotion-reset", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:3.0.1"],
+            ["@emotion/react", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:11.4.1"],
+            ["@types/emotion__react", null]
+          ],
+          "packagePeers": [
+            "@emotion/react",
+            "@types/emotion__react"
           ],
           "linkType": "HARD",
         }]
