@@ -14,7 +14,7 @@ export class Analytics {
     this.client = null;
   }
 
-  static setUp(params: SetUpParams) {
+  static setup(params: SetUpParams) {
     const {googleAnalytics, amplitude} = params;
 
     this.preset({
