@@ -16331,9 +16331,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:12.20.34"],
             ["@types/react", "npm:16.14.19"],
             ["@types/react-dom", "npm:16.9.14"],
-            ["@typescript-eslint/eslint-plugin", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.33.0"],
-            ["@typescript-eslint/parser", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:4.33.0"],
-            ["amplitude-js", "npm:8.8.0"],
+            ["@typescript-eslint/eslint-plugin", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:4.32.0"],
+            ["@typescript-eslint/parser", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:4.32.0"],
+            ["amplitude-js", "npm:8.5.0"],
+            ["emotion-reset", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:3.0.1"],
             ["eslint", "npm:7.32.0"],
             ["eslint-config-prettier", "virtual:00354cb7b647e70107f18434094c15bc204954cbf815a9783cea200a28a7b5960ec442e58518a2b88a7e1dea10e301c5883732aad9ee12625005b06b8c26fcb0#npm:8.3.0"],
             ["eslint-config-react-app", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:6.0.0"],
@@ -16983,31 +16984,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["emotion-theming", [
-        ["npm:10.0.27", {
-          "packageLocation": "./.yarn/cache/emotion-theming-npm-10.0.27-c90b72b72a-1fcabf32de.zip/node_modules/emotion-theming/",
+      ["emotion-reset", [
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/emotion-reset-npm-3.0.1-061e1e27b7-788cfbf6f3.zip/node_modules/emotion-reset/",
           "packageDependencies": [
-            ["emotion-theming", "npm:10.0.27"]
+            ["emotion-reset", "npm:3.0.1"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:17dbbf694420575fa3f8d590ae916ad5fb7ef26e2732bd78f715fcb21ca2eb3cb4658d58c899dd712cfb44916e8fc732e5d4ce2d72b63c0499216708af144cea#npm:10.0.27", {
-          "packageLocation": "./.yarn/__virtual__/emotion-theming-virtual-d0b6e5ee6d/0/cache/emotion-theming-npm-10.0.27-c90b72b72a-1fcabf32de.zip/node_modules/emotion-theming/",
+        ["virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:3.0.1", {
+          "packageLocation": "./.yarn/__virtual__/emotion-reset-virtual-f19aab9246/0/cache/emotion-reset-npm-3.0.1-061e1e27b7-788cfbf6f3.zip/node_modules/emotion-reset/",
           "packageDependencies": [
-            ["emotion-theming", "virtual:17dbbf694420575fa3f8d590ae916ad5fb7ef26e2732bd78f715fcb21ca2eb3cb4658d58c899dd712cfb44916e8fc732e5d4ce2d72b63c0499216708af144cea#npm:10.0.27"],
-            ["@babel/runtime", "npm:7.15.4"],
-            ["@emotion/core", "virtual:17dbbf694420575fa3f8d590ae916ad5fb7ef26e2732bd78f715fcb21ca2eb3cb4658d58c899dd712cfb44916e8fc732e5d4ce2d72b63c0499216708af144cea#npm:10.1.1"],
-            ["@emotion/weak-memoize", "npm:0.2.5"],
-            ["@types/emotion__core", null],
-            ["@types/react", "npm:16.14.19"],
-            ["hoist-non-react-statics", "npm:3.3.2"],
-            ["react", "npm:17.0.2"]
+            ["emotion-reset", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:3.0.1"],
+            ["@emotion/react", "virtual:6e8ca099fe45136d2e3c3ca883500ebc3c249828453be81fa31cec3778cd696c83615fb5e854874344100ed22b37ec29f3fa989cedae89321d2165c915e47f84#npm:11.4.1"],
+            ["@types/emotion__react", null]
           ],
           "packagePeers": [
-            "@emotion/core",
-            "@types/emotion__core",
-            "@types/react",
-            "react"
+            "@emotion/react",
+            "@types/emotion__react"
           ],
           "linkType": "HARD",
         }]
@@ -41458,7 +41452,6 @@ async function copyImpl(prelayout, postlayout, updateTime, destinationFs, destin
       {
         throw new Error(`Unsupported file type (${sourceStat.mode})`);
       }
-      break;
   }
 
   if (updated || ((_a = destinationStat === null || destinationStat === void 0 ? void 0 : destinationStat.mtime) === null || _a === void 0 ? void 0 : _a.getTime()) !== referenceTime.mtime.getTime() || ((_b = destinationStat === null || destinationStat === void 0 ? void 0 : destinationStat.atime) === null || _b === void 0 ? void 0 : _b.getTime()) !== referenceTime.atime.getTime()) {
@@ -41486,7 +41479,6 @@ async function copyFolder(prelayout, postlayout, updateTime, destinationFs, dest
   if (destinationStat !== null && !destinationStat.isDirectory()) {
     if (opts.overwrite) {
       prelayout.push(async () => destinationFs.removePromise(destination));
-      destinationStat = null;
     } else {
       return false;
     }
