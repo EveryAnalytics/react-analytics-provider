@@ -1,16 +1,15 @@
 import React from 'react';
 import {useAnalyticsContext} from '../contexts/useAnalyticsContext';
-import {UnknownRecord} from '../types/common';
 
-export function useAnalyticsPageView(params: UnknownRecord): void;
-export function useAnalyticsPageView(callback: () => UnknownRecord): void;
-export function useAnalyticsPageView(callback: () => Promise<UnknownRecord>): void;
-export function useAnalyticsPageView(paramsOrCallback: UnknownRecord | (() => Promise<UnknownRecord> | UnknownRecord)) {
+export function useAnalyticsPageView(params: string): void;
+export function useAnalyticsPageView(callback: () => string): void;
+export function useAnalyticsPageView(callback: () => Promise<string>): void;
+export function useAnalyticsPageView(paramsOrCallback: string | (() => Promise<string> | string)) {
   const analytics = useAnalyticsContext();
 
   const pageView = async () => {
     const params = typeof paramsOrCallback === 'function' ? await paramsOrCallback() : paramsOrCallback;
-    analytics.onPageView(params);
+    analytics.pageView(params);
   };
 
   React.useEffect(() => {

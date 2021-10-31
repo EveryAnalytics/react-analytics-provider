@@ -9,13 +9,13 @@ export interface AnalyticsClickProps {
 }
 
 export const AnalyticsClick = ({children, name, params}: AnalyticsClickProps) => {
-  const {onClick} = useAnalyticsContext();
+  const analytics = useAnalyticsContext();
 
   const child = React.Children.only(children) as React.ReactElement;
 
   const handleChildClick = useCallback(() => {
-    onClick(name, {action_type: 'click', ...params});
-  }, [name, params, onClick]);
+    analytics.click(name, {action_type: 'click', ...params});
+  }, [name, params, analytics]);
 
   return React.cloneElement(child, {
     onClick: handleChildClick,

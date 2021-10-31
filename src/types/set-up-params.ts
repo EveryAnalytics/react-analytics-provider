@@ -1,7 +1,7 @@
 import type {AmplitudeClient, Config} from 'amplitude-js';
 
 export type GoogleAnalyticsSetUpParams = {
-  trakingId: string;
+  trackingId: string;
   persistentValues?: Record<string, unknown>;
 };
 

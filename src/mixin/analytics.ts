@@ -20,7 +20,7 @@ export class Analytics {
     this.preset({
       init: () => {
         if (googleAnalytics) {
-          this.googleAnalytics.initialize(googleAnalytics.trakingId, googleAnalytics.persistentValues);
+          this.googleAnalytics.initialize(googleAnalytics.trackingId, googleAnalytics.persistentValues);
         }
         if (amplitude) {
           this.amplitude.initialize(amplitude.apiKey, amplitude.userId, amplitude.config, amplitude.callback);
@@ -36,7 +36,7 @@ export class Analytics {
       },
       pageView: (pathname: string) => {
         if (googleAnalytics) {
-          this.googleAnalytics.pageView(googleAnalytics.trakingId, pathname);
+          this.googleAnalytics.pageView(googleAnalytics.trackingId, pathname);
         }
         if (amplitude) {
           this.amplitude.logEvent('pageView', {pathname});
