@@ -3,15 +3,15 @@ import {useAnalyticsContext} from '../../contexts/useAnalyticsContext';
 
 export interface AnalyticsPageViewProps {
   children: React.ReactNode;
-  params: string;
+  pathname: string;
 }
 
-export const AnalyticsPageView = ({children, params}: AnalyticsPageViewProps) => {
+export const AnalyticsPageView = ({children, pathname}: AnalyticsPageViewProps) => {
   const analytics = useAnalyticsContext();
 
   React.useEffect(() => {
-    analytics.pageView(params);
-  }, [analytics, params]);
+    analytics.pageView(pathname);
+  }, [analytics, pathname]);
 
   return <>{children}</>;
 };

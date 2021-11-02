@@ -5,23 +5,26 @@ import {Analytics} from '../../mixin/analytics';
 import {IAnalyticsClient} from '../../interfaces';
 import {SetUpParams} from '../../types';
 
-export function AnalyticsProvider({
-  initialAnalyticsProps,
-  children,
-}: {
-  initialAnalyticsProps: IAnalyticsClient | SetUpParams;
+export type AnalyticsProviderProps = {
   children: React.ReactNode;
-}) {
-  React.useEffect(() => {
-    if ('init' in initialAnalyticsProps) {
-      Analytics.preset(initialAnalyticsProps);
-    } else {
-      Analytics.setup(initialAnalyticsProps);
+} & (
+  | {
+      client: IAnalyticsClient;
     }
-  }, [initialAnalyticsProps]);
+  | {setup: SetUpParams}
+);
+
+export function AnalyticsProvider(props: AnalyticsProviderProps) {
+  React.useEffect(() => {
+    if ('client' in props) {
+      Analytics.preset(props.client);
+    } else {
+      Analytics.setup(props.setup);
+    }
+  }, [props]);
 
   return React.useMemo(
-    () => <AnalyticsProviderContext.Provider value={Analytics}>{children}</AnalyticsProviderContext.Provider>,
-    [children],
+    () => <AnalyticsProviderContext.Provider value={Analytics}>{props.children}</AnalyticsProviderContext.Provider>,
+    [props.children],
   );
 }
