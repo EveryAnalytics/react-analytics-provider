@@ -10,13 +10,13 @@ describe('useAnalyticsPageView', () => {
     const callback = () => params;
     const asyncCallback = async () => params;
 
-    const onPageView = jest.fn();
+    const pageView = jest.fn();
 
     const useEffectSpy = jest.spyOn(React, 'useEffect').mockImplementationOnce(cb => cb());
     const useContextSpy = jest.spyOn(contextModule, 'useAnalyticsContext').mockImplementationOnce(
       () =>
         ({
-          onPageView,
+          pageView,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any),
     );
@@ -26,7 +26,7 @@ describe('useAnalyticsPageView', () => {
       params,
       callback,
       asyncCallback,
-      onPageView,
+      pageView,
       useEffectSpy,
       useContextSpy,
     };
@@ -35,35 +35,35 @@ describe('useAnalyticsPageView', () => {
   const waitForAsync = () => new Promise(resolve => setTimeout(resolve, 0));
 
   test('should call analytics.onPageView with params', async () => {
-    const {params, onPageView, useContextSpy, useEffectSpy} = setUp();
+    const {params, pageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(params);
     await waitForAsync();
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
-    expect(onPageView).toHaveBeenCalledWith(params);
+    expect(pageView).toHaveBeenCalledWith(params);
   });
 
   test('should call analytics.onPageView with callback', async () => {
-    const {params, callback, onPageView, useContextSpy, useEffectSpy} = setUp();
+    const {params, callback, pageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(callback);
     await waitForAsync();
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
-    expect(onPageView).toHaveBeenCalledWith(params);
+    expect(pageView).toHaveBeenCalledWith(params);
   });
 
   test('should call analytics.onPageView with asyncCallback', async () => {
-    const {params, asyncCallback, onPageView, useContextSpy, useEffectSpy} = setUp();
+    const {params, asyncCallback, pageView, useContextSpy, useEffectSpy} = setUp();
 
     useAnalyticsPageView(asyncCallback);
     await waitForAsync();
 
     expect(useContextSpy).toHaveBeenCalled();
     expect(useEffectSpy).toHaveBeenCalled();
-    expect(onPageView).toHaveBeenCalledWith(params);
+    expect(pageView).toHaveBeenCalledWith(params);
   });
 });
