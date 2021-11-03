@@ -1,6 +1,7 @@
-import ProductCartItem from '../../components/ProductCartItem';
+import ProductCartItems from '../../components/ProductCartItems';
 import ProductCartLayout from '../../components/ProductCartLayout';
 import {getQueryParams} from '../../utils/location';
+import products from '../../mocks/ecommerce/products.json';
 import styled from '@emotion/styled';
 import {useAnalyticsPageView} from '@every-analytics/react-analytics-provider';
 
@@ -9,15 +10,10 @@ const CartPage = () => {
   useAnalyticsPageView({referrer});
 
   return (
-    <ProductCartLayout>
-      <h1>Cart</h1>
-      <ProductCartItems>
-        <ProductCartItem />
-      </ProductCartItems>
+    <ProductCartLayout title="My cart list">
+      <ProductCartItems items={products} />
     </ProductCartLayout>
   );
 };
 
 export default CartPage;
-
-const ProductCartItems = styled.div``;
