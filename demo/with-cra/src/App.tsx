@@ -1,9 +1,10 @@
+import CartPage from './pages/CartPage';
+import Header from './components/Header';
+import LoginPage from './pages/LoginPage';
+import Main from './components/Main';
 import MainPage from './pages/MainPage';
 import ProductsPage from './pages/ProductsPage';
-import LoginPage from './pages/LoginPage';
 import Route from './router/Route';
-import Main from './components/Main';
-import Header from './components/Header';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/login">
           <LoginPage />
+        </Route>
+        <Route path="/cart">
+          <CartPage />
         </Route>
       </Main>
     </>
