@@ -14,8 +14,8 @@ function ProductCartItems({items}: Props) {
           <input type={'checkbox'} value={item.id} />
           <img src={item.imageUrl} alt={item.name.ko} />
           <ProductItemInfo>
-            <div>{item.name.ko}</div>
-            <div>{item.price}</div>
+            <div className="name">{item.name.ko}</div>
+            <div className="price">{item.price} KRW</div>
           </ProductItemInfo>
         </ProductCartItem>
       ))}
@@ -29,18 +29,35 @@ const ProductCartItemWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   width: 100%;
-  background-color: #e1e1e1;
+  //background-color: #e1e1e1;
 `;
 
 const ProductCartItem = styled.li`
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 70px;
+  height: 150px;
   border-radius: 10px;
   background-color: #f1f1f1;
+
+  input {
+    width: 5%;
+  }
+  img {
+    width: 15%;
+  }
 `;
 
-const ProductItemInfo = styled.div``;
+const ProductItemInfo = styled.div`
+  display: flex;
+
+  .name {
+    width: 20rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .price {
+  }
+`;
