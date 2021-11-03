@@ -1,5 +1,7 @@
-import ProductNav from '../../components/ProductNav';
+import ProductCartItem from '../../components/ProductCartItem';
+import ProductCartLayout from '../../components/ProductCartLayout';
 import {getQueryParams} from '../../utils/location';
+import styled from '@emotion/styled';
 import {useAnalyticsPageView} from '@every-analytics/react-analytics-provider';
 
 const CartPage = () => {
@@ -7,10 +9,15 @@ const CartPage = () => {
   useAnalyticsPageView({referrer});
 
   return (
-    <ProductNav>
+    <ProductCartLayout>
       <h1>Cart</h1>
-    </ProductNav>
+      <ProductCartItems>
+        <ProductCartItem />
+      </ProductCartItems>
+    </ProductCartLayout>
   );
 };
 
 export default CartPage;
+
+const ProductCartItems = styled.div``;
