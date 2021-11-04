@@ -38,7 +38,6 @@ const ContentSpacing = styled.div`
 
 const Title = styled.h1`
   font-size: 30px;
-  font-weight: bold;
 `;
 
 const Button = styled.button`
