@@ -10,12 +10,17 @@ function ProductCartItems({items}: Props) {
     <ProductCartItemWrapper>
       {items.map((item: ProductItem) => (
         <ProductCartItem key={item.id}>
-          <input type={'checkbox'} value={item.id} />
-          <img src={item.imageUrl} alt={item.name.ko} />
+          <Input type={'checkbox'} value={item.id} />
+          <ProductItemImage src={item.imageUrl} alt={item.name.ko} />
           <ProductItemInfo>
-            <div className="name">{item.name.ko}</div>
-            <div className="price">{item.price} KRW</div>
+            <ProductItemCategory>{item.categoryId}</ProductItemCategory>
+            <ProductItemName>
+              <div>{item.name.ko}</div>
+              <div>({item.name.en})</div>
+            </ProductItemName>
+            <ProductItemPrice>{item.price} KRW</ProductItemPrice>
           </ProductItemInfo>
+          <DeleteButton>X</DeleteButton>
         </ProductCartItem>
       ))}
     </ProductCartItemWrapper>
@@ -30,7 +35,6 @@ const ProductCartItemWrapper = styled.ul`
   justify-content: center;
   gap: 15px;
   width: 100%;
-  //background-color: #e1e1e1;
 `;
 
 const ProductCartItem = styled.li`
@@ -40,23 +44,31 @@ const ProductCartItem = styled.li`
   height: 150px;
   border-radius: 10px;
   background-color: #f1f1f1;
+`;
 
-  input {
-    width: 5%;
-  }
-  img {
-    width: 15%;
-  }
+const Input = styled.input`
+  width: 5%;
+`;
+
+const ProductItemImage = styled.img`
+  width: 15%;
 `;
 
 const ProductItemInfo = styled.div`
+  width: 75%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+`;
+const ProductItemCategory = styled.span``;
 
-  .name {
-    width: 20rem;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  .price {
-  }
+const ProductItemName = styled.div`
+  text-align: center;
+  font-size: 2rem;
+`;
+const ProductItemPrice = styled.span``;
+
+const DeleteButton = styled.button`
+  width: 5%;
 `;
