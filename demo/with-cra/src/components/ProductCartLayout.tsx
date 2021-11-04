@@ -4,18 +4,15 @@ function ProductCartLayout({
   title,
   children,
   buttonContent,
-  onClick,
 }: {
   title: string;
   children: React.ReactNode;
   buttonContent: string;
-  onClick: () => void;
 }) {
   return (
     <LayoutSpacing>
       <Title>{title}</Title>
       <ContentSpacing>{children}</ContentSpacing>
-      <Button onClick={onClick}>{buttonContent}</Button>
     </LayoutSpacing>
   );
 }
@@ -38,15 +35,4 @@ const ContentSpacing = styled.div`
 
 const Title = styled.h1`
   font-size: 30px;
-`;
-
-const Button = styled.button`
-  margin: auto;
-  text-align: center;
-  width: 300px;
-  height: 50px;
-  background-color: #293ad2;
-  font-size: 20px;
-  color: #fff;
-  border-radius: 10px;
 `;

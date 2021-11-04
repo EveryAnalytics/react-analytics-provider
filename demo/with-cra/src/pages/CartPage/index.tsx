@@ -15,10 +15,23 @@ const CartPage = () => {
   };
 
   return (
-    <ProductCartLayout title="My cart list" buttonContent="Buy Now" onClick={onClick}>
+    <ProductCartLayout title="My cart list" buttonContent="Buy Now">
       <ProductCartItems items={products} />
+      <Button onClick={onClick}>Buy Now</Button>
     </ProductCartLayout>
   );
 };
 
 export default CartPage;
+
+const Button = styled.button`
+  margin: auto;
+  text-align: center;
+  width: 300px;
+  height: 50px;
+  margin-top: 50px;
+  background-color: #293ad2;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 10px;
+`;
