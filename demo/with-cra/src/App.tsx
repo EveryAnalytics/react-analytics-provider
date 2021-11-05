@@ -1,31 +1,30 @@
-import NavBar from './components/NavBar';
+import CartPage from './pages/CartPage';
+import Header from './components/Header';
+import LoginPage from './pages/LoginPage';
+import Main from './components/Main';
 import MainPage from './pages/MainPage';
 import ProductsPage from './pages/ProductsPage';
-import LoginPage from './pages/LoginPage';
-import CurrencyPage from './pages/CurrencyPage';
-import UserPropertyPage from './pages/MyPage';
 import Route from './router/Route';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Route path="/">
-        <MainPage />
-      </Route>
-      <Route path="/products">
-        <ProductsPage />
-      </Route>
-      <Route path="/login">
-        <LoginPage />
-      </Route>
-      <Route path="/set-currency">
-        <CurrencyPage />
-      </Route>
-      <Route path="/mypage">
-        <UserPropertyPage />
-      </Route>
-    </div>
+    <>
+      <Header />
+      <Main>
+        <Route path="/">
+          <MainPage />
+        </Route>
+        <Route path="/products">
+          <ProductsPage />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <Route path="/cart">
+          <CartPage />
+        </Route>
+      </Main>
+    </>
   );
 }
 
