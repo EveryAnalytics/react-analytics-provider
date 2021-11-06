@@ -5,6 +5,7 @@ import Main from './components/Main';
 import MainPage from './pages/MainPage';
 import ProductsPage from './pages/ProductsPage';
 import Route from './router/Route';
+import PurchasePage from './pages/PurchasePage';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/cart">
           <CartPage />
+        </Route>
+        <Route path="/purchase">
+          <PurchasePage />
         </Route>
       </Main>
     </>
