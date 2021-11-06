@@ -1,20 +1,20 @@
-import {IAnalyticsClient} from '../interfaces';
+import {AnalyticsClient} from '../interfaces';
 import {googleAnalyticsHelper, amplitudeHelper} from '../utils';
-import {UnknownRecord, SetUpParams} from '../types';
+import {UnknownRecord, SetupParams} from '../types';
 
 export class Analytics {
   static googleAnalytics = googleAnalyticsHelper;
   static amplitude = amplitudeHelper;
 
   static isInitialized = false;
-  static client: IAnalyticsClient;
+  static client: AnalyticsClient;
 
   static clear() {
     this.isInitialized = false;
     this.client = null;
   }
 
-  static setup(params: SetUpParams) {
+  static setup(params: SetupParams) {
     const {googleAnalytics, amplitude} = params;
 
     this.preset({
@@ -45,13 +45,13 @@ export class Analytics {
     });
   }
 
-  static preset(client: IAnalyticsClient) {
+  static preset(client: AnalyticsClient) {
     this.clear();
     this.client = Object.freeze(client);
     this.init();
   }
 
-  static getClient(): IAnalyticsClient | void {
+  static getClient(): AnalyticsClient | void {
     if (!this.client) {
       console.warn('preset이 실행되지 않았습니다.');
       return;

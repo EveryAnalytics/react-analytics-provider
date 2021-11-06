@@ -2,16 +2,16 @@ import React, {useEffect, useMemo} from 'react';
 
 import AnalyticsProviderContext from '../../contexts/AnalyticsProviderContext';
 import {Analytics} from '../../mixin/analytics';
-import {IAnalyticsClient} from '../../interfaces';
-import {SetUpParams} from '../../types';
+import {AnalyticsClient} from '../../interfaces';
+import {SetupParams} from '../../types';
 
 export type AnalyticsProviderProps = {
   children: React.ReactNode;
 } & (
   | {
-      client: IAnalyticsClient;
+      client: AnalyticsClient;
     }
-  | {setup: SetUpParams}
+  | {setup: SetupParams}
 );
 
 export function AnalyticsProvider(props: AnalyticsProviderProps) {
