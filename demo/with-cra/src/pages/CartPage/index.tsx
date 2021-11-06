@@ -15,8 +15,8 @@ const CartPage = () => {
   };
 
   return (
-    <ProductCartLayout title="My cart list" buttonContent="Buy Now">
-      <ProductCartItems items={products} />
+    <ProductCartLayout title="My cart list">
+      <ProductCartItems items={products} onDelete={() => {}} />
       <Button onClick={onClick}>Buy Now</Button>
     </ProductCartLayout>
   );
