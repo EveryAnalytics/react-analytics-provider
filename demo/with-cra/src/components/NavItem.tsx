@@ -1,7 +1,6 @@
-import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
-import {navigate} from '../router';
+import {NavLink} from 'react-router-dom';
 import {Li} from './ProductNav';
 
 export interface NavItemProps {
@@ -18,30 +17,36 @@ export const NavItem = ({href, children, onClick, isActive}: NavItemProps) => {
 
   return (
     <Li>
-      <NavItemButton onClick={handleClick} active={isActive}>
+      <NavItemButton
+        to={href}
+        onClick={handleClick}
+        style={props => {
+          return isActive
+            ? {
+                color: '#0095f6',
+                backgroundColor: '#f7f7f7',
+              }
+            : {};
+        }}
+      >
         {children}
       </NavItemButton>
     </Li>
   );
 };
 
-export const NavItemButton = styled.button<{active: boolean}>`
+export const NavItemButton = styled(NavLink)`
   text-align: left;
   width: 100%;
   height: 50px;
   padding: 0 24px;
   font-size: 1.6rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 
   &:hover,
   &:focus {
     background-color: #fbfbfb;
   }
-
-  ${props =>
-    props.active &&
-    css`
-      color: #0095f6;
-      background-color: #f7f7f7 !important;
-    `}
 `;

@@ -1,23 +1,23 @@
-import navigate from '../router/navigate';
 import styled from '@emotion/styled';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {useNavigate} from 'react-router-dom';
 
 export default function Header() {
   const analytics = useAnalyticsContext();
-
+  const navigate = useNavigate();
   const handleLogoClick = () => {
     analytics.onClick('logo');
-    navigate.push('/');
+    navigate('/');
   };
 
   const handleCartClick = () => {
     analytics.onClick('cart');
-    navigate.push('/cart');
+    navigate('/cart');
   };
 
   const handleLoginClick = () => {
     analytics.onClick('login');
-    navigate.push('/login');
+    navigate('/login');
   };
 
   return (

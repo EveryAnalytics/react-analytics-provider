@@ -9840,6 +9840,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-hot-toast: ^2.1.0
+    react-router-dom: ^6.0.1
     react-scripts: 4.0.3
     typescript: ^4.1.2
     web-vitals: ^1.0.1
@@ -13449,6 +13450,15 @@ fsevents@1.2.4:
   version: 10.7.3
   resolution: "highlight.js@npm:10.7.3"
   checksum: defeafcd546b535d710d8efb8e650af9e3b369ef53e28c3dc7893eacfe263200bba4c5fcf43524ae66d5c0c296b1af0870523ceae3e3104d24b7abf6374a4fea
+  languageName: node
+  linkType: hard
+
+"history@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "history@npm:5.1.0"
+  dependencies:
+    "@babel/runtime": ^7.7.6
+  checksum: c978710a188ee5ad5d2acf55721c77e27469578c891a66311e71e8920d1390d14476e39a6db07e0ab0f5f8d594f1f62eb55a1059c7549cde7795a36367df5869
   languageName: node
   linkType: hard
 
@@ -22003,6 +22013,30 @@ fsevents@1.2.4:
   version: 0.8.3
   resolution: "react-refresh@npm:0.8.3"
   checksum: 3cffe5a9cbac1c5d59bf74bf9fff43c987d87ef32098b9092ea94b6637377d86c08565b9374d9397f446b3fbcd95de986ec77220a16f979687cb39b7b89e2f91
+  languageName: node
+  linkType: hard
+
+"react-router-dom@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "react-router-dom@npm:6.0.1"
+  dependencies:
+    history: ^5.1.0
+    react-router: 6.0.1
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: cc2d80536f4a02b8fcef826185ad0acb5d66245e9fb89345d54ec0eaea73eb4ff809cbf68ebb1ac8c3de15cbe45f539d7879cc2d3ed4a76c8c42a602dece71b0
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.0.1":
+  version: 6.0.1
+  resolution: "react-router@npm:6.0.1"
+  dependencies:
+    history: ^5.1.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 66bbaaa98637a0bf4e4c3e4392f8929388e2d07438759129e14709809add974bfa3307d508055c259986439b2f5f9c5558410771355e547c06005ed4feef7c7f
   languageName: node
   linkType: hard
 

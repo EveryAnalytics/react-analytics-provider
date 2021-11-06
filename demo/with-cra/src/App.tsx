@@ -1,8 +1,8 @@
 import {CartPage, LoginPage, MainPage, ProductsPage, MyPage} from './pages';
+import {Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
 import Main from './components/Main';
 import MainProvider from './contexts/MainContext';
-import Route from './router/Route';
 import PurchasePage from './pages/PurchasePage';
 
 function App() {
@@ -10,24 +10,14 @@ function App() {
     <MainProvider>
       <Header />
       <Main>
-        <Route path="/">
-          <MainPage />
-        </Route>
-        <Route path="/products">
-          <ProductsPage />
-        </Route>
-        <Route path="/login">
-          <LoginPage />
-        </Route>
-        <Route path="/cart">
-          <CartPage />
-        </Route>
-        <Route path="/purchase">
-          <PurchasePage />
-        </Route>
-        <Route path="/mypage">
-          <MyPage />
-        </Route>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="products" element={<ProductsPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="mypage" element={<MyPage />} />
+          <Route path="/purchase" element={<PurchasePage />} />
+        </Routes>
       </Main>
     </MainProvider>
   );

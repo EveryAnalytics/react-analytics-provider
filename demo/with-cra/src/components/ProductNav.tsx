@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 import React from 'react';
+import {useSearchParams} from 'react-router-dom';
 import {NavItem, NavItemProps} from './NavItem';
 
 export default function ProductNav({children}: {children: React.ReactNode}) {
@@ -25,13 +26,15 @@ const ProductColorNavItem = ({
   ...props
 }: Omit<NavItemProps, 'isActive' | 'href'> & {color: string}) => {
   const analytics = useAnalyticsContext();
+  const [params] = useSearchParams();
+
   const handleClick = () => {
-    analytics.onClick('products', {color: 'green'});
+    analytics.onClick('products', {color});
   };
 
   // 우선 여기서 판단하고, 자주 이런 판단로직이 필요할 경우 NavItem 안으로 넣는다.
   const isEqualPath = window.location.pathname === '/products';
-  const isIncludeColor = new URLSearchParams(window.location.search).get('color') === color;
+  const isIncludeColor = params.getAll('color').includes(color);
 
   return (
     <NavItem
