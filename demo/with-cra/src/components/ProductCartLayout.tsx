@@ -1,14 +1,6 @@
 import styled from '@emotion/styled';
 
-function ProductCartLayout({
-  title,
-  children,
-  buttonContent,
-}: {
-  title: string;
-  children: React.ReactNode;
-  buttonContent: string;
-}) {
+function ProductCartLayout({title, children}: {title: string; children: React.ReactNode}) {
   return (
     <LayoutSpacing>
       <Title>{title}</Title>
