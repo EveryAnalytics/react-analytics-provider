@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useAnalyticsContext} from '../../contexts/useAnalyticsContext';
 
 export interface AnalyticsPageViewProps {
@@ -9,7 +9,7 @@ export interface AnalyticsPageViewProps {
 export const AnalyticsPageView = ({children, pathname}: AnalyticsPageViewProps) => {
   const analytics = useAnalyticsContext();
 
-  React.useEffect(() => {
+  useEffect(() => {
     analytics.pageView(pathname);
   }, [analytics, pathname]);
 

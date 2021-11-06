@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useEffect, useMemo} from 'react';
 
 import AnalyticsProviderContext from '../../contexts/AnalyticsProviderContext';
 import {Analytics} from '../../mixin/analytics';
@@ -15,7 +15,7 @@ export type AnalyticsProviderProps = {
 );
 
 export function AnalyticsProvider(props: AnalyticsProviderProps) {
-  React.useEffect(() => {
+  useEffect(() => {
     if ('client' in props) {
       Analytics.preset(props.client);
     } else {
@@ -23,7 +23,7 @@ export function AnalyticsProvider(props: AnalyticsProviderProps) {
     }
   }, [props]);
 
-  return React.useMemo(
+  return useMemo(
     () => <AnalyticsProviderContext.Provider value={Analytics}>{props.children}</AnalyticsProviderContext.Provider>,
     [props.children],
   );
