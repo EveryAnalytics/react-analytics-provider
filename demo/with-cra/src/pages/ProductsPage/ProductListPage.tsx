@@ -1,13 +1,13 @@
 import {useNavigate} from 'react-router-dom';
 
 const ProductListPage = ({color, products}: {color: string; products: string[]}) => {
-  const naviage = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       <h2>{color} fruits</h2>
       <ul>
         {products.map(_product => (
-          <li key={_product} onClick={() => naviage(`/products?color=${color}&product=${_product.toLowerCase()}`)}>
+          <li key={_product} onClick={() => navigate(`/products?color=${color}&product=${_product.toLowerCase()}`)}>
             {_product}
           </li>
         ))}
