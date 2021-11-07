@@ -24,7 +24,7 @@ describe('amplitudeHelper.setUserId', () => {
 
   test(`should call amplitude setUserId with null userId`, async () => {
     const {consoleWarnSpy, getInstanceSpy, amplitudeSetUserIdMock} = setUp();
-    const userId = null;
+    const userId: string = null;
 
     await setUserIdUtils.setUserId(userId);
 

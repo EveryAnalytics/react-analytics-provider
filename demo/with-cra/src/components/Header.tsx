@@ -1,6 +1,5 @@
-import React from 'react';
-import styled from '@emotion/styled';
 import navigate from '../router/navigate';
+import styled from '@emotion/styled';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 
 export default function Header() {
