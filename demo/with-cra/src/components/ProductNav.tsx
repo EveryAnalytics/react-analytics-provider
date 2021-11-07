@@ -1,8 +1,7 @@
-import React from 'react';
-import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {css} from '@emotion/react';
 import navigate from '../router/navigate';
 import styled from '@emotion/styled';
-import {css} from '@emotion/react';
+import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 
 export default function ProductNav({children}: {children: React.ReactNode}) {
   const analytics = useAnalyticsContext();
