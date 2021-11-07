@@ -4,7 +4,7 @@ import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 
 import navigate from '../../router/navigate';
 import Products from '../../mocks/ecommerce/products.json';
-import {ProductType} from '../../types/Product';
+import {ProductType, AnalyticsViewItemType} from '../../types/Product';
 
 import ProductNav from '../../components/ProductNav';
 import Cards from '../../components/Cards';
@@ -17,7 +17,8 @@ const ProductsPage = () => {
 
   useEffect(() => {
     analytics.onPageView();
-  }, [analytics]);
+    analytics.onEvent('view_item_list', {items: makeViewItemListWithProducts(products)});
+  }, [analytics, products]);
 
   const getProductDetailUrl = (product: ProductType): string => {
     return `/product?color=${color}&product=${product.name.en}`;
@@ -29,9 +30,11 @@ const ProductsPage = () => {
       <Cards>
         {products.map((product: ProductType) => (
           <Card
+            key={product.id}
             title={product.name.en}
             onClick={() => {
               navigate.push(getProductDetailUrl(product));
+              analytics.onClick('product', product);
             }}
           />
         ))}
@@ -41,6 +44,18 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
+
+function makeViewItemListWithProducts(products: ProductType[]): AnalyticsViewItemType[] {
+  return products.map(
+    (product: ProductType): AnalyticsViewItemType => ({
+      id: product.id,
+      name: product.name.en,
+      category: product.categoryId,
+      variant: product.categoryId,
+      price: product.price,
+    }),
+  );
+}
 
 function getProductsByColor(color: string): ProductType[] {
   switch (color) {

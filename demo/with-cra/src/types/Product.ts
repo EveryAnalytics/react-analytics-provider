@@ -6,3 +6,16 @@ export type ProductType = {
   price: number;
   brand: string;
 };
+
+export type AnalyticsViewItemType = {
+  id: string;
+  name: string;
+  category?: string;
+  variant?: string;
+  price?: number;
+  brand?: string;
+  quantity?: number;
+  coupon?: string;
+  list_position?: number;
+  list_name?: string;
+};
