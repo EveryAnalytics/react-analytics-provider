@@ -12,6 +12,14 @@ export default function ProductNav({children}: {children: React.ReactNode}) {
       <Nav>
         <Ul>
           <NavItem
+            href="/products?color=all"
+            onClick={() => {
+              analytics.onClick('products', {color: 'all'});
+            }}
+          >
+            All
+          </NavItem>
+          <NavItem
             href="/products?color=red"
             onClick={() => {
               analytics.onClick('products', {color: 'red'});
