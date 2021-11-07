@@ -1,13 +1,12 @@
+import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 import {useEffect} from 'react';
 import {useNavigate, useSearchParams} from 'react-router-dom';
-import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
-
-import Products from '../../mocks/ecommerce/products.json';
-import {ProductType, AnalyticsViewItemType} from '../../types/Product';
-
-import ProductNav from '../../components/ProductNav';
-import Cards from '../../components/Cards';
 import Card from '../../components/Card';
+import Cards from '../../components/Cards';
+import ProductNav from '../../components/ProductNav';
+import Products from '../../mocks/ecommerce/products.json';
+import {AnalyticsViewItemType, ProductType} from '../../types/Product';
+import ProductDetailPage from './ProductDetailPage';
 
 const ProductsPage = () => {
   const [searchParams] = useSearchParams();
@@ -23,13 +22,13 @@ const ProductsPage = () => {
   }, [analytics, products]);
 
   const getProductDetailUrl = (product: ProductType): string => {
-    return `/product?color=${color}&product=${product.name.en}`;
+    return `/products?color=${color}&product=${product.name.en}`;
   };
 
   return (
     <ProductNav>
       {product ? (
-        <div></div>
+        <ProductDetailPage product={product} />
       ) : (
         <>
           <h2>{color} fruits</h2>
