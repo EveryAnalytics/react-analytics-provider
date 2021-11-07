@@ -9,53 +9,82 @@ const MyPage = () => {
     analytics.onPageView();
   }, [analytics]);
 
-  const [subscription, setSubscription] = useState('basic');
-  const [currency, setCurrency] = useState('KRW');
-  const [favorite, setFavoriteFruits] = useState('red');
+  interface SelectItems {
+    title: string;
+    selectValue: string;
+    options: string[];
+    onChange: (value: string) => void;
+  }
+  const [subscription, setSubscription] = useState<string>('basic');
+  const [currency, setCurrency] = useState<string>('KRW');
+  const [favorite, setFavoriteFruits] = useState<string>('red');
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     analytics.onSetUserProperty({subscription: subscription, currency: currency, favorite: favorite});
   };
   const subscriptionOptions = ['basic', 'premium'];
   const currencyOptions = ['KWR', 'USD', 'EUR'];
-  const FavoriteFruitsOptions = ['Red', 'Yellow', 'Blue', 'Purple'];
-
+  const favoriteFruitsOptions = ['Red', 'Yellow', 'Blue', 'Purple'];
+  const selectItems: SelectItems[] = [
+    {
+      title: 'Subscription',
+      selectValue: 'subscription',
+      options: subscriptionOptions,
+      onChange: setSubscription,
+    },
+    {
+      title: 'Currency',
+      selectValue: 'currency',
+      options: currencyOptions,
+      onChange: setCurrency,
+    },
+    {
+      title: 'Favorites',
+      selectValue: 'favoriteFruits',
+      options: favoriteFruitsOptions,
+      onChange: setFavoriteFruits,
+    },
+  ];
   return (
-    <Container>
-      <h1>User Info</h1>
-      <h5>User ID: Demo id</h5>
+    <MyPageContainer>
+      <MyPageTitle>My Page</MyPageTitle>
+      <MyPageUserId>User ID: Demo id</MyPageUserId>
       <form onSubmit={handleSubmit}>
-        <Select
-          title="Subscription"
-          selectValue="subscription"
-          options={subscriptionOptions}
-          onChange={setSubscription}
-        />
+        {selectItems.map(selectItem => (
+          <Select
+            title={selectItem.title}
+            selectValue={selectItem.selectValue}
+            options={selectItem.options}
+            onChange={selectItem.onChange}
+          />
+        ))}
         <div></div>
-        <Select title="Currency" selectValue="currency" options={currencyOptions} onChange={setCurrency} />
-        <div></div>
-        <Select
-          title="Favorites"
-          selectValue="favoriteFruits"
-          options={FavoriteFruitsOptions}
-          onChange={setFavoriteFruits}
-        />
-        {/* <label>
-          Favorite Fruits
-          <select value={favorite} onChange={e => setFavoriteFruits(e.target.value)}>
-            <option value="red">Red</option>
-            <option value="yellow">Yellow</option>
-            <option value="blue">Blue</option>
-            <option value="purple">Purple</option>
-          </select>
-        </label> */}
-        <div></div>
-        <button type="submit">Save</button>
+        <MyPageButton type="submit">Save</MyPageButton>
       </form>
-    </Container>
+    </MyPageContainer>
   );
 };
 
-const Container = styled.div``;
+const MyPageContainer = styled.div``;
+const MyPageTitle = styled.h3`
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px;
+`;
+const MyPageUserId = styled.div`
+  font-size: 25px;
+  margin: 20px;
+`;
+const MyPageButton = styled.button`
+  width: 60px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-left: 50px;
+  cursor: pointer;
+  &:hover {
+    background: rgb(277, 277, 277);
+  }
+`;
 
 export default MyPage;
