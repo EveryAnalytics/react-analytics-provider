@@ -9,7 +9,7 @@ export interface NavItemProps {
   onClick?: (e: React.MouseEvent) => void;
   isActive: boolean;
 }
-export const NavItem = ({href, children, onClick, isActive}: NavItemProps) => {
+const NavItem = ({href, children, onClick, isActive}: NavItemProps) => {
   const handleClick = (e: React.MouseEvent) => {
     onClick?.(e);
     // navigate.push(href);
@@ -35,7 +35,9 @@ export const NavItem = ({href, children, onClick, isActive}: NavItemProps) => {
   );
 };
 
-export const NavItemButton = styled(NavLink)`
+export default NavItem;
+
+const NavItemButton = styled(NavLink)`
   text-align: left;
   width: 100%;
   height: 50px;

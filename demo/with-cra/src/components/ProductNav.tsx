@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
 import React from 'react';
 import {useSearchParams} from 'react-router-dom';
-import {NavItem, NavItemProps} from './NavItem';
+import NavItem, {NavItemProps} from './NavItem';
 
 export default function ProductNav({children}: {children: React.ReactNode}) {
   return (
