@@ -3,14 +3,16 @@ import styled from '@emotion/styled';
 
 interface Props {
   items: ProductItem[];
+  useCheckbox?: boolean;
+  onDelete?: () => void;
 }
 
-function ProductCartItems({items}: Props) {
+function ProductCartItems({items, useCheckbox = true, onDelete}: Props) {
   return (
     <ProductCartItemWrapper>
       {items.map((item: ProductItem) => (
         <ProductCartItem key={item.id}>
-          <Input type={'checkbox'} value={item.id} />
+          {useCheckbox && <Input type={'checkbox'} value={item.id} />}
           <ProductItemImage src={item.imageUrl} alt={item.name.ko} />
           <ProductItemInfo>
             <ProductItemCategory>{item.categoryId}</ProductItemCategory>
@@ -20,7 +22,7 @@ function ProductCartItems({items}: Props) {
             </ProductItemName>
             <ProductItemPrice>{item.price} KRW</ProductItemPrice>
           </ProductItemInfo>
-          <DeleteButton>X</DeleteButton>
+          {onDelete && <DeleteButton onClick={onDelete}>X</DeleteButton>}
         </ProductCartItem>
       ))}
     </ProductCartItemWrapper>
