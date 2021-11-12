@@ -3,13 +3,14 @@ import Header from './components/Header';
 import LoginPage from './pages/LoginPage';
 import Main from './components/Main';
 import MainPage from './pages/MainPage';
+import MainProvider from './contexts/MainContext';
 import ProductsPage from './pages/ProductsPage';
 import MyPage from './pages/MyPage';
 import Route from './router/Route';
 
 function App() {
   return (
-    <>
+    <MainProvider>
       <Header />
       <Main>
         <Route path="/">
@@ -28,7 +29,7 @@ function App() {
           <MyPage />
         </Route>
       </Main>
-    </>
+    </MainProvider>
   );
 }
 
