@@ -11,12 +11,12 @@ const CartPage = () => {
   useAnalyticsPageView({referrer});
 
   const onClick = () => {
-    navigate.push('/purchase'); //TODO: 구매페이지 router 이름에 맞게 수정하기
+    navigate.push('/purchase');
   };
 
   return (
     <ProductCartLayout title="My cart list">
-      <ProductCartItems items={products} onDelete={() => {}} />
+      <ProductCartItems items={products} />
       <Button onClick={onClick}>Buy Now</Button>
     </ProductCartLayout>
   );

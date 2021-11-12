@@ -1,6 +1,5 @@
-import {AnalyticsPageView} from '@every-analytics/react-analytics-provider';
+import {AnalyticsPageView, AnalyticsClick} from '@every-analytics/react-analytics-provider';
 import {useRouter} from 'next/router';
-import {AnalyticsClick} from '@every-analytics/react-analytics-provider';
 import styles from './index.module.css';
 
 const ColorPage = () => {

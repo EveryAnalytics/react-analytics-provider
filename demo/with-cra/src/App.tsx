@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import Main from './components/Main';
 import MainPage from './pages/MainPage';
 import ProductsPage from './pages/ProductsPage';
+import MyPage from './pages/MyPage';
 import Route from './router/Route';
 import PurchasePage from './pages/PurchasePage';
 
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/purchase">
           <PurchasePage />
+        </Route>
+        <Route path="/mypage">
+          <MyPage />
         </Route>
       </Main>
     </>
