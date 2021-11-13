@@ -1,47 +1,18 @@
-import {css} from '@emotion/react';
-import navigate from '../router/navigate';
 import styled from '@emotion/styled';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import React from 'react';
+import {useSearchParams} from 'react-router-dom';
+import NavItem, {NavItemProps} from './NavItem';
 
 export default function ProductNav({children}: {children: React.ReactNode}) {
-  const analytics = useAnalyticsContext();
-
   return (
     <Wrapper>
       <Nav>
         <Ul>
-          <NavItem
-            href="/products?color=all"
-            onClick={() => {
-              analytics.onClick('products', {color: 'all'});
-            }}
-          >
-            All
-          </NavItem>
-          <NavItem
-            href="/products?color=red"
-            onClick={() => {
-              analytics.onClick('products', {color: 'red'});
-            }}
-          >
-            Red
-          </NavItem>
-          <NavItem
-            href="/products?color=yellow"
-            onClick={() => {
-              analytics.onClick('products', {color: 'yellow'});
-            }}
-          >
-            Yellow
-          </NavItem>
-          <NavItem
-            href="/products?color=green"
-            onClick={() => {
-              analytics.onClick('products', {color: 'green'});
-            }}
-          >
-            Green
-          </NavItem>
+          <ProductColorNavItem color="all">All</ProductColorNavItem>
+          <ProductColorNavItem color="red">Red</ProductColorNavItem>
+          <ProductColorNavItem color="yellow">Yellow</ProductColorNavItem>
+          <ProductColorNavItem color="green">Green</ProductColorNavItem>
         </Ul>
       </Nav>
       <Content>{children}</Content>
@@ -49,28 +20,31 @@ export default function ProductNav({children}: {children: React.ReactNode}) {
   );
 }
 
-const NavItem = ({
-  href,
+const ProductColorNavItem = ({
+  color,
   children,
-  onClick,
-}: {
-  href: string;
-  children: React.ReactNode;
-  onClick?: (e: React.MouseEvent) => void;
-}) => {
-  const handleClick = (e: React.MouseEvent) => {
-    onClick?.(e);
-    navigate.push(href);
+  ...props
+}: Omit<NavItemProps, 'isActive' | 'href'> & {color: string}) => {
+  const analytics = useAnalyticsContext();
+  const [params] = useSearchParams();
+
+  const handleClick = () => {
+    analytics.onClick('products', {color});
   };
 
-  const active = href === window.location.pathname + window.location.search;
+  // 우선 여기서 판단하고, 자주 이런 판단로직이 필요할 경우 NavItem 안으로 넣는다.
+  const isEqualPath = window.location.pathname === '/products';
+  const isIncludeColor = params.getAll('color').includes(color);
 
   return (
-    <Li>
-      <NavItemButton onClick={handleClick} active={active}>
-        {children}
-      </NavItemButton>
-    </Li>
+    <NavItem
+      {...props}
+      href={`/products?color=${color}`}
+      isActive={isEqualPath && isIncludeColor}
+      onClick={handleClick}
+    >
+      {children}
+    </NavItem>
   );
 };
 
@@ -81,40 +55,19 @@ const Wrapper = styled.div`
   min-height: calc(100vh - ${HEADER_HEIGHT});
 `;
 
-const Nav = styled.nav`
-  width: 300px;
-  border-right: 1px solid #ebebeb;
-`;
-
 const Ul = styled.ul`
   padding: 8px 0;
   margin: 0;
   list-style: none;
 `;
 
-const Li = styled.li``;
-
-const NavItemButton = styled.button<{active: boolean}>`
-  text-align: left;
-  width: 100%;
-  height: 50px;
-  padding: 0 24px;
-  font-size: 1.6rem;
-  font-weight: 600;
-
-  &:hover,
-  &:focus {
-    background-color: #fbfbfb;
-  }
-
-  ${props =>
-    props.active &&
-    css`
-      color: #0095f6;
-      background-color: #f7f7f7 !important;
-    `}
-`;
+export const Li = styled.li``;
 
 const Content = styled.div`
   flex: 1;
+`;
+
+const Nav = styled.nav`
+  width: 300px;
+  border-right: 1px solid #ebebeb;
 `;

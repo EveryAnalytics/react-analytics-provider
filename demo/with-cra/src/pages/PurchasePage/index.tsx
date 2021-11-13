@@ -1,17 +1,19 @@
-import {getQueryParams} from '../../utils/location';
 import navigate from '../../router/navigate';
 import products from '../../mocks/ecommerce/products.json';
 import styled from '@emotion/styled';
 import {useAnalyticsPageView} from '@every-analytics/react-analytics-provider';
 import ProductCartItems from '../../components/ProductCartItems';
 import ProductCartLayout from '../../components/ProductCartLayout';
+import {useSearchParams, useNavigate} from 'react-router-dom';
 
 const PurchasePage = () => {
-  const {referrer} = getQueryParams<{referrer: string}>();
-  useAnalyticsPageView({referrer});
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  useAnalyticsPageView({referrer: searchParams.get('referrer') || ''});
 
   const onClick = () => {
-    navigate.push('/purchase-complete'); // TODO 구매 완료페이지 개발
+    navigate('/purchase-complete'); // TODO 구매 완료페이지 개발
   };
 
   const tempProducts = products.slice(0, 3);

@@ -7,6 +7,7 @@ import {Toaster} from 'react-hot-toast';
 import {toaster} from './utils/toaster';
 import {Global, css} from '@emotion/react';
 import globalStyle from './utils/globalStyle';
+import {BrowserRouter} from 'react-router-dom';
 
 amplitudeHelper.initialize(process.env.REACT_APP_AMPLITUDE_API_KEY);
 const persistentValues = {userNo: 123};
@@ -59,7 +60,9 @@ ReactDOM.render(
         toaster.exception(params);
       }}
     >
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </AnalyticsProvider>
     <Toaster
       position="bottom-right"
