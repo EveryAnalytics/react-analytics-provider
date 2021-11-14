@@ -1,6 +1,6 @@
 import {AnalyticsClient} from '../interfaces';
 import {googleAnalyticsHelper, amplitudeHelper} from '../utils';
-import {UnknownRecord, SetupParams} from '../types';
+import {UnknownRecord, SetupParams, Pathname} from '../types';
 
 export class Analytics {
   static googleAnalytics = googleAnalyticsHelper;
@@ -85,12 +85,12 @@ export class Analytics {
     client.click?.(eventName, data);
   }
 
-  static pageView(pathname: string) {
+  static pageView(data: Pathname | UnknownRecord) {
     const client = this.getClient();
     if (!client) {
       return;
     }
-    client.pageView?.(pathname);
+    client.pageView?.(data);
   }
 
   static setUserId(id: string | number) {
