@@ -1,9 +1,12 @@
 import navigate from '../router/navigate';
 import styled from '@emotion/styled';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import LoginModal from './LoginModal';
+import {useState} from 'react';
 
 export default function Header() {
   const analytics = useAnalyticsContext();
+  const [open, setOpen] = useState(false);
 
   const handleLogoClick = () => {
     analytics.onClick('logo');
@@ -17,7 +20,7 @@ export default function Header() {
 
   const handleLoginClick = () => {
     analytics.onClick('login');
-    navigate.push('/login');
+    setOpen(true);
   };
 
   return (
@@ -35,6 +38,7 @@ export default function Header() {
           </Li>
         </Ul>
       </Nav>
+      <LoginModal open={open} setOpen={setOpen} />
     </PageHeader>
   );
 }
