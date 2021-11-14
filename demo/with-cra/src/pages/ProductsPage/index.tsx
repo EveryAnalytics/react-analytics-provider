@@ -1,38 +1,78 @@
-import {useEffect} from 'react';
-import {getQueryParams} from '../../utils/location';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {useEffect} from 'react';
+import {useNavigate, useSearchParams} from 'react-router-dom';
+import Card from '../../components/Card';
+import Cards from '../../components/Cards';
 import ProductNav from '../../components/ProductNav';
+import Products from '../../mocks/ecommerce/products.json';
+import {AnalyticsViewItemType, ProductType} from '../../types/Product';
+import ProductDetailPage from './ProductDetailPage';
 
 const ProductsPage = () => {
-  const {color} = getQueryParams<{color: string}>();
+  const [searchParams] = useSearchParams();
+  const color = searchParams.get('color') || '';
+  const product = searchParams.get('product') || '';
   const products = getProductsByColor(color);
   const analytics = useAnalyticsContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     analytics.onPageView();
-  }, [analytics]);
+    analytics.onEvent('view_item_list', {items: makeViewItemListWithProducts(products)});
+  }, [analytics, products]);
+
+  const getProductDetailUrl = (product: ProductType): string => {
+    return `/products?color=${color}&product=${product.name.en}`;
+  };
 
   return (
     <ProductNav>
-      <h2>{color} fruits</h2>
-      <ul>
-        {products.map(product => (
-          <li key={product}>{product}</li>
-        ))}
-      </ul>
+      {product ? (
+        <ProductDetailPage product={product} />
+      ) : (
+        <>
+          <h2>{color} fruits</h2>
+          <Cards>
+            {products.map((product: ProductType) => (
+              <Card
+                key={product.id}
+                title={product.name.en}
+                onClick={() => {
+                  navigate(getProductDetailUrl(product));
+                  analytics.onClick('product', product);
+                }}
+              />
+            ))}
+          </Cards>
+        </>
+      )}
     </ProductNav>
   );
 };
 
 export default ProductsPage;
 
-function getProductsByColor(color: string) {
+function makeViewItemListWithProducts(products: ProductType[]): AnalyticsViewItemType[] {
+  return products.map(
+    (product: ProductType): AnalyticsViewItemType => ({
+      id: product.id,
+      name: product.name.en,
+      category: product.categoryId,
+      variant: product.categoryId,
+      price: product.price,
+    }),
+  );
+}
+
+function getProductsByColor(color: string): ProductType[] {
   switch (color) {
     case 'red':
-      return ['Strawberry', 'Tomato'];
+      return Products.filter((product: ProductType) => product.categoryId === 'RED');
     case 'yellow':
-      return ['Banana', 'Lemon'];
+      return Products.filter((product: ProductType) => product.categoryId === 'YELLOW');
+    case 'green':
+      return Products.filter((product: ProductType) => product.categoryId === 'GREEN');
     default:
-      return [];
+      return Products;
   }
 }

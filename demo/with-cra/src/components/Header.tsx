@@ -1,25 +1,27 @@
-import navigate from '../router/navigate';
 import styled from '@emotion/styled';
 import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {useNavigate} from 'react-router-dom';
 import LoginModal from './LoginModal';
 import {useState} from 'react';
 
 export default function Header() {
   const analytics = useAnalyticsContext();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const handleLogoClick = () => {
     analytics.onClick('logo');
-    navigate.push('/');
+    navigate('/');
   };
 
   const handleCartClick = () => {
     analytics.onClick('cart');
-    navigate.push('/cart');
+    navigate('/cart');
   };
 
   const handleLoginClick = () => {
     analytics.onClick('login');
+    navigate('/login');
     setOpen(true);
   };
 
