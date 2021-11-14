@@ -5,12 +5,12 @@ import {Analytics} from '../../mixin/analytics';
 import {AnalyticsClient} from '../../interfaces';
 import {SetupParams} from '../../types';
 
-interface CustomSetupProps {
+export interface CustomSetupProps {
   children: ReactNode;
   client: AnalyticsClient;
 }
 
-interface DefaultSetupProps {
+export interface DefaultSetupProps {
   children: ReactNode;
   setup: SetupParams;
 }
