@@ -1,17 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useAnalyticsContext} from '../../contexts/useAnalyticsContext';
-import {UnknownRecord} from '../../types/common';
+import {Pathname, UnknownRecord} from '../../types';
 
 export interface AnalyticsPageViewProps {
   children: React.ReactNode;
-  params: UnknownRecord;
+  params: Pathname | UnknownRecord;
 }
 
 export const AnalyticsPageView = ({children, params}: AnalyticsPageViewProps) => {
   const analytics = useAnalyticsContext();
 
-  React.useEffect(() => {
-    analytics.onPageView(params);
+  useEffect(() => {
+    analytics.pageView(params);
   }, [analytics, params]);
 
   return <>{children}</>;

@@ -1,26 +1,26 @@
-import {IAnalyticsClient} from '../interfaces';
+import {AnalyticsClient} from '../interfaces';
 import {googleAnalyticsHelper, amplitudeHelper} from '../utils';
-import {UnknownRecord, SetUpParams} from '../types';
+import {UnknownRecord, SetupParams, Pathname} from '../types';
 
 export class Analytics {
   static googleAnalytics = googleAnalyticsHelper;
   static amplitude = amplitudeHelper;
 
   static isInitialized = false;
-  static client: IAnalyticsClient;
+  static client: AnalyticsClient;
 
   static clear() {
     this.isInitialized = false;
     this.client = null;
   }
 
-  static setup(params: SetUpParams) {
+  static setup(params: SetupParams) {
     const {googleAnalytics, amplitude} = params;
 
     this.preset({
       init: () => {
         if (googleAnalytics) {
-          this.googleAnalytics.initialize(googleAnalytics.trakingId, googleAnalytics.persistentValues);
+          this.googleAnalytics.initialize(googleAnalytics.trackingId, googleAnalytics.persistentValues);
         }
         if (amplitude) {
           this.amplitude.initialize(amplitude.apiKey, amplitude.userId, amplitude.config, amplitude.callback);
@@ -36,7 +36,7 @@ export class Analytics {
       },
       pageView: (pathname: string) => {
         if (googleAnalytics) {
-          this.googleAnalytics.pageView(googleAnalytics.trakingId, pathname);
+          this.googleAnalytics.pageView(googleAnalytics.trackingId, pathname);
         }
         if (amplitude) {
           this.amplitude.logEvent('pageView', {pathname});
@@ -45,13 +45,13 @@ export class Analytics {
     });
   }
 
-  static preset(client: IAnalyticsClient) {
+  static preset(client: AnalyticsClient) {
     this.clear();
     this.client = Object.freeze(client);
     this.init();
   }
 
-  static getClient(): IAnalyticsClient | void {
+  static getClient(): AnalyticsClient | void {
     if (!this.client) {
       console.warn('preset이 실행되지 않았습니다.');
       return;
@@ -85,12 +85,12 @@ export class Analytics {
     client.click?.(eventName, data);
   }
 
-  static pageView(pathname: string) {
+  static pageView(data: Pathname | UnknownRecord) {
     const client = this.getClient();
     if (!client) {
       return;
     }
-    client.pageView?.(pathname);
+    client.pageView?.(data);
   }
 
   static setUserId(id: string | number) {

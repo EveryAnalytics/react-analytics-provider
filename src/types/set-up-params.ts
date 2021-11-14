@@ -1,18 +1,18 @@
 import type {AmplitudeClient, Config} from 'amplitude-js';
 
-export type GoogleAnalyticsSetUpParams = {
-  trakingId: string;
+export type GoogleAnalyticsSetupParams = {
+  trackingId: string;
   persistentValues?: Record<string, unknown>;
 };
 
-export type AmplitudeSetUpParams = {
+export type AmplitudeSetupParams = {
   apiKey: string;
   userId?: string;
   config?: Config;
   callback?: (client: AmplitudeClient) => void;
 };
 
-export type SetUpParams = {
-  googleAnalytics?: GoogleAnalyticsSetUpParams;
-  amplitude?: AmplitudeSetUpParams;
+export type SetupParams = {
+  googleAnalytics?: GoogleAnalyticsSetupParams;
+  amplitude?: AmplitudeSetupParams;
 };

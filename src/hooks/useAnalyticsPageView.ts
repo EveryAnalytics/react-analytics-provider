@@ -1,19 +1,18 @@
-import React from 'react';
+import {useEffect} from 'react';
 import {useAnalyticsContext} from '../contexts/useAnalyticsContext';
-import {UnknownRecord} from '../types/common';
 
-export function useAnalyticsPageView(params: UnknownRecord): void;
-export function useAnalyticsPageView(callback: () => UnknownRecord): void;
-export function useAnalyticsPageView(callback: () => Promise<UnknownRecord>): void;
-export function useAnalyticsPageView(paramsOrCallback: UnknownRecord | (() => Promise<UnknownRecord> | UnknownRecord)) {
+export function useAnalyticsPageView(pathname: string): void;
+export function useAnalyticsPageView(callback: () => string): void;
+export function useAnalyticsPageView(callback: () => Promise<string>): void;
+export function useAnalyticsPageView(pathnameOrCallback: string | (() => Promise<string> | string)) {
   const analytics = useAnalyticsContext();
 
   const pageView = async () => {
-    const params = typeof paramsOrCallback === 'function' ? await paramsOrCallback() : paramsOrCallback;
-    analytics.onPageView(params);
+    const pathname = typeof pathnameOrCallback === 'function' ? await pathnameOrCallback() : pathnameOrCallback;
+    analytics.pageView(pathname);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     pageView();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [analytics]);

@@ -1,51 +1,42 @@
-import * as React from 'react';
+import React, {useEffect, useMemo, ReactNode} from 'react';
 
 import AnalyticsProviderContext from '../../contexts/AnalyticsProviderContext';
-import {UnknownRecord} from '../../types/common';
+import {Analytics} from '../../mixin/analytics';
+import {AnalyticsClient} from '../../interfaces';
+import {SetupParams} from '../../types';
 
-interface Props {
-  onInitialize(): void;
-  onPageView?(params?: UnknownRecord): void;
-  onEvent?(name: string, params?: UnknownRecord): void;
-  onClick?(name: string, params?: UnknownRecord): void;
-  onSet?(...args: [string, UnknownRecord] | [UnknownRecord]): void;
-  onSetUserId?(userId: string | null): void;
-  onSetUserProperty?(params: UnknownRecord): void;
-  onException(params?: UnknownRecord): void;
-  children: React.ReactNode;
+export interface CustomSetupProps {
+  children: ReactNode;
+  client: AnalyticsClient;
 }
 
-export function AnalyticsProvider({
-  onInitialize,
-  onPageView = () => null,
-  onEvent = () => null,
-  onClick = () => null,
-  onSet = () => null,
-  onSetUserId = () => null,
-  onSetUserProperty = () => null,
-  onException = () => null,
-  children,
-}: Props) {
-  React.useEffect(() => {
-    onInitialize();
-  }, [onInitialize]);
+export interface DefaultSetupProps {
+  children: ReactNode;
+  setup: SetupParams;
+}
 
-  return React.useMemo(
-    () => (
-      <AnalyticsProviderContext.Provider
-        value={{
-          onPageView,
-          onEvent,
-          onClick,
-          onSet,
-          onSetUserId,
-          onSetUserProperty,
-          onException,
-        }}
-      >
-        {children}
-      </AnalyticsProviderContext.Provider>
-    ),
-    [children, onClick, onEvent, onPageView, onSet, onSetUserId, onSetUserProperty, onException],
+export type AnalyticsProviderProps = CustomSetupProps | DefaultSetupProps;
+
+const isCustomSetup = (props: AnalyticsProviderProps): props is CustomSetupProps =>
+  (props as CustomSetupProps).client !== undefined;
+
+const isDefaultSetup = (props: AnalyticsProviderProps): props is DefaultSetupProps =>
+  (props as DefaultSetupProps).setup !== undefined;
+
+export function AnalyticsProvider(props: AnalyticsProviderProps) {
+  useEffect(() => {
+    if (isCustomSetup(props)) {
+      Analytics.preset(props.client);
+      return;
+    }
+    if (isDefaultSetup(props)) {
+      Analytics.setup(props.setup);
+      return;
+    }
+  }, [props]);
+
+  return useMemo(
+    () => <AnalyticsProviderContext.Provider value={Analytics}>{props.children}</AnalyticsProviderContext.Provider>,
+    [props.children],
   );
 }
