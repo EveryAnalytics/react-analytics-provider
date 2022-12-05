@@ -2,7 +2,9 @@ import {useEffect} from 'react';
 import {UnknownRecord} from '..';
 import {useAnalyticsContext} from '../contexts/useAnalyticsContext';
 
-export function useAnalyticsPageView(paramsOrCallback: UnknownRecord | (() => Promise<UnknownRecord>)) {
+export function useAnalyticsPageView(
+  paramsOrCallback: UnknownRecord | (() => UnknownRecord) | (() => Promise<UnknownRecord>),
+) {
   const analytics = useAnalyticsContext();
 
   useEffect(() => {
