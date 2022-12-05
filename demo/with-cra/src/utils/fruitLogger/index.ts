@@ -1,5 +1,8 @@
 type UnknownRecord = Record<string, unknown>;
 
+const init = (apiKey: string) => {
+  console.info(`🥝Fruit Logger - Init / apiKey: ${apiKey}`);
+};
 const pageView = (path: string, params?: UnknownRecord) => {
   console.info('🥝Fruit Logger - PageView', params);
 };
@@ -26,6 +29,7 @@ const exception = (params?: UnknownRecord) => {
 };
 
 export const fruitLogger = {
+  init,
   pageView,
   event,
   click,

@@ -1,6 +1,45 @@
-import {AnalyticsClient} from '../interfaces';
+// import {AnalyticsClient} from '../interfaces';
 import {googleAnalyticsHelper, amplitudeHelper} from '../utils';
-import {UnknownRecord, SetupParams, Pathname} from '../types';
+import {UnknownRecord} from '../types';
+import type {AmplitudeClient, Config} from 'amplitude-js';
+
+export type GoogleAnalyticsInitParams = {
+  trackingId: string;
+  persistentValues?: Record<string, unknown>;
+};
+
+export type AmplitudeInitParams = {
+  apiKey: string;
+  userId?: string;
+  config?: Config;
+  callback?: (client: AmplitudeClient) => void;
+};
+
+export type InitParams = {
+  googleAnalytics?: GoogleAnalyticsInitParams;
+  amplitude?: AmplitudeInitParams;
+};
+
+export interface AnalyticsPreset {
+  preset?: InitParams;
+  onInit?: () => void | Promise<void>;
+
+  onEvent?: (name: string, data?: UnknownRecord, callback?: (...args: unknown[]) => void) => void;
+
+  onPageView?: (params: UnknownRecord) => void;
+
+  setUserId?: (id: string | number) => void;
+  setUserProperties?: (data: UnknownRecord) => void;
+}
+
+export class AnalyticsClient {
+  init: () => void;
+  event: (name: string, data?: UnknownRecord) => void;
+  pageView: (params?: UnknownRecord) => void;
+
+  setUserId?: (id: string | number) => void;
+  setUserProperties?: (data: UnknownRecord) => void;
+}
 
 export class Analytics {
   static googleAnalytics = googleAnalyticsHelper;
@@ -14,10 +53,14 @@ export class Analytics {
     this.client = null;
   }
 
-  static setup(params: SetupParams) {
-    const {googleAnalytics, amplitude} = params;
+  static async init(params: AnalyticsPreset) {
+    this.clear();
 
-    this.preset({
+    const {preset} = params;
+    const googleAnalytics = preset?.googleAnalytics;
+    const amplitude = preset?.amplitude;
+
+    this.client = Object.freeze({
       init: () => {
         if (googleAnalytics) {
           this.googleAnalytics.initialize(googleAnalytics.trackingId, googleAnalytics.persistentValues);
@@ -34,21 +77,25 @@ export class Analytics {
           this.amplitude.logEvent(name, data);
         }
       },
-      pageView: (pathname: string) => {
+      pageView: (params?: UnknownRecord) => {
+        const pathname = location.pathname + location.search;
         if (googleAnalytics) {
           this.googleAnalytics.pageView(googleAnalytics.trackingId, pathname);
         }
         if (amplitude) {
-          this.amplitude.logEvent('pageView', {pathname});
+          this.amplitude.logEvent('pageView', {pathname, params});
+        }
+      },
+      /** Only supported in Amplitude */
+      setUserId: (userId: string) => {
+        if (amplitude) {
+          this.amplitude.setUserId(userId);
         }
       },
     });
-  }
 
-  static preset(client: AnalyticsClient) {
-    this.clear();
-    this.client = Object.freeze(client);
-    this.init();
+    await this.client.init();
+    this.isInitialized = true;
   }
 
   static getClient(): AnalyticsClient | void {
@@ -60,15 +107,6 @@ export class Analytics {
     return this.client;
   }
 
-  static async init() {
-    const client = this.getClient();
-    if (!client || this.isInitialized) {
-      return;
-    }
-    await client.init();
-    this.isInitialized = true;
-  }
-
   static event(name: string, data?: UnknownRecord) {
     const client = this.getClient();
     if (!client) {
@@ -77,20 +115,13 @@ export class Analytics {
     client.event(name, data);
   }
 
-  static click(eventName: string, data?: UnknownRecord) {
+  static pageView(params?: UnknownRecord) {
     const client = this.getClient();
     if (!client) {
       return;
     }
-    client.click?.(eventName, data);
-  }
 
-  static pageView(data: Pathname | UnknownRecord) {
-    const client = this.getClient();
-    if (!client) {
-      return;
-    }
-    client.pageView?.(data);
+    client.pageView?.(params);
   }
 
   static setUserId(id: string | number) {

@@ -6,7 +6,8 @@ import {useAnalyticsPageView} from '../../src/hooks/useAnalyticsPageView';
 
 describe('useAnalyticsPageView', () => {
   const setUp = () => {
-    const params = faker.lorem.word();
+    const word = faker.lorem.word();
+    const params = {params: word};
     const callback = () => params;
     const asyncCallback = async () => params;
 

@@ -14,7 +14,7 @@ export const AnalyticsClick = ({children, name, params}: AnalyticsClickProps) =>
   const child = React.Children.only(children) as React.ReactElement;
 
   const handleChildClick = useCallback(() => {
-    analytics.click(name, {action_type: 'click', ...params});
+    analytics.event(name, {action_type: 'click', ...params});
   }, [name, params, analytics]);
 
   return React.cloneElement(child, {

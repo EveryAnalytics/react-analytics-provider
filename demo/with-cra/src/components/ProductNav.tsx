@@ -29,7 +29,7 @@ const ProductColorNavItem = ({
   const [params] = useSearchParams();
 
   const handleClick = () => {
-    analytics.onClick('products', {color});
+    analytics.event('products', {color});
   };
 
   // 우선 여기서 판단하고, 자주 이런 판단로직이 필요할 경우 NavItem 안으로 넣는다.

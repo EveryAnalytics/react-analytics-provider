@@ -1,13 +1,10 @@
-import {useEffect, useState} from 'react';
-import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
-import Select from '../../components/Select';
 import styled from '@emotion/styled';
+import {useAnalyticsContext} from '@every-analytics/react-analytics-provider';
+import {useState} from 'react';
+import Select from '../../components/Select';
 
 const MyPage = () => {
   const analytics = useAnalyticsContext();
-  useEffect(() => {
-    analytics.onPageView();
-  }, [analytics]);
 
   interface SelectItems {
     title: string;
@@ -20,7 +17,7 @@ const MyPage = () => {
   const [favorite, setFavoriteFruits] = useState<string>('red');
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    analytics.onSetUserProperty({subscription: subscription, currency: currency, favorite: favorite});
+    analytics.setUserProperties({subscription: subscription, currency: currency, favorite: favorite});
   };
   const subscriptionOptions = ['basic', 'premium'];
   const currencyOptions = ['KWR', 'USD', 'EUR'];

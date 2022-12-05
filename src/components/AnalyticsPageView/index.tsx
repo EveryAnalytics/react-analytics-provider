@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
+import {UnknownRecord} from '../..';
 import {useAnalyticsContext} from '../../contexts/useAnalyticsContext';
-import {Pathname, UnknownRecord} from '../../types';
 
 export interface AnalyticsPageViewProps {
   children: React.ReactNode;
-  params: Pathname | UnknownRecord;
+  params?: UnknownRecord;
 }
 
 export const AnalyticsPageView = ({children, params}: AnalyticsPageViewProps) => {
