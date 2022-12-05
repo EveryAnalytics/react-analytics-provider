@@ -17,8 +17,8 @@ const ProductsPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    analytics.onPageView();
-    analytics.onEvent('view_item_list', {items: makeViewItemListWithProducts(products)});
+    analytics.pageView();
+    analytics.event('view_item_list', {items: makeViewItemListWithProducts(products)});
   }, [analytics, products]);
 
   const getProductDetailUrl = (product: ProductType): string => {
@@ -39,7 +39,7 @@ const ProductsPage = () => {
                 title={product.name.en}
                 onClick={() => {
                   navigate(getProductDetailUrl(product));
-                  analytics.onClick('product', product);
+                  analytics.event('product', product);
                 }}
               />
             ))}

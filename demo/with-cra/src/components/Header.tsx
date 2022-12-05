@@ -6,17 +6,17 @@ export default function Header() {
   const analytics = useAnalyticsContext();
   const navigate = useNavigate();
   const handleLogoClick = () => {
-    analytics.onClick('logo');
+    analytics.event('logo');
     navigate('/');
   };
 
   const handleCartClick = () => {
-    analytics.onClick('cart');
+    analytics.event('cart');
     navigate('/cart');
   };
 
   const handleLoginClick = () => {
-    analytics.onClick('login');
+    analytics.event('login');
     navigate('/login');
   };
 

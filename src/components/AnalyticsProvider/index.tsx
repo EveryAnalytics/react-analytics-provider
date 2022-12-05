@@ -1,38 +1,17 @@
-import React, {useEffect, useMemo, ReactNode} from 'react';
-
+import React, {ReactNode, useEffect, useMemo} from 'react';
 import AnalyticsProviderContext from '../../contexts/AnalyticsProviderContext';
-import {Analytics} from '../../mixin/analytics';
-import {AnalyticsClient} from '../../interfaces';
-import {SetupParams} from '../../types';
+import {Analytics, AnalyticsPreset} from '../../mixin/analytics';
 
-export interface CustomSetupProps {
+interface Props extends AnalyticsPreset {
   children: ReactNode;
-  client: AnalyticsClient;
 }
 
-export interface DefaultSetupProps {
-  children: ReactNode;
-  setup: SetupParams;
-}
-
-export type AnalyticsProviderProps = CustomSetupProps | DefaultSetupProps;
-
-const isCustomSetup = (props: AnalyticsProviderProps): props is CustomSetupProps =>
-  (props as CustomSetupProps).client !== undefined;
-
-const isDefaultSetup = (props: AnalyticsProviderProps): props is DefaultSetupProps =>
-  (props as DefaultSetupProps).setup !== undefined;
-
-export function AnalyticsProvider(props: AnalyticsProviderProps) {
+export function AnalyticsProvider(props: Props) {
   useEffect(() => {
-    if (isCustomSetup(props)) {
-      Analytics.preset(props.client);
-      return;
+    if (props.preset != null) {
+      Analytics.preset?.(props);
     }
-    if (isDefaultSetup(props)) {
-      Analytics.setup(props.setup);
-      return;
-    }
+    props.onInit?.();
   }, [props]);
 
   return useMemo(
