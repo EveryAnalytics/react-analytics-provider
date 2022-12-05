@@ -8,9 +8,7 @@ interface Props extends AnalyticsPreset {
 
 export function AnalyticsProvider(props: Props) {
   useEffect(() => {
-    if (props.preset != null) {
-      Analytics.preset?.(props);
-    }
+    Analytics.init?.(props);
     props.onInit?.();
   }, [props]);
 

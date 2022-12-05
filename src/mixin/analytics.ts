@@ -53,7 +53,7 @@ export class Analytics {
     this.client = null;
   }
 
-  static async preset(params: AnalyticsPreset) {
+  static async init(params: AnalyticsPreset) {
     this.clear();
 
     const {preset} = params;

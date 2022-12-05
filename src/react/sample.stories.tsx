@@ -1,11 +1,17 @@
 import React from 'react';
 import {Analytics} from '../mixin';
 
-Analytics.preset({
-  init: async () => {
-    console.info('init completed');
+Analytics.init({
+  preset: {
+    googleAnalytics: {
+      trackingId: '123',
+      persistentValues: {userNo: 1},
+    },
+    amplitude: {
+      apiKey: '456',
+    },
   },
-  event: (...args) => {
+  onEvent: (...args) => {
     console.info('event occured! ' + args);
   },
 });
